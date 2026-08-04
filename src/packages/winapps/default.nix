@@ -4,4 +4,4 @@
 #     home.packages = [ winapps.winapps ];
 #     my.r.win = "winapps windows";
 # }
-{}: {}
+{ ... }: { }
