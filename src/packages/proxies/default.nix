@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  yueyinqiu-nur-packages,
   ...
 }:
 
 let
-  mmmm = pkgs.callPackage ./mihomo-manager-mihomo-mixin { };
+  mixin = yueyinqiu-nur-packages.mihomo-manager-mihomo-mixin;
   tui = pkgs.callPackage ./mihomo-tui { };
 in
 {
@@ -35,7 +36,7 @@ in
   config = {
     home.packages = [
       pkgs.mihomo
-      mmmm
+      mixin
       tui
     ];
 
@@ -81,14 +82,14 @@ in
           cd "''${XDG_CONFIG_HOME:-$HOME/.config}/proxies/${name}"
           mkdir -p "/tmp/config-sh"
           mkdir -p "$STATE_DIRECTORY/config-sh"
-          MMMM="${mmmm}/bin/mmmm" \
+          MMMM="${mixin}/bin/MihomoManager.MihomoMixin" \
             OUTPUT_PATH="/tmp/merged.yaml" \
             TEMP_DIRECTORY="/tmp/config-sh" \
             STATE_DIRECTORY="$STATE_DIRECTORY/config-sh" \
             bash config.sh
 
           mkdir -p "$STATE_DIRECTORY/core"
-          "${mmmm}/bin/mmmm" merge /tmp/merged.yaml merge "${port}" save "$STATE_DIRECTORY/core/config.yaml"
+          "${mixin}/bin/MihomoManager.MihomoMixin" merge /tmp/merged.yaml merge "${port}" save "$STATE_DIRECTORY/core/config.yaml"
 
           SOCKET="$XDG_RUNTIME_DIR/proxies-${name}.sock"
 
