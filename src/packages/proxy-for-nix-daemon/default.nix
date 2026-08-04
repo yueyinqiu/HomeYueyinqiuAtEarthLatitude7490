@@ -27,15 +27,15 @@
   #   };
   # };
 
-  my.r.proxy-for-nix-daemon-switch = ''
-    nix-daemon-proxy socks5h://127.0.0.1:23569
-  '';
-
-  my.r.proxy-for-nix-daemon-check-block = ''
-    journalctl --user -u sing-box-for-nix-daemon | grep block
-  '';
-
-  my.r.proxy-for-nix-daemon-restart = ''
-    systemctl --user restart sing-box-for-nix-daemon
-  '';
+  # my.r.proxy-for-nix-daemon-switch = ''
+  #   nix-daemon-proxy socks5h://127.0.0.1:23569
+  # '';
+# 
+  # my.r.proxy-for-nix-daemon-check-block = ''
+  #   journalctl --user -u sing-box-for-nix-daemon | grep block
+  # '';
+# 
+  # my.r.proxy-for-nix-daemon-restart = ''
+  #   systemctl --user restart sing-box-for-nix-daemon
+  # '';
 }
