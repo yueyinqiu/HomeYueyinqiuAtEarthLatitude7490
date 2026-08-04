@@ -1,13 +1,13 @@
 { ... }:
 {
-  my.sing-box.instances.ailab = {
-    files = [
-      ./route.json
-      ./outbounds.json
-    ];
-    port = 25563;
-    manager = 11614;
-  };
+  # my.sing-box.instances.ailab = {
+  #   files = [
+  #     ./route.json
+  #     ./outbounds.json
+  #   ];
+  #   port = 25563;
+  #   manager = 11614;
+  # };
 
   my.r.sing-box-ailab-start-vpn = ''
     echo "VNC: 127.0.0.1:52495 Password: vnc"
