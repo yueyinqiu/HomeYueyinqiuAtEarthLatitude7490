@@ -1,0 +1,33 @@
+// Tips:
+// `curl -H "User-Agent: flclash" --output xxxx https://xxxxxxxxx` to download configuration
+
+{
+    "dns": {
+        "servers": [
+            {
+                "type": "https",
+                "server": "1.1.1.1",
+                "server_port": 443,
+                "path": "/dns-query"
+            }
+        ]
+    },
+    "outbounds": [
+        {
+            "type": "shadowsocks",
+            "tag": "server-1",
+            "server": "your-server-address-1",
+            "server_port": 8388,
+            "method": "aes-256-gcm",
+            "password": "your-password"
+        },
+        {
+            "type": "shadowsocks",
+            "tag": "server-2",
+            "server": "your-server-address-2",
+            "server_port": 8388,
+            "method": "aes-256-gcm",
+            "password": "your-password"
+        }
+    ]
+}

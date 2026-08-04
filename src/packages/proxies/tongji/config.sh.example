@@ -1,0 +1,25 @@
+# "$MMMM" for mihomo-manager-mihomo-mixin
+# "$OUTPUT_PATH" for writing the final output
+# "$TEMP_DIRECTORY" for temporary files (cleaned up after service stops)
+# "$STATE_DIRECTORY" for persistent files (retained across runs)
+# . for other configuration files
+
+cp "/home/yueyinqiu/.ssh/id_ed25519" "$STATE_DIRECTORY/easytier-ssh-key"
+
+cat > "$OUTPUT_PATH" << EOF
+mode: global
+
+proxy-groups:
+  - name: GLOBAL
+    type: select
+    proxies:
+      - easytier
+
+proxies:
+  - name: "easytier"
+    type: ssh
+    server: 100.64.0.11
+    port: 22
+    username: yueyi
+    private-key: "$STATE_DIRECTORY/easytier-ssh-key"
+EOF
