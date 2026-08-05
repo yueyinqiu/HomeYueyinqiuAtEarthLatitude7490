@@ -3,6 +3,28 @@
     "NixVirt": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs-mindustry",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748140003,
+        "narHash": "sha256-DNBZmuk1YRM2PmwbHzVdXumRjCUzQkMarg4iI/37rOQ=",
+        "owner": "AshleyYakeley",
+        "repo": "NixVirt",
+        "rev": "5dfe108fd859b122f9a96981cb6bc12297653d6c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AshleyYakeley",
+        "ref": "v0.6.0",
+        "repo": "NixVirt",
+        "type": "github"
+      }
+    },
+    "NixVirt_2": {
+      "inputs": {
+        "nixpkgs": [
           "os",
           "nixpkgs"
         ]
@@ -182,18 +204,38 @@
         "type": "github"
       }
     },
-    "nixpkgs-master": {
+    "nixpkgs-mindustry": {
+      "inputs": {
+        "NixVirt": "NixVirt",
+        "nixpkgs": "nixpkgs"
+      },
       "locked": {
-        "lastModified": 1784721694,
-        "narHash": "sha256-RH0/UoFKE1LhMCQoNp9dmFNeY/lQMWqjpgcRZzzT0C8=",
+        "lastModified": 1785910002,
+        "narHash": "sha256-FEDwzfoN+fzDoin2oAgpfu1BZwz6JDK9cRncS71c45s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5e992c12040a62f7dc68613c2fd705dbc5426318",
+        "rev": "3a72af70557e100cc468ab3ab5717586e29370a0",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "master",
+        "repo": "nixpkgs",
+        "rev": "3a72af70557e100cc468ab3ab5717586e29370a0",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1785828668,
+        "narHash": "sha256-8fsyqeO+mJqvIzeO4xIpgJe/f7MTbbVTEC6RT6WSXNs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e72e4f299401a3689d4b3d5fc6496b11db7064eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -221,8 +263,8 @@
     },
     "os": {
       "inputs": {
-        "NixVirt": "NixVirt",
-        "nixpkgs": "nixpkgs"
+        "NixVirt": "NixVirt_2",
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1785910002,
@@ -251,7 +293,7 @@
           "os",
           "nixpkgs"
         ],
-        "nixpkgs-master": "nixpkgs-master",
+        "nixpkgs-mindustry": "nixpkgs-mindustry",
         "nur": "nur",
         "os": "os",
         "winapps": "winapps"
