@@ -10,8 +10,8 @@
       follows = "os/NixVirt";
     };
 
-    nixpkgs-master = {
-      url = "github:NixOS/nixpkgs/master";
+    nixpkgs-mindustry = {
+      url = "github:NixOS/nixpkgs/3a72af70557e100cc468ab3ab5717586e29370a0";
     };
 
     home-manager = {
@@ -42,13 +42,13 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-master,
       home-manager,
       flatpaks,
       NixVirt,
       nur,
       winapps,
       nix-wpsoffice-cn,
+      nixpkgs-mindustry,
       ...
     }:
     {
@@ -61,6 +61,7 @@
           nur = nur.legacyPackages."x86_64-linux".repos;
           winapps = winapps.packages."x86_64-linux";
           nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
+          nixpkgs-mindustry = nixpkgs-mindustry;
         };
         modules = [
           ./src
