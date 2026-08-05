@@ -3,6 +3,7 @@
     "NixVirt": {
       "inputs": {
         "nixpkgs": [
+          "os",
           "nixpkgs"
         ]
       },
@@ -218,15 +219,41 @@
         "type": "github"
       }
     },
-    "root": {
+    "os": {
       "inputs": {
         "NixVirt": "NixVirt",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1785851019,
+        "narHash": "sha256-nPJKB5HF/o4SbMDOKCXwke5e3OVT1iY7GDFEHO0TDrg=",
+        "owner": "yueyinqiu",
+        "repo": "NixosEarthLatitude7490",
+        "rev": "0e659a1b39227f43c9aca8f57ec693c6c78cc63a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yueyinqiu",
+        "repo": "NixosEarthLatitude7490",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "NixVirt": [
+          "os",
+          "NixVirt"
+        ],
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
         "nix-wpsoffice-cn": "nix-wpsoffice-cn",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "os",
+          "nixpkgs"
+        ],
         "nixpkgs-master": "nixpkgs-master",
         "nur": "nur",
+        "os": "os",
         "winapps": "winapps",
         "yueyinqiu-nur-packages": "yueyinqiu-nur-packages"
       }
