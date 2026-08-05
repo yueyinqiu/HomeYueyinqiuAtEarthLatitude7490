@@ -1,11 +1,11 @@
 {
   pkgs,
-  yueyinqiu-nur-packages,
+  nur,
   ...
 }:
 {
   home.packages = [
     pkgs.fzf
-    yueyinqiu-nur-packages.snavi
+    nur.yueyinqiu.snavi
   ];
 }

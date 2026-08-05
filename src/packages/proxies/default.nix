@@ -2,12 +2,12 @@
   config,
   lib,
   pkgs,
-  yueyinqiu-nur-packages,
+  nur,
   ...
 }:
 
 let
-  mixin = yueyinqiu-nur-packages.mihomo-manager-mihomo-mixin;
+  mixin = nur.yueyinqiu.mihomo-manager-mihomo-mixin;
   tui = pkgs.callPackage ./mihomo-tui { };
 in
 {

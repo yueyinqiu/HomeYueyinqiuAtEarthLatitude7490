@@ -37,11 +37,6 @@
       url = "github:Beriholic/nix-wpsoffice-cn";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    yueyinqiu-nur-packages = {
-      url = "github:yueyinqiu/MyNurPackages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -54,7 +49,6 @@
       nur,
       winapps,
       nix-wpsoffice-cn,
-      yueyinqiu-nur-packages,
       ...
     }:
     {
@@ -67,7 +61,6 @@
           nur = nur.legacyPackages."x86_64-linux";
           winapps = winapps.packages."x86_64-linux";
           nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
-          yueyinqiu-nur-packages = yueyinqiu-nur-packages.legacyPackages."x86_64-linux";
         };
         modules = [
           ./src
