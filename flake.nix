@@ -11,7 +11,7 @@
     };
 
     nixpkgs-mindustry = {
-      url = "github:NixOS/nixpkgs?rev=3a72af70557e100cc468ab3ab5717586e29370a0";
+      url = "github:NixOS/nixpkgs/3a72af70557e100cc468ab3ab5717586e29370a0";
     };
 
     home-manager = {
@@ -57,7 +57,7 @@
         extraSpecialArgs = {
           flatpaks = flatpaks;
           nixvirt = NixVirt;
-          # nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages."x86_64-linux";
+          nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages."x86_64-linux";
           nur = nur.legacyPackages."x86_64-linux".repos;
           winapps = winapps.packages."x86_64-linux";
           nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
