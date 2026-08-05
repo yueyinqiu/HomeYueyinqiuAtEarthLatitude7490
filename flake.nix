@@ -57,11 +57,10 @@
         extraSpecialArgs = {
           flatpaks = flatpaks;
           nixvirt = NixVirt;
-          nixpkgs-master = nixpkgs-master.legacyPackages."x86_64-linux";
+          nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages."x86_64-linux";
           nur = nur.legacyPackages."x86_64-linux".repos;
           winapps = winapps.packages."x86_64-linux";
           nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
-          nixpkgs-mindustry = nixpkgs-mindustry;
         };
         modules = [
           ./src
