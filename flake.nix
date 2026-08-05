@@ -1,8 +1,15 @@
 {
-  inputs = {    
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    os = {
+      url = "github:yueyinqiu/NixosEarthLatitude7490";
     };
+    nixpkgs = {
+      follows = "os/nixpkgs";
+    };
+    NixVirt = {
+      follows = "os/NixVirt";
+    };
+
     nixpkgs-master = {
       url = "github:NixOS/nixpkgs/master";
     };
@@ -14,11 +21,6 @@
 
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/latest";
-    };
-
-    NixVirt = {
-      url = "github:AshleyYakeley/NixVirt/v0.6.0";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur = {
