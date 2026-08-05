@@ -11,8 +11,7 @@
     };
 
     nixpkgs-mindustry = {
-      url = "github:NixOS/nixpkgs";
-      rev = "3a72af70557e100cc468ab3ab5717586e29370a0";
+      url = "github:NixOS/nixpkgs?rev=3a72af70557e100cc468ab3ab5717586e29370a0";
     };
 
     home-manager = {
