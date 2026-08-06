@@ -55,8 +55,9 @@
     programs.bash.initExtra = ''
       s() {
         local result="$(my-global-snavi)"
-        history -s -- "$result"
         echo "$result"
+        history -s -- "$result"
+        echo "Saved to history."
       }
     '';
 
