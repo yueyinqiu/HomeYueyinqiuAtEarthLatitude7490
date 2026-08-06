@@ -13,6 +13,7 @@
             Value = "toggle-mute";
           }
         ];
+        ExtraArguments = false;
       };
     }
   ];

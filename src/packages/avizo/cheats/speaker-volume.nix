@@ -21,7 +21,7 @@
             };
           }
         ];
-        ExtraArguments = true;
+        ExtraArguments = false;
       };
       extraFiles = {
         "up-or-down.cs" = builtins.readFile ./up-or-down.cs;

@@ -14,7 +14,7 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        yield return ("down", "");
         yield return ("up", "");
+        yield return ("down", "");
     }
 }
