@@ -58,12 +58,15 @@ in
 
     my.snavi-cheats = [
       {
-        cheat = builtins.readFile ./cheats/snavi.json;
-      }
-      {
-        cheat = builtins.readFile ./cheats/git-checkout.json;
-        extraFiles = {
-          "list-branches.cs" = builtins.readFile ./cheats/list-branches.cs;
+        cheat = builtins.toJSON {
+          Description = "run Snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support";
+          Command = [
+            {
+              "$type" = "CommandTokenLiteral";
+              Value = "Snavi";
+            }
+          ];
+          ExtraArguments = true;
         };
       }
     ];
