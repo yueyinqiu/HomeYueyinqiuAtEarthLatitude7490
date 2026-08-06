@@ -1,7 +1,9 @@
 #:package Snavi.ArgumentSuggester@0.0.2
+#:package CliWrap@3.10.4
 
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using CliWrap;
+using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
 
 await new Suggester().RunAsync();
@@ -15,21 +17,14 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var psi = new ProcessStartInfo("virsh")
+        var output = await Cli.Wrap("virsh")
+            .WithArguments(["list", "--all", "--name"])
+            .ExecuteBufferedAsync(cancellationToken);
+        foreach (var line in output.StandardOutput.Split(
+            Environment.NewLine,
+            StringSplitOptions.RemoveEmptyEntries))
         {
-            UseShellExecute = false,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-        };
-        psi.ArgumentList.Add("list");
-        psi.ArgumentList.Add("--all");
-        psi.ArgumentList.Add("--name");
-        using var process = Process.Start(psi)!;
-        var stdout = process.StandardOutput.ReadToEnd();
-        process.WaitForExit();
-        foreach (var line in stdout.Split('\n', StringSplitOptions.RemoveEmptyEntries))
-        {
-            yield return (line.Trim(), "");
+            yield return (line, "");
         }
     }
 }

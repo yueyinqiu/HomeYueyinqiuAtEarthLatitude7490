@@ -1,7 +1,9 @@
 #:package Snavi.ArgumentSuggester@0.0.2
+#:package CliWrap@3.10.4
 
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using CliWrap;
+using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
 
 await new Suggester().RunAsync();
@@ -15,16 +17,11 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var psi = new ProcessStartInfo("trash-list")
-        {
-            UseShellExecute = false,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-        };
-        using var process = Process.Start(psi)!;
-        var stdout = process.StandardOutput.ReadToEnd();
-        process.WaitForExit();
-        foreach (var line in stdout.Split('\n', StringSplitOptions.RemoveEmptyEntries))
+        var output = await Cli.Wrap("trash-list")
+            .ExecuteBufferedAsync(cancellationToken);
+        foreach (var line in output.StandardOutput.Split(
+            Environment.NewLine,
+            StringSplitOptions.RemoveEmptyEntries))
         {
             var columns = line.Split(' ', '\t', StringSplitOptions.RemoveEmptyEntries);
             if (columns.Length >= 3)
