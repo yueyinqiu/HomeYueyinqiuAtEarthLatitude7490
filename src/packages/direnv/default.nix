@@ -5,6 +5,10 @@
     enableBashIntegration = true;
   };
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.direnv = ''
     # grant permission to run the current .envrc in this directory
     direnv allow
