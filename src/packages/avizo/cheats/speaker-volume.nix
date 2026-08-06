@@ -2,7 +2,7 @@
   my.snavi-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "adjust speaker volume with avizo notification";
+        Description = "toggle speaker mute state with avizo notification";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
