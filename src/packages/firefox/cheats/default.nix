@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./spawn.nix
+    ./niri-spawn.nix
   ];
 }
