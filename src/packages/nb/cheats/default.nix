@@ -1,7 +1,7 @@
 { ... }: {
   imports = [
     ./edit.nix
-    ./set-auto-sync.nix
+    ./disable-sync.nix
     ./set-remote.nix
     ./sync.nix
   ];
