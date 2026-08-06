@@ -37,7 +37,8 @@
     );
 
     home.packages = [
-      (pkgs.writeShellApplication "my-global-snavi" {
+      (pkgs.writeShellApplication {
+        name = "my-global-snavi";
         text = ''
           exec "${nur.yueyinqiu.snavi}/bin/Snavi" run \
             --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
@@ -67,7 +68,7 @@
           Command = [
             {
               "$type" = "CommandTokenLiteral";
-              Value = "Snavi";
+              Value = "my-global-snavi";
             }
           ];
           ExtraArguments = true;
