@@ -11,6 +11,10 @@
     })
   ];
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.expect = ''
     # execute a command and leave the interactive bash session open
     my-expect-bash-run <command>
