@@ -51,11 +51,9 @@ in
     programs.bash.initExtra = ''
       _snavi_widget() {
           READLINE_LINE="$("${widget}")"
-          READLINE_POINT=''${#READLINE_LINE}
+          READLINE_POINT="''${#READLINE_LINE}"
       }
-      if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
-          bind -x '"\C-n": _snavi_widget'
-      fi
+      bind -x '"\C-n": _snavi_widget'
     '';
 
     my.snavi-cheats = [
