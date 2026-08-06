@@ -24,7 +24,7 @@ class Suggester : SnaviArgumentSuggester
             Environment.NewLine,
             StringSplitOptions.RemoveEmptyEntries))
         {
-            var session = line.Trim().Split(' ', '\t')[0];
+            var session = line.Split(' ', '\t', StringSplitOptions.RemoveEmptyEntries)[0];
             if (session.StartsWith("ses_"))
             {
                 yield return (session, "");

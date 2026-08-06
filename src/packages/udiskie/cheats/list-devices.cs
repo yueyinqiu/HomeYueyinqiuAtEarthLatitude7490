@@ -24,7 +24,7 @@ class Suggester : SnaviArgumentSuggester
             Environment.NewLine,
             StringSplitOptions.RemoveEmptyEntries))
         {
-            yield return (line.Trim(), "");
+            yield return (line, "");
         }
     }
 }
