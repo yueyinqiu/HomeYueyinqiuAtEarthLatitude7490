@@ -1,6 +1,10 @@
 { ... }: {
   services.avizo.enable = true;
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.avizo = ''
     $ direction: printf "up\ndown\n" --- --map my-bash-escape-std
 
@@ -16,36 +20,4 @@
     # adjust screen brightness with avizo notification
     lightctl <direction>
   '';
-
-  my.snavi-cheats = [
-    {
-      cheat = builtins.toJSON {
-        Description = "adjust speaker volume with avizo notification";
-        Command = [
-          {
-            "$type" = "CommandTokenLiteral";
-            Value = "volumectl";
-          }
-          {
-            "$type" = "CommandTokenLiteral";
-            Value = "-u";
-          }
-          {
-            "$type" = "CommandTokenVariable";
-            Name = "direction";
-            Suggester = {
-              "$type" = "ArgumentSuggesterCsharp";
-              ScriptPath = "up-or-down.cs";
-            };
-          }
-        ];
-        ExtraArguments = true;
-      };
-      extraFiles = {
-        "up-or-down.cs" = ''
-          
-        '';
-      };
-    }
-  ];
 }
