@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
     settings.user = {
@@ -7,6 +7,19 @@
     };
     lfs.enable = true;
   };
+
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "my-git-add-commit";
+      text = ''
+        git add -A && git commit -m "''$1"
+      '';
+    })
+  ];
+
+  imports = [
+    ./cheats
+  ];
 
   my.navi-cheats.git = ''
     $ message: --- --map my-bash-escape-std
