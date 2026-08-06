@@ -1,11 +1,76 @@
 {
   pkgs,
+  lib,
+  config,
   nur,
   ...
 }:
+let
+  cheats = config.my.snavi-cheats;
+
+  widget = pkgs.writeShellScript "my-snavi-widget" ''
+    exec ${nur.yueyinqiu.snavi}/bin/Snavi run --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" --fzf "${pkgs.fzf}/bin/fzf" ${
+      lib.imap0 (index: _: ''
+        "-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"
+      '') cheats
+    }
+  '';
+in
 {
-  home.packages = [
-    pkgs.fzf
-    nur.yueyinqiu.snavi
-  ];
+  options.my.snavi-cheats = lib.mkOption {
+    type = lib.types.listOf (
+      lib.types.submodule {
+        options = {
+          cheat = lib.mkOption {
+            type = lib.types.str;
+          };
+          extraFiles = lib.mkOption {
+            type = lib.types.attrsOf lib.types.str;
+            default = { };
+          };
+        };
+      }
+    );
+    default = [ ];
+  };
+
+  config = {
+    xdg.configFile = builtins.listToAttrs (
+      lib.concatMap (
+        { index, entry }:
+        [
+          {
+            name = "snavi/cheats/${toString index}/cheat.json";
+            value.text = entry.cheat;
+          }
+        ]
+        ++ lib.mapAttrsToList (filename: content: {
+          name = "snavi/cheats/${toString index}/${filename}";
+          value.text = content;
+        }) entry.extraFiles
+      ) (lib.imap0 (index: entry: { inherit index entry; }) cheats)
+    );
+
+    programs.bash.initExtra = ''
+      _snavi_widget() {
+          READLINE_LINE="$("${widget}")"
+          READLINE_POINT=''${#READLINE_LINE}
+      }
+      if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
+          bind -x '"\C-n": _snavi_widget'
+      fi
+    '';
+
+    my.snavi-cheats = [
+      {
+        cheat = builtins.readFile ./cheats/snavi.json;
+      }
+      {
+        cheat = builtins.readFile ./cheats/git-checkout.json;
+        extraFiles = {
+          "list-branches.cs" = builtins.readFile ./cheats/list-branches.cs;
+        };
+      }
+    ];
+  };
 }
