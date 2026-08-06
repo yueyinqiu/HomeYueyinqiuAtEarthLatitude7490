@@ -38,19 +38,14 @@ in
 
   config = {
     xdg.configFile = builtins.listToAttrs (
-      lib.concatMap (
-        { index, entry }:
-        [
-          {
-            name = "snavi/cheats/${toString index}/cheat.json";
-            value.text = entry.cheat;
-          }
-        ]
-        ++ lib.mapAttrsToList (filename: content: {
-          name = "snavi/cheats/${toString index}/${filename}";
-          value.text = content;
-        }) entry.extraFiles
-      ) (lib.imap0 (index: entry: { inherit index entry; }) cheats)
+      builtins.concatLists (
+        lib.imap0 (index: entry:
+          lib.mapAttrsToList (filename: content: {
+            name = "snavi/cheats/${toString index}/${filename}";
+            value.text = content;
+          }) (entry.extraFiles // { "cheat.json" = entry.cheat; })
+        ) cheats
+      )
     );
 
     programs.bash.initExtra = ''
