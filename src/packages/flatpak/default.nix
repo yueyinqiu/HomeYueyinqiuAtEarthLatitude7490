@@ -1,6 +1,7 @@
 { flatpaks, ... }: {
   imports = [
     flatpaks.homeModules.default
+    ./cheats
   ];
 
   services.flatpak = {
