@@ -11,9 +11,9 @@ let
   widget = pkgs.writeShellScript "my-snavi-widget" ''
     exec ${nur.yueyinqiu.snavi}/bin/Snavi run --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" --fzf "${pkgs.fzf}/bin/fzf" ${
       lib.concatStringsSep " " (
-        lib.imap0 (index: _: ''
-          "-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"
-        '') cheats
+        lib.imap0 (
+          index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
+        ) cheats
       )
     }
   '';
@@ -39,7 +39,8 @@ in
   config = {
     xdg.configFile = builtins.listToAttrs (
       builtins.concatLists (
-        lib.imap0 (index: entry:
+        lib.imap0 (
+          index: entry:
           lib.mapAttrsToList (filename: content: {
             name = "snavi/cheats/${toString index}/${filename}";
             value.text = content;
