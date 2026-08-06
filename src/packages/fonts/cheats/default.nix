@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./grep-keyword.nix
+    ./find-family.nix
   ];
 }

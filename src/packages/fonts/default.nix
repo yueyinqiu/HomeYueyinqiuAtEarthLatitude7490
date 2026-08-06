@@ -6,6 +6,13 @@
     noto-fonts-color-emoji
     corefonts
     nix-wpsoffice-cn.chinese-fonts
+
+    (pkgs.writeShellApplication {
+      name = "my-fontconfig-find-family";
+      text = ''
+        fc-list : family | sort -u | grep -i "''$1"
+      '';
+    })
   ];
 
   fonts.fontconfig = {
