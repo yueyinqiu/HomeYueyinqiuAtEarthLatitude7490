@@ -64,6 +64,14 @@ in
                 };
               };
             }
+            {
+              name = "proxies/${name}/restart.sh";
+              value = {
+                text = ''
+                  systemctl --user restart "proxies-${name}.service"
+                '';
+              };
+            }
           ]
         )
       ) config.my.proxies
