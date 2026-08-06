@@ -59,7 +59,7 @@ in
     my.snavi-cheats = [
       {
         cheat = builtins.toJSON {
-          Description = "run Snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support";
+          Description = "run snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support";
           Command = [
             {
               "$type" = "CommandTokenLiteral";
