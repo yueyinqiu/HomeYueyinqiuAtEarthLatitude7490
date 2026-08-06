@@ -1,0 +1,22 @@
+{
+    "Description": "switch the current git branch",
+    "Command": [
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "git"
+        },
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "checkout"
+        },
+        {
+            "$type": "CommandTokenVariable",
+            "Name": "branch",
+            "Suggester": {
+                "$type": "ArgumentSuggesterCsharp",
+                "ScriptPath": "list-branches.cs"
+            }
+        }
+    ],
+    "ExtraArguments": false
+}
