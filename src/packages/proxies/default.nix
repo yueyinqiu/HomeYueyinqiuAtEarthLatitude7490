@@ -31,6 +31,7 @@ in
     ./ye-sha-yun
     ./pjlab
     ./tongji
+    ./cheats
   ];
 
   config = {
@@ -38,6 +39,13 @@ in
       pkgs.mihomo
       mixin
       tui
+
+      (pkgs.writeShellApplication {
+        name = "my-proxies-mihomo-tui";
+        text = ''
+          exec mihomo-tui -c "''${XDG_STATE_HOME:-$HOME/.local/state}/proxies/state/''$1/tui/config.yaml"
+        '';
+      })
     ];
 
     xdg.configFile = lib.mergeAttrsList (

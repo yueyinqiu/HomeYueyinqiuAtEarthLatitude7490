@@ -2,6 +2,10 @@
   home.packages = with pkgs; [
     mpv
   ];
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.mpv = ''
     $ target: find . -maxdepth 1 -type f --- --map my-bash-escape-std
     

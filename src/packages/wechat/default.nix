@@ -18,6 +18,10 @@
     })
   ];
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.wechat = ''
     # run wechat, a social communication app serving over 1 billion users, supporting free chat, HD voice and video calls, Moments, and mobile payments, making communication and life more convenient.
     wechat

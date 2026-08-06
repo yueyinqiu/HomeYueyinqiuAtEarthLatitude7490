@@ -4,6 +4,10 @@
 
   home.shellAliases.v = ''code "$@"'';
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.vscode = ''
     $ target: find . -maxdepth 1 --- --map my-bash-escape-std
     

@@ -1,0 +1,40 @@
+{ ... }: {
+  my.snavi-cheats = [
+    {
+      cheat = builtins.toJSON {
+        Description = "compress files or directory into archive";
+        Command = [
+          {
+            "$type" = "CommandTokenLiteral";
+            Value = "ouch";
+          }
+          {
+            "$type" = "CommandTokenLiteral";
+            Value = "compress";
+          }
+          {
+            "$type" = "CommandTokenVariable";
+            Name = "target";
+            Suggester = {
+              "$type" = "ArgumentSuggesterCsharp";
+              ScriptPath = "list-targets.cs";
+            };
+          }
+          {
+            "$type" = "CommandTokenVariable";
+            Name = "output";
+            Suggester = {
+              "$type" = "ArgumentSuggesterCsharp";
+              ScriptPath = "suggest-outputs.cs";
+            };
+          }
+        ];
+        ExtraArguments = false;
+      };
+      extraFiles = {
+        "list-targets.cs" = builtins.readFile ./list-targets.cs;
+        "suggest-outputs.cs" = builtins.readFile ./suggest-outputs.cs;
+      };
+    }
+  ];
+}

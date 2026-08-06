@@ -2,6 +2,10 @@
   home.packages = with pkgs; [
     nb
   ];
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.nb = ''
       $ note: nb list --filenames --no-id --- --map my-bash-escape-std
 

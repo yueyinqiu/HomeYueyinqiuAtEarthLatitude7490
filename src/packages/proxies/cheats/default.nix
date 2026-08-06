@@ -1,0 +1,5 @@
+{ ... }: {
+  imports = [
+    ./open-dashboard.nix
+  ];
+}

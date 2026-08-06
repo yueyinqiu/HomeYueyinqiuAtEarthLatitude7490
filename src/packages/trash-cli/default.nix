@@ -3,6 +3,10 @@
     trash-cli
   ];
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.trash-cli = ''
     $ file: find . -maxdepth 1 --- --map my-bash-escape-std
     $ trash: trash-list --- --column 3 --map my-bash-escape-std

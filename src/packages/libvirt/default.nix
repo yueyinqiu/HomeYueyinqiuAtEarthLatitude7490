@@ -8,6 +8,7 @@
 {
   imports = [
     nixvirt.homeModules.default
+    ./cheats
   ];
 
   home.packages = with pkgs; [
