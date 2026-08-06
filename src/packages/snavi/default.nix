@@ -37,9 +37,9 @@
     );
 
     home.packages = [
-      (pkgs.writeShellApplication "my-snavi" {
-        source = ''
-          local result=$("${nur.yueyinqiu.snavi}/bin/Snavi" run \
+      (pkgs.writeShellApplication "my-global-snavi" {
+        text = ''
+          exec "${nur.yueyinqiu.snavi}/bin/Snavi" run \
             --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
             --fzf "${pkgs.fzf}/bin/fzf" \
             ${lib.concatStringsSep " " (
@@ -48,13 +48,18 @@
               ) config.my.snavi-cheats
             )}
           )
-          
-          history -s -- "$result"
-          echo "$result"
         '';
       })
     ];
 
+    programs.bash.initExtra = ''
+      s() {
+        local result="$(my-global-snavi)"
+        history -s -- "$result"
+        echo "$result"
+      }
+    '';
+    
     my.snavi-cheats = [
       {
         cheat = builtins.toJSON {
