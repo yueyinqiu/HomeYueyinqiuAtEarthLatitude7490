@@ -48,7 +48,6 @@
                 index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
               ) config.my.snavi-cheats
             )}
-          )
         '';
       })
     ];
@@ -60,7 +59,7 @@
         echo "$result"
       }
     '';
-    
+
     my.snavi-cheats = [
       {
         cheat = builtins.toJSON {
