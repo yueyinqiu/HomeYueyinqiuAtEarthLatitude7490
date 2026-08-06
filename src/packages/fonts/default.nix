@@ -21,6 +21,10 @@
     };
   };
 
+  imports = [
+    ./cheats
+  ];
+
   my.navi-cheats.fonts = ''
     $ keyword: --- --map my-bash-escape-std
 
