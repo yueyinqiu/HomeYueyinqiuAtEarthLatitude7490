@@ -5,18 +5,6 @@
   nur,
   ...
 }:
-let
-  widget = pkgs.writeShellScript "my-snavi-widget" ''
-    exec ${nur.yueyinqiu.snavi}/bin/Snavi run \
-      --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
-      --fzf "${pkgs.fzf}/bin/fzf" \
-      ${lib.concatStringsSep " " (
-        lib.imap0 (
-          index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
-        ) config.my.snavi-cheats
-      )}
-  '';
-in
 {
   options.my.snavi-cheats = lib.mkOption {
     type = lib.types.listOf (
@@ -48,13 +36,24 @@ in
       )
     );
 
-    programs.bash.initExtra = ''
-      _snavi_widget() {
-          READLINE_LINE="$("${widget}")"
-          READLINE_POINT="''${#READLINE_LINE}"
-      }
-      bind -x '"\C-n": _snavi_widget'
-    '';
+    home.packages = [
+      (pkgs.writeShellApplication "my-snavi" {
+        source = ''
+          local result=$("${nur.yueyinqiu.snavi}/bin/Snavi" run \
+            --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
+            --fzf "${pkgs.fzf}/bin/fzf" \
+            ${lib.concatStringsSep " " (
+              lib.imap0 (
+                index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
+              ) config.my.snavi-cheats
+            )}
+          )
+          
+          history -s -- "$result"
+          echo "$result"
+        '';
+      })
+    ];
 
     my.snavi-cheats = [
       {
