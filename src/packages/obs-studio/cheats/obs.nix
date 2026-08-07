@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "run obs-studio, a software designed for capturing, compositing, encoding, recording, and streaming video content, efficiently";

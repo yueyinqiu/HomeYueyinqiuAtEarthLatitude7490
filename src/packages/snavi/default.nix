@@ -15,13 +15,13 @@ let
         ${lib.concatStringsSep " " (
           lib.imap0 (
             index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
-          ) config.my.snavi-cheats
+          ) config.my.snavi-global-cheats
         )}
     '';
   };
 in
 {
-  options.my.snavi-cheats = lib.mkOption {
+  options.my.snavi-global-cheats = lib.mkOption {
     type = lib.types.listOf (
       lib.types.submodule {
         options = {
@@ -47,7 +47,7 @@ in
             name = "snavi/cheats/${toString index}/${filename}";
             value.text = content;
           }) (entry.extraFiles // { "cheat.json" = entry.cheat; })
-        ) config.my.snavi-cheats
+        ) config.my.snavi-global-cheats
       )
     );
 
