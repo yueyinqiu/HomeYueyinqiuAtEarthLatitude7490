@@ -57,7 +57,7 @@ in
 
     programs.bash.initExtra = ''
       s() {
-        local result="$("${my-snavi-global}")"
+        local result="$("${my-snavi-global}/bin/my-snavi-global")"
         echo "$result"
         history -s -- "$result"
         echo "Saved to history."
