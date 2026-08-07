@@ -2,7 +2,7 @@
   my.snavi-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "open syncthing web ui in default browser";
+        Description = "get the address of syncthing web ui";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
