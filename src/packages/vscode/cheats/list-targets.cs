@@ -14,9 +14,13 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        foreach (var entry in currentDirectory.EnumerateFileSystemEntries("*", SearchOption.TopDirectoryOnly))
+        foreach (var directory in currentDirectory.EnumerateDirectories())
         {
-            yield return (Path.GetFileName(entry), "");
+            yield return (directory.Name, "");
+        }
+        foreach (var file in currentDirectory.EnumerateFiles())
+        {
+            yield return (file.Name, "");
         }
     }
 }
