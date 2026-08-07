@@ -17,7 +17,7 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        foreach (var file in currentDirectory.EnumerateFiles("*", SearchOption.TopDirectoryOnly))
+        foreach (var file in currentDirectory.EnumerateFiles())
         {
             if (ArchiveExtensions.Any(extension => file.Name.EndsWith(extension, StringComparison.OrdinalIgnoreCase)))
             {

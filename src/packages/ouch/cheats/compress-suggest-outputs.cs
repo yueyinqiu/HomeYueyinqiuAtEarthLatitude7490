@@ -14,8 +14,7 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        yield return ("archive.tar.gz", "");
-        yield return ("archive.zip", "");
-        yield return ("archive.7z", "");
+        yield return ($"{givenArguments[0]}.zip", "");
+        yield return ($"{givenArguments[0]}.7z", "");
     }
 }

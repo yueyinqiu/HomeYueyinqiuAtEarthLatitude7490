@@ -33,7 +33,7 @@
       };
       extraFiles = {
         "list-targets.cs" = builtins.readFile ./list-targets.cs;
-        "suggest-outputs.cs" = builtins.readFile ./suggest-outputs.cs;
+        "compress-suggest-outputs.cs" = builtins.readFile ./compress-suggest-outputs.cs;
       };
     }
   ];
