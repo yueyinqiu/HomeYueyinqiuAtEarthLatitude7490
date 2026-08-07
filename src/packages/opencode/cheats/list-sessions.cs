@@ -20,15 +20,12 @@ class Suggester : SnaviArgumentSuggester
         var output = await Cli.Wrap("opencode")
             .WithArguments(["session", "list"])
             .ExecuteBufferedAsync(cancellationToken);
-        foreach (var line in output.StandardOutput.Split(
-            Environment.NewLine,
-            StringSplitOptions.RemoveEmptyEntries))
+        foreach (var line in output.StandardOutput.Split(Environment.NewLine))
         {
-            var session = line.Split(' ', '\t', StringSplitOptions.RemoveEmptyEntries)[0];
-            if (session.StartsWith("ses_"))
-            {
-                yield return (session, "");
-            }
+            if (!line.StartsWith("ses_"))
+                continue;
+            var split = line.Split(' ', 2, StringSplitOptions.RemoveEmptyEntries);
+            yield return (split[0], split[1]);
         }
     }
 }
