@@ -1,4 +1,9 @@
-{ lib, buildDotnetModule, fetchFromGitHub, dotnet-sdk_10 }:
+{
+  lib,
+  buildDotnetModule,
+  fetchFromGitHub,
+  dotnet-sdk_10,
+}:
 
 buildDotnetModule (finalAttrs: {
   pname = "mihomo-manager-mihomo-mixin";

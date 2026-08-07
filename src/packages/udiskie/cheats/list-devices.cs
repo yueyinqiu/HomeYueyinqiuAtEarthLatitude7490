@@ -37,7 +37,7 @@ class Suggester : SnaviArgumentSuggester
         {
             if (block.Name.StartsWith("loop") || block.Name.StartsWith("ram") || block.Name.StartsWith("zram"))
                 continue;
-            
+
             foreach (var part in block.EnumerateDirectories())
             {
                 if (File.Exists(Path.Combine(part.FullName, "partition")))

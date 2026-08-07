@@ -32,7 +32,7 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nix-wpsoffice-cn = {
       url = "github:Beriholic/nix-wpsoffice-cn";
       inputs.nixpkgs.follows = "nixpkgs";
