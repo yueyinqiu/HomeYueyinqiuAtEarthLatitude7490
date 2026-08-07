@@ -6,7 +6,7 @@
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "y";
+            Value = "yazi";
           }
         ];
         ExtraArguments = false;
