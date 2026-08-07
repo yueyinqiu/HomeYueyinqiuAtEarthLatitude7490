@@ -1,0 +1,5 @@
+{ ... }: {
+  imports = [
+    ./snavi-global.nix
+  ];
+}
