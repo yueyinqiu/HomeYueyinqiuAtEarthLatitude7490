@@ -64,4 +64,8 @@ in
       }
     '';
   };
+
+  imports = [
+    ./cheats
+  ];
 }
