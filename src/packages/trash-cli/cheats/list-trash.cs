@@ -17,17 +17,11 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var output = await Cli.Wrap("trash-list")
-            .ExecuteBufferedAsync(cancellationToken);
-        foreach (var line in output.StandardOutput.Split(
-            Environment.NewLine,
-            StringSplitOptions.RemoveEmptyEntries))
+        var output = await Cli.Wrap("trash-list").ExecuteBufferedAsync(cancellationToken);
+        foreach (var line in output.StandardOutput.Split(Environment.NewLine))
         {
-            var columns = line.Split(' ', '\t', StringSplitOptions.RemoveEmptyEntries);
-            if (columns.Length >= 3)
-            {
-                yield return (columns[2], "");
-            }
+            var columns = line.Split(' ', 3);
+            yield return (columns[2], $"{columns[0]} {columns[1]}");
         }
     }
 }
