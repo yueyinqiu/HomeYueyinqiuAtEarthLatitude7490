@@ -25,7 +25,7 @@
             Name = "output";
             Suggester = {
               "$type" = "ArgumentSuggesterCsharp";
-              ScriptPath = "suggest-outputs.cs";
+              ScriptPath = "compress-suggest-outputs.cs";
             };
           }
         ];
