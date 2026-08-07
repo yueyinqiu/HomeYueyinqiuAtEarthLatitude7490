@@ -5,9 +5,4 @@
   imports = [
     ./cheats
   ];
-
-  my.navi-cheats.xwayland-satellite = ''
-    # run xwayland-satellite, which grants rootless Xwayland integration to any Wayland compositor implementing xdg_wm_base and viewporter.
-    xwayland-satellite
-  '';
 }

@@ -17,13 +17,8 @@
       '';
     })
   ];
-  
+
   imports = [
     ./cheats
   ];
-
-  my.navi-cheats.wps = ''
-    # run wps, a free all-in-one office suite for Microsoft Word, Excel, PowerPoint, and PDF files.
-    wps
-  '';
 }

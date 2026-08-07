@@ -16,9 +16,4 @@
   imports = [
     ./cheats
   ];
-
-  my.navi-cheats.firefox = ''
-    # spawn firefox via niri, detached from current shell
-    niri msg action spawn -- firefox
-  '';
 }

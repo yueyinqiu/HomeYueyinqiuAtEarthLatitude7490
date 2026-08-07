@@ -31,11 +31,4 @@
   imports = [
     ./cheats
   ];
-
-  my.navi-cheats.fonts = ''
-    $ keyword: --- --map my-bash-escape-std
-
-    # list all available installed fonts matching a search keyword
-    fc-list : family | sort -u | grep -i <keyword>
-  '';
 }
