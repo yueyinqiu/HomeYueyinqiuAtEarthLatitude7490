@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./play.nix
+    ./mpv.nix
   ];
 }
