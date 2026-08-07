@@ -14,15 +14,10 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var configHome = Environment.GetEnvironmentVariable("XDG_CONFIG_HOME")
-            ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config");
-        var proxiesDir = Path.Combine(configHome, "proxies");
-        if (Directory.Exists(proxiesDir))
+        var proxies = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "proxies");
+        foreach (var directory in new DirectoryInfo(proxies).EnumerateDirectories())
         {
-            foreach (var dir in new DirectoryInfo(proxiesDir).EnumerateDirectories())
-            {
-                yield return (dir.Name, "");
-            }
+            yield return (directory.Name, "");
         }
     }
 }
