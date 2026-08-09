@@ -17,7 +17,8 @@ window-rule {
 }
 
 window-rule {
-    match app-id="code" is-floating=false
+    match app-id="code"
+    exclude is-floating=true
 
     open-maximized-to-edges true
 }
