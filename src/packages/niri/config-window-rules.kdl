@@ -50,4 +50,5 @@ window-rule {
 window-rule {
     match app-id="wpsoffice"
     open-maximized-to-edges true
+    open-maximized false
 }
