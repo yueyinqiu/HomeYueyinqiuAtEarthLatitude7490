@@ -5,10 +5,20 @@
 
 window-rule {
     match app-id="com.mitchellh.ghostty"
+
+    open-maximized-to-edges true
+}
+
+window-rule {
     match app-id="wpsoffice"
-    match app-id="code"
 
     open-fullscreen false
+    open-maximized-to-edges true
+}
+
+window-rule {
+    match app-id="code" is-floating = false
+
     open-maximized-to-edges true
 }
 
