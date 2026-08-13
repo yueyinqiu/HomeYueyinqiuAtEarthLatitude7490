@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # my.r.sing-box-ailab-start-vpn = ''
   #   echo "VNC: 127.0.0.1:52495 Password: vnc"
@@ -41,7 +41,14 @@
       PASSWORD = "1";
       FAKE_HWADDR = "BE:D3:BD:24:71:D8";
     };
-    volumes = [ "/home/yueyinqiu/.atrust-data/pjlab:/root" ];
+    volumes = [
+      "${config.home.homeDirectory}/.atrust-data/pjlab:/root"
+    ];
+    extraConfig = {
+      Service = {
+        ExecStartPre = "mkdir -p ${config.home.homeDirectory}/.atrust-data/pjlab";
+      };
+    };
     devices = [ "/dev/net/tun" ];
     addCapabilities = [ "NET_ADMIN" ];
     extraPodmanArgs = [
