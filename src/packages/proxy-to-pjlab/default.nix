@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   # my.r.sing-box-ailab-start-vpn = ''
   #   echo "VNC: 127.0.0.1:52495 Password: vnc"
@@ -29,31 +29,43 @@
     })
   ];
 
-  services.podman.containers.pjlab-atrust = {
-    image = "docker.io/hagb/docker-atrust";
-    autoStart = true;
-    ports = [
-      "127.0.0.1:52495:5901"
-      "127.0.0.1:59553:1080"
-    ];
-    environment = {
-      URLWIN = "1";
-      PASSWORD = "1";
-      FAKE_HWADDR = "BE:D3:BD:24:71:D8";
+  xdg.configFile."pjlab-atrust/compose.yml".text = ''
+    name: pjlab-atrust
+    services:
+      pjlab-atrust:
+        container_name: pjlab-atrust
+        image: docker.io/hagb/docker-atrust
+        restart: unless-stopped
+        ports:
+          - "127.0.0.1:52495:5901"
+          - "127.0.0.1:59553:1080"
+        environment:
+          URLWIN: "1"
+          PASSWORD: "1"
+        devices:
+          - "/dev/net/tun"
+        cap_add:
+          - "NET_ADMIN"
+        sysctls:
+          - "net.ipv4.conf.default.route_localnet=1"
+        dns:
+          - "114.114.114.114"
+  '';
+
+  systemd.user.services."pjlab-atrust-podman-start" = {
+    Unit = {
+      Description = "aTrust VPN container (pjlab) via podman-compose";
+      After = [ "network-online.target" ];
+      Wants = [ "network-online.target" ];
     };
-    volumes = [
-      "${config.home.homeDirectory}/.atrust-data/pjlab:/root"
-    ];
-    extraConfig = {
-      Service = {
-        ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p ${config.home.homeDirectory}/.atrust-data/pjlab";
-      };
+    Service = {
+      Type = "oneshot";
+      ExecStart = ''cd ''${XDG_CONFIG_HOME:-$HOME/.config}/pjlab-atrust ${pkgs.podman-compose}/bin/podman-compose up'';
+      Restart = "on-failure";
+      RestartSec = "5s";
+      StartLimitIntervalSec = 300;
+      StartLimitBurst = 60;
     };
-    devices = [ "/dev/net/tun" ];
-    addCapabilities = [ "NET_ADMIN" ];
-    extraPodmanArgs = [
-      "--sysctl=net.ipv4.conf.default.route_localnet=1"
-      "--dns=114.114.114.114"
-    ];
+    Install.WantedBy = [ "default.target" ];
   };
 }
