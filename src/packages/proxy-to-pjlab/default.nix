@@ -46,7 +46,7 @@
     ];
     extraConfig = {
       Service = {
-        ExecStartPre = "mkdir -p ${config.home.homeDirectory}/.atrust-data/pjlab";
+        ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p ${config.home.homeDirectory}/.atrust-data/pjlab";
       };
     };
     devices = [ "/dev/net/tun" ];
