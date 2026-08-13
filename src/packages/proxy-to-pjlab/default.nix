@@ -36,7 +36,11 @@
     extraPodmanArgs = [
       "--sysctl=net.ipv4.conf.default.route_localnet=1"
       "--dns=114.114.114.114"
-      "-t"
     ];
+    extraConfig = {
+      Container = {
+        TTY = true;
+      };
+    };
   };
 }
