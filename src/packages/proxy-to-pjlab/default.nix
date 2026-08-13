@@ -44,8 +44,6 @@ home.file.".atrust-data/ailab2/.keep".text = "";
     addCapabilities = [ "NET_ADMIN" ];
 
     extraPodmanArgs = [
-      "-t"
-      "-i"
       "--sysctl=net.ipv4.conf.default.route_localnet=1"
       "--dns=114.114.114.114"
     ];
