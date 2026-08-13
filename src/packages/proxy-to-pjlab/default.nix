@@ -20,11 +20,9 @@
     # proxy: socks5h://127.0.0.1:59553
   '';
 
-home.file.".atrust-data/ailab2/.keep".text = "";
-
   services.podman.containers.pjlab-atrust = {
     image = "docker.io/hagb/docker-atrust";
-    autoStart = true;
+    autoStart = false;
 
     ports = [
       "127.0.0.1:52495:5901"
@@ -35,10 +33,6 @@ home.file.".atrust-data/ailab2/.keep".text = "";
       URLWIN = "1";
       PASSWORD = "vnc";
     };
-
-    volumes = [
-      "${config.home.homeDirectory}/.atrust-data/ailab2:/root"
-    ];
 
     devices = [ "/dev/net/tun" ];
     addCapabilities = [ "NET_ADMIN" ];
