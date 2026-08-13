@@ -28,11 +28,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-wpsoffice-cn = {
       url = "github:Beriholic/nix-wpsoffice-cn";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,7 +41,6 @@
       flatpaks,
       NixVirt,
       nur,
-      winapps,
       nix-wpsoffice-cn,
       nixpkgs-mindustry,
       ...
@@ -59,7 +53,6 @@
           nixvirt = NixVirt;
           nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages."x86_64-linux";
           nur = nur.legacyPackages."x86_64-linux".repos;
-          winapps = winapps.packages."x86_64-linux";
           nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
         };
         modules = [
