@@ -1,1 +1,0 @@
-ssh localhost -t "cd '$PWD' && all_proxy=socks5h://127.0.0.1:26290 home-manager switch --flake ."
