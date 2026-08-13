@@ -38,7 +38,9 @@
     environment = {
       URLWIN = "1";
       PASSWORD = "1";
+      FAKE_HWADDR = "BE:D3:BD:24:71:D8";
     };
+    volumes = [ "/home/yueyinqiu/.atrust-data/pjlab:/root" ];
     devices = [ "/dev/net/tun" ];
     addCapabilities = [ "NET_ADMIN" ];
     extraPodmanArgs = [
