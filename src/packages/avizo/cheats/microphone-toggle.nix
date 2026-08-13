@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "toggle microphone mute state with avizo notification";

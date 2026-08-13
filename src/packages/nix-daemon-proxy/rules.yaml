@@ -6,6 +6,7 @@ rules:
   - DOMAIN-SUFFIX,nomachine.com,my-proxies-ye-sha-yun
   - DOMAIN-SUFFIX,googlesource.com,my-proxies-ye-sha-yun
 
+  - DOMAIN-SUFFIX,pythonhosted.org,DIRECT
   - DOMAIN-SUFFIX,steampowered.com,DIRECT
   - DOMAIN-SUFFIX,sourceforge.net,DIRECT
   - DOMAIN-SUFFIX,sourceforge.net,DIRECT

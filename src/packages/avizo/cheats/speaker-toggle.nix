@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "adjust speaker volume with avizo notification";

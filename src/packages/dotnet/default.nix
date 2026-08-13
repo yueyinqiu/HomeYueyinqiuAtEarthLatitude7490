@@ -6,11 +6,4 @@
   imports = [
     ./cheats
   ];
-
-  my.navi-cheats.dotnet = ''
-    $ script: find . -maxdepth 1 -type f -name "*.cs" --- --map my-bash-escape-std
-
-    # run a dotnet file-based app.
-    dotnet run <script>
-  '';
 }

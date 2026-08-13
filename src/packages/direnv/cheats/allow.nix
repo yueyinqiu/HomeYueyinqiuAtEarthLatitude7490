@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "grant permission to run the current .envrc in this directory";

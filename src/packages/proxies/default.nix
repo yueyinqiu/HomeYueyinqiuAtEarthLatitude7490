@@ -31,6 +31,7 @@ in
     ./ye-sha-yun
     ./pjlab
     ./tongji
+    ./cheats
   ];
 
   config = {
@@ -38,6 +39,13 @@ in
       pkgs.mihomo
       mixin
       tui
+
+      (pkgs.writeShellApplication {
+        name = "my-proxies-mihomo-tui";
+        text = ''
+          exec mihomo-tui -c "''${XDG_STATE_HOME:-$HOME/.local/state}/proxies/state/''$1/tui/config.yaml"
+        '';
+      })
     ];
 
     xdg.configFile = lib.mergeAttrsList (
@@ -127,12 +135,5 @@ in
         };
       }
     ) config.my.proxies;
-
-    my.navi-cheats.proxies = ''
-      $ proxy: ls "''${XDG_CONFIG_HOME:-$HOME/.config}/proxies/"
-
-      # open mihomo-tui dashboard, connecting to the selected proxy instance
-      mihomo-tui -c "''${XDG_STATE_HOME:-$HOME/.local/state}/proxies/state/<proxy>/tui/config.yaml"
-    '';
   };
 }

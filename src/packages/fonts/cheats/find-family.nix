@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "list all available installed fonts matching a search keyword";

@@ -1,5 +1,5 @@
 { ... }: {
-  my.snavi-cheats = [
+  my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
         Description = "run feishu, a new way to collaborate, empowering teams by messenger, meetings, calendar, docs, and emails";

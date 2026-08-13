@@ -5,8 +5,23 @@
   nur,
   ...
 }:
+let
+  my-snavi-global = pkgs.writeShellApplication {
+    name = "my-snavi-global";
+    text = ''
+      exec "${nur.yueyinqiu.snavi}/bin/Snavi" run \
+        --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
+        --fzf "${pkgs.fzf}/bin/fzf" \
+        ${lib.concatStringsSep " " (
+          lib.imap0 (
+            index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
+          ) config.my.snavi-global-cheats
+        )}
+    '';
+  };
+in
 {
-  options.my.snavi-cheats = lib.mkOption {
+  options.my.snavi-global-cheats = lib.mkOption {
     type = lib.types.listOf (
       lib.types.submodule {
         options = {
@@ -32,48 +47,25 @@
             name = "snavi/cheats/${toString index}/${filename}";
             value.text = content;
           }) (entry.extraFiles // { "cheat.json" = entry.cheat; })
-        ) config.my.snavi-cheats
+        ) config.my.snavi-global-cheats
       )
     );
 
     home.packages = [
-      (pkgs.writeShellApplication {
-        name = "my-global-snavi";
-        text = ''
-          exec "${nur.yueyinqiu.snavi}/bin/Snavi" run \
-            --dotnet "${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet" \
-            --fzf "${pkgs.fzf}/bin/fzf" \
-            ${lib.concatStringsSep " " (
-              lib.imap0 (
-                index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
-              ) config.my.snavi-cheats
-            )}
-        '';
-      })
+      my-snavi-global
     ];
 
     programs.bash.initExtra = ''
       s() {
-        local result="$(my-global-snavi)"
+        local result="$("${my-snavi-global}/bin/my-snavi-global")"
         echo "$result"
         history -s -- "$result"
         echo "Saved to history."
       }
     '';
-
-    my.snavi-cheats = [
-      {
-        cheat = builtins.toJSON {
-          Description = "run snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support";
-          Command = [
-            {
-              "$type" = "CommandTokenLiteral";
-              Value = "my-global-snavi";
-            }
-          ];
-          ExtraArguments = true;
-        };
-      }
-    ];
   };
+
+  imports = [
+    ./cheats
+  ];
 }

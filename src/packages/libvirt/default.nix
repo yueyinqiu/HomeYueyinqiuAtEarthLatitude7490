@@ -8,6 +8,7 @@
 {
   imports = [
     nixvirt.homeModules.default
+    ./cheats
   ];
 
   home.packages = with pkgs; [
@@ -26,7 +27,7 @@
 
       # To activate: irm https://get.activated.win | iex
 
-      # To share files: use syncthing 
+      # To share files: use syncthing
       definition =
         let
           base = nixvirt.lib.domain.templates.windows {
@@ -80,25 +81,4 @@
         );
     }
   ];
-
-  my.navi-cheats.libvirt = ''
-    $ domain: virsh list --all --name --- --map my-bash-escape-std
-    $ file: printf "storage.raw\nstorage.raw" --- --map my-bash-escape-std
-    $ size: printf "80G" --- --map my-bash-escape-std
-
-    # start a virtual machine
-    virsh start <domain>
-
-    # gracefully shutdown a virtual machine
-    virsh shutdown <domain>
-
-    # force power off a virtual machine
-    virsh destroy <domain>
-    
-    # attach GUI viewer to a running domain
-    virt-viewer --attach <domain>
-
-    # create preallocated raw disk image for a virtual machine
-    qemu-img create -f raw -o preallocation=full <file> <size>
-  '';
 }
