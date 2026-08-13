@@ -6,7 +6,7 @@
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "my-global-snavi";
+            Value = "my-snavi-global";
           }
         ];
         ExtraArguments = false;
