@@ -59,5 +59,21 @@
           ./src
         ];
       };
+
+      devShells = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          default = pkgs.mkShell {
+            packages = [
+              (pkgs.writeShellScriptBin "dev-switch-local" ''
+                ssh localhost -t "cd '$PWD' && all_proxy=socks5h://127.0.0.1:26290 home-manager switch --flake ."
+              '')
+            ];
+          };
+        }
+      );
     };
 }
