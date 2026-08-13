@@ -23,14 +23,14 @@
     (pkgs.writeShellApplication {
       name = "my-proxy-to-pjlab-vpn-vnc";
       text = ''
-        remmina -c vnc://127.0.0.1:52495
+        "${pkgs.remmina}/bin/remmina" -c vnc://127.0.0.1:52495
       '';
     })
   ];
 
   services.podman.containers.pjlab-atrust = {
     image = "docker.io/hagb/docker-atrust";
-    autoStart = false;
+    autoStart = true;
     ports = [
       "127.0.0.1:52495:5901"
       "127.0.0.1:59553:1080"
