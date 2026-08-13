@@ -1,4 +1,5 @@
 { ... }:
+
 {
   my.r.sing-box-ailab-start-vpn = ''
     echo "VNC: 127.0.0.1:52495 Password: vnc"
@@ -18,4 +19,23 @@
     # vnc: 127.0.0.1:52495 (vnc)
     # proxy: socks5h://127.0.0.1:59553
   '';
+
+  services.podman.containers.pjlab-atrust = {
+    image = "docker.io/hagb/docker-atrust";
+    autoStart = true;
+    ports = [
+      "127.0.0.1:52495:5901" # vnc
+      "127.0.0.1:59553:1080" # proxy
+    ];
+    environment = {
+      URLWIN = "1";
+      PASSWORD = "vnc";
+    };
+    devices = [ "/dev/net/tun" ];
+    addCapabilities = [ "NET_ADMIN" ];
+    extraPodmanArgs = [
+      "--sysctl=net.ipv4.conf.default.route_localnet=1"
+      "--dns=114.114.114.114"
+    ];
+  };
 }
