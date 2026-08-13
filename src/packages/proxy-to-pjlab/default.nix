@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # my.r.sing-box-ailab-start-vpn = ''
   #   echo "VNC: 127.0.0.1:52495 Password: vnc"
@@ -21,10 +21,11 @@
 
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "my-proxy-to-pjlab-vpn-vnc";
+      name = "my-proxy-to-pjlab-atrust-up";
       text = ''
-        echo "password: 1"
-        "${pkgs.remmina}/bin/remmina" -c vnc://127.0.0.1:52495
+        ${pkgs.podman-compose}/bin/podman-compose -f ${config.xdg.configHome}/pjlab-atrust/compose.yml up -d
+        echo "VNC: '${pkgs.remmina}/bin/remmina' -c vnc://127.0.0.1:52495"
+        echo "Password: 1"
       '';
     })
   ];
@@ -35,6 +36,7 @@
       pjlab-atrust:
         container_name: pjlab-atrust
         image: docker.io/hagb/docker-atrust
+        hostname: pjlab-atrust
         restart: unless-stopped
         ports:
           - "127.0.0.1:52495:5901"
@@ -42,6 +44,7 @@
         environment:
           URLWIN: "1"
           PASSWORD: "1"
+          FAKE_HWADDR: "BE:D3:BD:24:71:D8"
         devices:
           - "/dev/net/tun"
         cap_add:
@@ -51,21 +54,4 @@
         dns:
           - "114.114.114.114"
   '';
-
-  systemd.user.services."pjlab-atrust-podman-start" = {
-    Unit = {
-      Description = "aTrust VPN container (pjlab) via podman-compose";
-      After = [ "network-online.target" ];
-      Wants = [ "network-online.target" ];
-    };
-    Service = {
-      Type = "oneshot";
-      ExecStart = ''cd ''${XDG_CONFIG_HOME:-$HOME/.config}/pjlab-atrust ${pkgs.podman-compose}/bin/podman-compose up'';
-      Restart = "on-failure";
-      RestartSec = "5s";
-      StartLimitIntervalSec = 300;
-      StartLimitBurst = 60;
-    };
-    Install.WantedBy = [ "default.target" ];
-  };
 }
