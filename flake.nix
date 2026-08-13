@@ -46,19 +46,23 @@
       ...
     }:
     {
-      homeConfigurations.yueyinqiu = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {
-          flatpaks = flatpaks;
-          nixvirt = NixVirt;
-          nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages."x86_64-linux";
-          nur = nur.legacyPackages."x86_64-linux".repos;
-          nix-wpsoffice-cn = nix-wpsoffice-cn.packages."x86_64-linux";
+      homeConfigurations."yueyinqiu@earth-latitude-7490" =
+        let
+          system = "x86_64-linux";
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = {
+            flatpaks = flatpaks;
+            nixvirt = NixVirt;
+            nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages.${system};
+            nur = nur.legacyPackages.${system}.repos;
+            nix-wpsoffice-cn = nix-wpsoffice-cn.packages.${system};
+          };
+          modules = [
+            ./src
+          ];
         };
-        modules = [
-          ./src
-        ];
-      };
 
       devShells = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
         system:
