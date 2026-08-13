@@ -23,6 +23,7 @@
     (pkgs.writeShellApplication {
       name = "my-proxy-to-pjlab-vpn-vnc";
       text = ''
+        echo "password: 1"
         "${pkgs.remmina}/bin/remmina" -c vnc://127.0.0.1:52495
       '';
     })
