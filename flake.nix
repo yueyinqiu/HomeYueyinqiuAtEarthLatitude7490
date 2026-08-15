@@ -34,40 +34,30 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      flatpaks,
-      NixVirt,
-      nur,
-      nix-wpsoffice-cn,
-      nixpkgs-mindustry,
-      ...
-    }:
+  outputs = inputs:
     {
       homeConfigurations."yueyinqiu@earth-latitude7490" =
         let
           system = "x86_64-linux";
         in
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+        inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = inputs.nixpkgs.legacyPackages.${system};
           extraSpecialArgs = {
-            flatpaks = flatpaks;
-            nixvirt = NixVirt;
-            nixpkgs-mindustry = nixpkgs-mindustry.legacyPackages.${system};
-            nur = nur.legacyPackages.${system}.repos;
-            nix-wpsoffice-cn = nix-wpsoffice-cn.packages.${system};
+            flatpaks = inputs.flatpaks;
+            nixvirt = inputs.NixVirt;
+            nixpkgs-mindustry = inputs.nixpkgs-mindustry.legacyPackages.${system};
+            nur = inputs.nur.legacyPackages.${system}.repos;
+            nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
           };
           modules = [
             ./src
           ];
         };
 
-      devShells = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+      devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = inputs.nixpkgs.legacyPackages.${system};
         in
         {
           default = pkgs.mkShell {
