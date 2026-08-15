@@ -1,25 +1,19 @@
-{ ... }:
+{ nur, ... }:
 {
-  my.proxies.for-nix-daemon = {
-    files = [
-      ./config.sh.example
-      ./rules.yaml
-    ];
-    port = 26290;
-  };
+  home.packages = [
+    nur.yueyinqiu.nix-daemon-proxy-client
+  ];
 
-  systemd.user.services.nix-daemon-proxy = {
+  systemd.user.services.nix-daemon-proxy-auto = {
     Unit = {
       Description = "Set nix-daemon proxy";
-      After = [ "sing-box-nix-daemon.service" ];
-      Wants = [ "sing-box-nix-daemon.service" ];
     };
     Install = {
       WantedBy = [ "default.target" ];
     };
     Service = {
       Type = "oneshot";
-      ExecStart = "/run/current-system/sw/bin/nix-daemon-proxy socks5h://127.0.0.1:26290";
+      ExecStart = "${nur.yueyinqiu.nix-daemon-proxy-client}/bin/NixDaemonProxy.Client socks5 -H 127.0.0.1 -P 26290";
       Restart = "on-failure";
       RestartSec = "5s";
       StartLimitIntervalSec = 300;
