@@ -46,7 +46,7 @@
       ...
     }:
     {
-      homeConfigurations."yueyinqiu@earth-latitude-7490" =
+      homeConfigurations."yueyinqiu@earth-latitude7490" =
         let
           system = "x86_64-linux";
         in
