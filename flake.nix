@@ -16,7 +16,6 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flatpaks = {
@@ -25,12 +24,10 @@
 
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-wpsoffice-cn = {
       url = "github:Beriholic/nix-wpsoffice-cn";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
