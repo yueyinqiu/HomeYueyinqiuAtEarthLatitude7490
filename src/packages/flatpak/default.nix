@@ -1,7 +1,11 @@
-{ flatpaks, ... }: {
+{ pkgs, flatpaks, ... }: {
   imports = [
     flatpaks.homeModules.default
     ./cheats
+  ];
+
+  home.packages = [
+    pkgs.flatpak
   ];
 
   services.flatpak = {
