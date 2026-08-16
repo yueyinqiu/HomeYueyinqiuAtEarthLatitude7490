@@ -19,8 +19,8 @@
 
   my.proxies.for-huggingface = {
     files = [
-      ./config.sh.example
-      ./rules.yaml
+      ./proxy/config.sh.example
+      ./proxy/rules.yaml
     ];
     port = 52095;
   };
