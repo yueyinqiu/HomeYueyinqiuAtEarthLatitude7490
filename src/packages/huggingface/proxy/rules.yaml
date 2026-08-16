@@ -1,0 +1,5 @@
+rules:
+  - DOMAIN-SUFFIX,huggingface.co,my-proxies-ye-sha-yun
+  - DOMAIN-SUFFIX,hf.co,my-proxies-ye-sha-yun
+
+  - MATCH,DIRECT

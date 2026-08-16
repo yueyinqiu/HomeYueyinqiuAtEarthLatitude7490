@@ -4,6 +4,14 @@
     nur.yueyinqiu.nix-daemon-proxy-client
   ];
 
+  my.proxies.for-nix-daemon = {
+    files = [
+      ./config.sh.example
+      ./rules.yaml
+    ];
+    port = 26290;
+  };
+  
   systemd.user.services.nix-daemon-proxy-auto = {
     Unit = {
       Description = "Set nix-daemon proxy";
