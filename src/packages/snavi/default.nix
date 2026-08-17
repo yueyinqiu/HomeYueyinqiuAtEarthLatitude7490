@@ -14,7 +14,7 @@ let
         --fzf "${pkgs.fzf}/bin/fzf" \
         ${lib.concatStringsSep " " (
           lib.imap0 (
-            index: _: ''"-c" "''${XDG_CONFIG_HOME:-$HOME/.config}/snavi/cheats/${toString index}/cheat.json"''
+            index: _: ''"-c" "${config.xdg.configHome}/snavi/cheats/${toString index}/cheat.json"''
           ) config.my.snavi-global-cheats
         )}
     '';

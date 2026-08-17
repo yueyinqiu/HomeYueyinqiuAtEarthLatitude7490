@@ -43,7 +43,20 @@ in
       (pkgs.writeShellApplication {
         name = "my-proxies-mihomo-tui";
         text = ''
-          exec mihomo-tui -c "''${XDG_STATE_HOME:-$HOME/.local/state}/proxies/state/''$1/tui/config.yaml"
+          exec mihomo-tui -c "${config.xdg.stateHome}/proxies/state/''$1/tui/config.yaml"
+        '';
+      })
+      (pkgs.writeShellApplication {
+        name = "my-proxies-with";
+        text = ''
+          PORT=$(cat "${config.xdg.stateHome}/proxies/state/$1/meta/port")
+          export ALL_PROXY="socks5://127.0.0.1:$PORT"
+          export HTTP_PROXY="$ALL_PROXY"
+          export HTTPS_PROXY="$ALL_PROXY"
+          export all_proxy="$ALL_PROXY"
+          export http_proxy="$ALL_PROXY"
+          export https_proxy="$ALL_PROXY"
+          exec "''${@:2}"
         '';
       })
     ];
@@ -88,14 +101,14 @@ in
     systemd.user.services = lib.mapAttrs' (
       name: item:
       let
-        port = pkgs.writeText "proxies-${name}-port.yaml" ''
+        portYaml = pkgs.writeText "proxies-${name}-port.yaml" ''
           mixed-port: ${toString item.port}
         '';
 
         runner = pkgs.writeShellScript "proxies-${name}-run" ''
           set -e
 
-          cd "''${XDG_CONFIG_HOME:-$HOME/.config}/proxies/${name}"
+          cd "${config.xdg.configHome}/proxies/${name}"
           mkdir -p "/tmp/config-sh"
           mkdir -p "$STATE_DIRECTORY/config-sh"
           MMMM="${mixin}/bin/MihomoManager.MihomoMixin" \
@@ -105,14 +118,20 @@ in
             bash config.sh
 
           mkdir -p "$STATE_DIRECTORY/core"
-          "${mixin}/bin/MihomoManager.MihomoMixin" merge /tmp/merged.yaml merge "${port}" save "$STATE_DIRECTORY/core/config.yaml"
+          "${mixin}/bin/MihomoManager.MihomoMixin" merge /tmp/merged.yaml merge "${portYaml}" save "$STATE_DIRECTORY/core/config.yaml"
 
-          SOCKET="$XDG_RUNTIME_DIR/proxies-${name}.sock"
+          SOCKET="${config.xdg.runtimeDir}/proxies-${name}.sock"
 
           mkdir -p "$STATE_DIRECTORY/tui"
           cd "$STATE_DIRECTORY/tui"
           cat > config.yaml << EOF
           mihomo-api: unix:$SOCKET
+          EOF
+
+          mkdir -p "$STATE_DIRECTORY/meta"
+          cd "$STATE_DIRECTORY/meta"
+          cat > port << EOF
+          ${toString item.port}
           EOF
 
           cd "$STATE_DIRECTORY/core"
