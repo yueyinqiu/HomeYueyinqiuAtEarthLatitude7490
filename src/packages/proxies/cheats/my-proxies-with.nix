@@ -2,7 +2,7 @@
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "";
+        Description = "run command with proxy environment variables set for the selected proxy instance";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
