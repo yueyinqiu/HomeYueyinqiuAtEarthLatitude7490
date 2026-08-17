@@ -120,7 +120,7 @@ in
           mkdir -p "$STATE_DIRECTORY/core"
           "${mixin}/bin/MihomoManager.MihomoMixin" merge /tmp/merged.yaml merge "${portYaml}" save "$STATE_DIRECTORY/core/config.yaml"
 
-          SOCKET="${config.xdg.runtimeDir}/proxies-${name}.sock"
+          SOCKET="$XDG_RUNTIME_DIR/proxies-${name}.sock"
 
           mkdir -p "$STATE_DIRECTORY/tui"
           cd "$STATE_DIRECTORY/tui"
