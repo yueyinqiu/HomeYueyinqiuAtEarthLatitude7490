@@ -50,7 +50,7 @@ in
         name = "my-proxies-with";
         text = ''
           PORT=$(cat "${config.xdg.stateHome}/proxies/state/$1/meta/port")
-          export ALL_PROXY="socks5://127.0.0.1:$PORT"
+          export ALL_PROXY="http://127.0.0.1:$PORT"
           export HTTP_PROXY="$ALL_PROXY"
           export HTTPS_PROXY="$ALL_PROXY"
           export all_proxy="$ALL_PROXY"
