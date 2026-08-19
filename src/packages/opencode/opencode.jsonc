@@ -1,0 +1,57 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+        "token.pjlab.org.cn": {
+            "options": {
+                "baseURL": "https://token.pjlab.org.cn/v1"
+            },
+            "models": {
+                "qwen3.5-397b": {
+                    "name": "qwen3.5-397b"
+                },
+                "deepseek-v4-pro": {
+                    "name": "deepseek-v4-pro"
+                },
+                "kimi-k3": {
+                    "name": "kimi-k3"
+                },
+                "glm-5.2-1m": {
+                    "name": "glm-5.2-1m"
+                },
+                "glm-5.2": {
+                    "name": "glm-5.2"
+                },
+                "minimax-m3": {
+                    "name": "minimax-m3"
+                },
+                "gpt-oss-120b": {
+                    "name": "gpt-oss-120b"
+                },
+                "kimi-k2.6": {
+                    "name": "kimi-k2.6"
+                },
+                "glm-5.1": {
+                    "name": "glm-5.1"
+                },
+                "minimax-m2.7": {
+                    "name": "minimax-m2.7"
+                },
+                "Qwen3.6-35B-A3B-FP8": {
+                    "name": "Qwen3.6-35B-A3B-FP8"
+                },
+                "deepseek-v4-flash-0731": {
+                    "name": "deepseek-v4-flash-0731"
+                },
+                "Qwen3.6-27B-FP8": {
+                    "name": "Qwen3.6-27B-FP8"
+                },
+                "Intern-S2-Preview-FP8": {
+                    "name": "Intern-S2-Preview-FP8"
+                },
+                "Agents-A1": {
+                    "name": "Agents-A1"
+                }
+            }
+        }
+    }
+}
