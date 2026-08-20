@@ -6,7 +6,7 @@
 
 origin="$STATE_DIRECTORY/origin.yaml"
 if [ -z "$(find "$origin" -mtime -90)" ]; then
-    curl -H "User-Agent: flclash" \
+    curl -L -H "User-Agent: flclash" \
         --output "$origin" \
         https://vx.yeshayun.com/
 fi
