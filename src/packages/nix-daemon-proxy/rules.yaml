@@ -1,10 +1,10 @@
 rules:
-  - DOMAIN-SUFFIX,github.com,my-proxies-ye-sha-yun
-  - DOMAIN-SUFFIX,githubusercontent.com,my-proxies-ye-sha-yun
-  - DOMAIN-SUFFIX,gitlab.com,my-proxies-ye-sha-yun
-  - DOMAIN-SUFFIX,web.archive.org,my-proxies-ye-sha-yun
-  - DOMAIN-SUFFIX,nomachine.com,my-proxies-ye-sha-yun
-  - DOMAIN-SUFFIX,googlesource.com,my-proxies-ye-sha-yun
+  - DOMAIN-SUFFIX,github.com,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,githubusercontent.com,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,gitlab.com,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,web.archive.org,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,nomachine.com,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,googlesource.com,my-proxies-bai-piao-ji-chang
 
   - DOMAIN-SUFFIX,pythonhosted.org,DIRECT
   - DOMAIN-SUFFIX,steampowered.com,DIRECT
