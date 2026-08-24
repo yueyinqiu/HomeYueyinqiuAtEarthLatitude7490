@@ -8,6 +8,10 @@
     settings = {
       vim.viAlias = false;
       vim.vimAlias = true;
+
+      # Allow slower key-chords.
+      vim.options.timeoutlen = 10000;
+
       vim.lsp = {
         enable = true;
         lspconfig.enable = true;
