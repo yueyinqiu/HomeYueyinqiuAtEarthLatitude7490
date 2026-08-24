@@ -3,15 +3,19 @@
   programs.helix = {
     enable = true;
 
+    settings = {
+      editor.lsp.display-messages = true;
+    };
+
     languages = {
       language-server.pyright = {
         command = "${pkgs.pyright}/bin/pyright-langserver";
         args = [ "--stdio" ];
       };
 
-      language-server.csharp-ls = {
-        command = "${pkgs.csharp-ls}/bin/csharp-ls";
-        args = [ ];
+      language-server.omnisharp = {
+        command = "${pkgs.omnisharp-roslyn}/bin/OmniSharp";
+        args = [ "--languageserver" ];
       };
 
       language = [
@@ -21,7 +25,7 @@
         }
         {
           name = "c-sharp";
-          language-servers = [ "csharp-ls" ];
+          language-servers = [ "omnisharp" ];
         }
       ];
     };
