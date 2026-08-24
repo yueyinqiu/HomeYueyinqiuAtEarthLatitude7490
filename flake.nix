@@ -29,10 +29,6 @@
     nix-wpsoffice-cn = {
       url = "github:Beriholic/nix-wpsoffice-cn";
     };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-    };
   };
 
   outputs = inputs:
@@ -49,7 +45,6 @@
             nixpkgs-mindustry = inputs.nixpkgs-mindustry.legacyPackages.${system};
             nur = inputs.nur.legacyPackages.${system}.repos;
             nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
-            nvf = inputs.nvf;
           };
           modules = [
             ./src
