@@ -10,6 +10,7 @@
       vim.vimAlias = true;
       vim.lsp = {
         enable = true;
+        lspconfig.enable = true;
       };
 
       # Python development (LSP/format/debug/diagnostics)
