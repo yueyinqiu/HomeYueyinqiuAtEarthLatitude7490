@@ -5,8 +5,8 @@ rules:
   - DOMAIN-SUFFIX,web.archive.org,my-proxies-bai-piao-ji-chang
   - DOMAIN-SUFFIX,nomachine.com,my-proxies-bai-piao-ji-chang
   - DOMAIN-SUFFIX,googlesource.com,my-proxies-bai-piao-ji-chang
-
-  - DOMAIN-SUFFIX,roslyn.blob.core.windows.net,DIRECT
+  - DOMAIN-SUFFIX,roslyn.blob.core.windows.net,my-proxies-bai-piao-ji-chang
+  
   - DOMAIN-SUFFIX,vsassets.io,DIRECT
   - DOMAIN-SUFFIX,aur.archlinux.org,DIRECT
   - DOMAIN-SUFFIX,qq.com,DIRECT
