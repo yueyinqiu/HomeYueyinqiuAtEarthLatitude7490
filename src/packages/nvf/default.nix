@@ -15,8 +15,7 @@
     terminal.toggleterm.lazygit.enable = true;
 
     binds.whichKey.enable = true;
-    binds.cheatsheet.enable = true;
-
+    
     filetree.neo-tree.enable = true;
     filetree.neo-tree.setupOpts.enable_cursor_hijack = true;
 
