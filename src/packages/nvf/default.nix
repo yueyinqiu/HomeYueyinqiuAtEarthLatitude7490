@@ -1,4 +1,4 @@
-{ nvf, ... }: {
+{ pkgs, nvf, ... }: {
   imports = [
     nvf.homeManagerModules.default
   ];
@@ -12,6 +12,11 @@
     debugger.nvim-dap = {
       ui.enable = true;
     };
+
+    extraPackages = [
+      pkgs.netcoredbg
+      pkgs.python3Packages.debugpy
+    ];
 
     terminal.toggleterm.enable = true;
     terminal.toggleterm = {
