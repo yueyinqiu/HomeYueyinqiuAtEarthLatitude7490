@@ -3,6 +3,11 @@
     nvf.homeManagerModules.default
   ];
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
     lsp.enable = true;
