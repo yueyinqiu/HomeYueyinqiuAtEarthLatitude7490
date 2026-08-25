@@ -13,9 +13,9 @@
         args = [ "--stdio" ];
       };
 
-      language-server.roslyn = {
-        command = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
-        args = [ ];
+      language-server.omnisharp = {
+        command = "${pkgs.omnisharp-roslyn}/bin/OmniSharp";
+        args = [ "--languageserver" ];
       };
 
       language = [
@@ -25,7 +25,7 @@
         }
         {
           name = "c-sharp";
-          language-servers = [ "roslyn" ];
+          language-servers = [ "omnisharp" ];
         }
       ];
     };
