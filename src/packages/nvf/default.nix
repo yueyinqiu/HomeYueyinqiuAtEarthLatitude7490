@@ -18,7 +18,7 @@
     binds.cheatsheet.enable = true;
 
     filetree.neo-tree.enable = true;
-    filetree.setupOpts.enable_cursor_hijack = true;
+    filetree.neo-tree.setupOpts.enable_cursor_hijack = true;
 
     languages.enableFormat = true;
     languages.enableTreesitter = true;
