@@ -15,7 +15,7 @@
 
       language-server.roslyn = {
         command = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
-        args = [ "--stdio" ];
+        args = [ ];
       };
 
       language = [
