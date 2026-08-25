@@ -60,5 +60,14 @@
       style = "darker";
       transparent = false;
     };
+
+    luaConfigRC.fcitx5-auto-inactivate = ''
+      vim.api.nvim_create_autocmd("ModeChanged", {
+        pattern = "*:n",
+        callback = function()
+          vim.system({ "fcitx5-remote", "-c" }, { detach = true })
+        end,
+      })
+    '';
   };
 }
