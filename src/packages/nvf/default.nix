@@ -9,15 +9,21 @@
     autocomplete.nvim-cmp.enable = true;
 
     debugger.nvim-dap.enable = true;
-    debugger.nvim-dap.ui.enable = true;
+    debugger.nvim-dap = {
+      ui.enable = true;
+    };
 
     terminal.toggleterm.enable = true;
-    terminal.toggleterm.lazygit.enable = true;
+    terminal.toggleterm = {
+      lazygit.enable = true;
+    };
 
     binds.whichKey.enable = true;
-    
+
     filetree.neo-tree.enable = true;
-    filetree.neo-tree.setupOpts.enable_cursor_hijack = true;
+    filetree.neo-tree = {
+      setupOpts.enable_cursor_hijack = true;
+    };
 
     languages.enableFormat = true;
     languages.enableTreesitter = true;
