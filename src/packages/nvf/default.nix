@@ -81,6 +81,9 @@
           # Use Roslyn LSP (roslyn-ls) + roslyn-nvim integration.
           lsp.servers = [ "roslyn-ls" ];
           extensions.roslyn-nvim.enable = true;
+          # Current roslyn.nvim extension args don't match the roslyn-ls CLI we have,
+          # causing the server to exit with code 1. Disable Razor extensions for now.
+          extensions.roslyn-nvim.setupOpts.extensions.razor.enabled = false;
         };
       };
     };
