@@ -1,91 +1,42 @@
-{ pkgs, nvf, ... }: {
+{ nvf, ... }: {
   imports = [
     nvf.homeManagerModules.default
   ];
 
   programs.nvf.enable = true;
-  programs.nvf.settings = {
-    vim = {
-      # Core dev experience (picked from your answers)
-      lsp = {
-        enable = true;
-        formatOnSave = true;
-      };
+  programs.nvf.settings.vim = {
+    lsp.enable = true;
+    autocomplete.nvim-cmp.enable = true;
 
-      autocomplete = {
-        nvim-cmp.enable = true;
-      };
+    debugger.nvim-dap.enable = true;
+    debugger.nvim-dap.ui.enable = true;
 
-      debugger = {
-        nvim-dap = {
-          enable = true;
-          ui.enable = true;
-        };
-      };
+    terminal.toggleterm.enable = true;
+    terminal.toggleterm.lazygit.enable = true;
 
-      terminal = {
-        toggleterm = {
-          enable = true;
-          lazygit.enable = true;
-        };
-      };
+    binds.whichKey.enable = true;
+    binds.cheatsheet.enable = true;
 
-      binds = {
-        whichKey.enable = true;
-        cheatsheet.enable = true;
-      };
+    filetree.neo-tree.enable = true;
+    filetree.setupOpts.enable_cursor_hijack = true;
 
-      filetree.neo-tree = {
-        enable = true;
-        setupOpts.enable_cursor_hijack = true;
-      };
+    languages.enableFormat = true;
+    languages.enableTreesitter = true;
 
-      keymaps = [
-        {
-          key = "<C-n>";
-          mode = "n";
-          silent = true;
-          action = ":Neotree filesystem reveal left<CR>";
-        }
-      ];
+    languages.nix = {
+      enable = true;
+      lsp.servers = [ "nixd" ];
+    };
 
-      # Fuzzy finding
-      startPlugins = with pkgs.vimPlugins; [
-        telescope-ui-select-nvim
-      ];
-      telescope = {
-        enable = true;
-        setupOpts.extensions."ui-select" = {
-          # keep defaults
-        };
-      };
-      luaConfigRC.telescope-ui-select = ''
-        require("telescope").load_extension("ui-select")
-      '';
+    languages.python.enable = true;
+    languages.lua.enable = true;
 
-      # Language support
-      languages = {
-        enableFormat = true;
-        enableTreesitter = true;
-
-        nix = {
-          enable = true;
-          lsp.servers = [ "nixd" ];
-        };
-
-        python.enable = true;
-        lua.enable = true;
-
-        csharp = {
-          enable = true;
-          # Use Roslyn LSP (roslyn-ls) + roslyn-nvim integration.
-          lsp.servers = [ "roslyn-ls" ];
-          extensions.roslyn-nvim.enable = true;
-          # Current roslyn.nvim extension args don't match the roslyn-ls CLI we have,
-          # causing the server to exit with code 1. Disable Razor extensions for now.
-          extensions.roslyn-nvim.setupOpts.extensions.razor.enabled = false;
-        };
-      };
+    languages.csharp = {
+      enable = true;
+      lsp.servers = [ "roslyn-ls" ];
+      extensions.roslyn-nvim.enable = true;
+      # https://github.com/NotAShelf/nvf/issues/1673
+      extensions.roslyn-nvim.setupOpts.extensions.razor.enabled = false;
     };
   };
 }
