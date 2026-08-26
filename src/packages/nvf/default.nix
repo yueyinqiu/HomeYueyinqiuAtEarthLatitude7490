@@ -10,6 +10,14 @@
 
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
+    autocmds = [
+      {
+        event = [ "FileType" ];
+        pattern = [ "nix" ];
+        command = "setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab";
+      }
+    ];
+
     lsp.enable = true;
     autocomplete.nvim-cmp.enable = true;
 
@@ -69,5 +77,6 @@
         end,
       })
     '';
+
   };
 }
