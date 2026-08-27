@@ -70,7 +70,7 @@
     statusline = {
       lualine = {
         enable = true;
-        theme = "catppuccin";
+        theme = "auto";
 
         integrations.breadcrumbs = {
           vanilla.enable = false;
