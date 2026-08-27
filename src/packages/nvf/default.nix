@@ -1,4 +1,4 @@
-{ pkgs, nvf, ... }: {
+{ nvf, ... }: {
   imports = [
     nvf.homeManagerModules.default
   ];
@@ -8,75 +8,223 @@
     VISUAL = "nvim";
   };
 
-  programs.nvf.enable = true;
-  programs.nvf.settings.vim = {
-    autocmds = [
-      {
-        event = [ "FileType" ];
-        pattern = [ "nix" ];
-        command = "setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab";
-      }
-    ];
+  config.vim = {
+    viAlias = true;
+    vimAlias = true;
 
-    lsp.enable = true;
-    autocomplete.nvim-cmp.enable = true;
+    opts.expandtab = true;
 
-    debugger.nvim-dap.enable = true;
-    debugger.nvim-dap = {
-      ui.enable = true;
-    };
-
-    extraPackages = [
-      pkgs.netcoredbg
-      pkgs.python3Packages.debugpy
-    ];
-
-    terminal.toggleterm.enable = true;
-    terminal.toggleterm = {
-      lazygit.enable = true;
-    };
-
-    binds.whichKey.enable = true;
-
-    filetree.neo-tree.enable = true;
-    filetree.neo-tree = {
-      setupOpts.enable_cursor_hijack = true;
-    };
-
-    languages.enableFormat = true;
-    languages.enableTreesitter = true;
-
-    languages.nix = {
+    lsp = {
       enable = true;
-      lsp.servers = [ "nixd" ];
+
+      formatOnSave = true;
+      lspkind.enable = false;
+      lightbulb.enable = true;
+      lspsaga.enable = false;
+      trouble.enable = true;
+      lspSignature.enable = false;
+      otter-nvim.enable = true;
+      nvim-docs-view.enable = true;
+      presets.harper.enable = true;
     };
 
-    languages.python.enable = true;
-    languages.lua.enable = true;
+    debugger = {
+      nvim-dap = {
+        enable = true;
+        ui.enable = true;
+      };
+    };
 
-    languages.csharp = {
-      enable = true;
-      lsp.servers = [ "roslyn-ls" ];
-      extensions.roslyn-nvim.enable = true;
-      # https://github.com/NotAShelf/nvf/issues/1673
-      extensions.roslyn-nvim.setupOpts.extensions.razor.enabled = false;
+    languages = {
+      enableFormat = true;
+      enableTreesitter = true;
+      enableExtraDiagnostics = true;
+
+      nix.enable = true;
+      markdown.enable = true;
+
+      bash.enable = true;
+      json.enable = true;
+      python.enable = true;
+      toml.enable = true;
+      xml.enable = true;
+      env.enable = true;
+
+      csharp.enable = true;
+    };
+
+    visuals = {
+      nvim-scrollbar.enable = true;
+      satellite-nvim.enable = false;
+      nvim-web-devicons.enable = true;
+      nvim-cursorline.enable = true;
+      cinnamon-nvim.enable = true;
+      fidget-nvim.enable = true;
+
+      highlight-undo.enable = true;
+      blink-indent.enable = true;
+      indent-blankline.enable = true;
+    };
+
+    statusline = {
+      lualine = {
+        enable = true;
+        theme = "catppuccin";
+
+        integrations.breadcrumbs = {
+          vanilla.enable = false;
+          nvim-navic.enable = true;
+          navbuddy.enable = true;
+          lspsaga.enable = false;
+        };
+      };
     };
 
     theme = {
       enable = true;
-      name = "onedark";
-      style = "darker";
+      name = "catppuccin";
+      style = "mocha";
       transparent = false;
     };
 
-    luaConfigRC.fcitx5-auto-inactivate = ''
-      vim.api.nvim_create_autocmd("ModeChanged", {
-        pattern = "*:n",
-        callback = function()
-          vim.system({ "fcitx5-remote", "-c" }, { detach = true })
-        end,
-      })
-    '';
+    autopairs.nvim-autopairs.enable = true;
 
+    autocomplete = {
+      blink-cmp.enable = true;
+    };
+
+    snippets.luasnip.enable = true;
+
+    filetree = {
+      neo-tree = {
+        enable = true;
+      };
+    };
+
+    tabline = {
+      nvimBufferline.enable = true;
+    };
+
+    treesitter.context.enable = true;
+
+    binds = {
+      whichKey.enable = true;
+      cheatsheet.enable = true;
+    };
+
+    telescope.enable = true;
+
+    git = {
+      enable = true;
+      gitsigns.enable = true;
+      gitsigns.codeActions.enable = false;
+      neogit.enable = true;
+    };
+
+    minimap = {
+      minimap-vim.enable = true;
+    };
+
+    dashboard = {
+      dashboard-nvim.enable = false;
+      alpha.enable = true;
+    };
+
+    notify = {
+      nvim-notify.enable = true;
+    };
+
+    projects = {
+      project-nvim.enable = true;
+    };
+
+    utility = {
+      ccc.enable = false;
+      vim-wakatime.enable = false;
+      diffview-nvim.enable = true;
+      yanky-nvim.enable = false;
+      qmk-nvim.enable = false; # requires hardware specific options
+      icon-picker.enable = true;
+      surround.enable = true;
+      leetcode-nvim.enable = true;
+      multicursors.enable = true;
+      smart-splits.enable = true;
+      undotree.enable = true;
+      nvim-biscuits.enable = true;
+      grug-far-nvim.enable = true;
+
+      motion = {
+        hop.enable = true;
+        leap.enable = true;
+        precognition.enable = true;
+      };
+      images = {
+        image-nvim.enable = false;
+        img-clip.enable = true;
+      };
+    };
+
+    notes = {
+      neorg.enable = false;
+      orgmode.enable = false;
+      todo-comments.enable = true;
+    };
+
+    terminal = {
+      toggleterm = {
+        enable = true;
+        lazygit.enable = true;
+      };
+    };
+
+    ui = {
+      borders.enable = true;
+      dropbar-nvim.enable = false;
+      noice.enable = true;
+      colorizer.enable = true;
+      modes-nvim.enable = false; # the theme looks terrible with catppuccin
+      illuminate.enable = true;
+      smartcolumn = {
+        enable = true;
+        setupOpts.custom_colorcolumn = {
+          # this is a freeform module, it's `buftype = int;` for configuring column position
+          nix = "110";
+          ruby = "120";
+          java = "130";
+          go = [
+            "90"
+            "130"
+          ];
+        };
+      };
+      fastaction.enable = true;
+    };
+
+    assistant = {
+      chatgpt.enable = false;
+      copilot = {
+        enable = false;
+        cmp.enable = true;
+      };
+      codecompanion-nvim.enable = false;
+      avante-nvim.enable = true;
+    };
+
+    session = {
+      nvim-session-manager.enable = false;
+    };
+
+    gestures = {
+      gesture-nvim.enable = false;
+    };
+
+    comments = {
+      comment-nvim.enable = true;
+    };
+
+    presence = {
+      neocord.enable = false;
+      cord-nvim.enable = false;
+    };
   };
 }
