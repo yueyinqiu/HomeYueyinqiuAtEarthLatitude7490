@@ -8,7 +8,7 @@
     VISUAL = "nvim";
   };
 
-  config.vim = {
+  vim = {
     viAlias = true;
     vimAlias = true;
 
