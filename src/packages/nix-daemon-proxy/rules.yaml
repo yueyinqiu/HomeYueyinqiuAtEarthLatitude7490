@@ -5,6 +5,7 @@ rules:
   - DOMAIN-SUFFIX,web.archive.org,my-proxies-bai-piao-ji-chang
   - DOMAIN-SUFFIX,nomachine.com,my-proxies-bai-piao-ji-chang
   - DOMAIN-SUFFIX,googlesource.com,my-proxies-bai-piao-ji-chang
+  - DOMAIN-SUFFIX,cachix.org,my-proxies-bai-piao-ji-chang
 
   - DOMAIN-SUFFIX,roslyn.blob.core.windows.net,DIRECT
   - DOMAIN-SUFFIX,vsassets.io,DIRECT
@@ -14,7 +15,6 @@ rules:
   - DOMAIN-SUFFIX,steampowered.com,DIRECT
   - DOMAIN-SUFFIX,sourceforge.net,DIRECT
   - DOMAIN-SUFFIX,sourceforge.net,DIRECT
-  - DOMAIN-SUFFIX,cachix.org,DIRECT
   - DOMAIN-SUFFIX,mirror.nju.edu.cn,DIRECT
   - DOMAIN-SUFFIX,mirrors.tuna.tsinghua.edu.cn,DIRECT
   - DOMAIN-SUFFIX,mirrors.cernet.edu.cn,DIRECT
