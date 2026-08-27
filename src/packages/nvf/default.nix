@@ -110,6 +110,7 @@
       blink-cmp = {
         enable = true;
         setupOpts.signature.enabled = true;
+        setupOpts.signature.trigger.show_on_keyword = true;
       };
     };
 
