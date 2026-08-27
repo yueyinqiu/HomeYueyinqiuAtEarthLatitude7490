@@ -107,7 +107,10 @@
     autopairs.nvim-autopairs.enable = true;
 
     autocomplete = {
-      blink-cmp.enable = true;
+      blink-cmp = {
+        enable = true;
+        setupOpts.signature.enabled = true;
+      };
     };
 
     snippets.luasnip.enable = true;
