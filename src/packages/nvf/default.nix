@@ -10,6 +10,16 @@
 
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
+    luaConfigRC.fcitx5-auto-inactivate = ''
+      vim.api.nvim_create_autocmd("ModeChanged", {
+        pattern = "*:n",
+        callback = function()
+          vim.system({ "fcitx5-remote", "-c" }, { detach = true })
+        end,
+      })
+    '';
+
+
     viAlias = true;
     vimAlias = true;
 
@@ -110,7 +120,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>mt";
+        key = "<leader>e";
         action = ":Neotree focus<CR>";
         desc = "Focus Neo-tree";
       }
