@@ -151,7 +151,7 @@
       multicursors.enable = true;
       smart-splits.enable = true;
       undotree.enable = true;
-      nvim-biscuits.enable = true;
+      nvim-biscuits.enable = false;
       grug-far-nvim.enable = true;
 
       motion = {
