@@ -133,6 +133,12 @@
         action = ":Neotree focus<CR>";
         desc = "Focus Neo-tree";
       }
+      {
+        mode = "n";
+        key = "<leader>bd";
+        action = ":BufferLinePickClose<CR>";
+        desc = "Pick a buffer to close";
+      }
     ];
 
     treesitter.context.enable = true;
