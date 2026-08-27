@@ -8,7 +8,8 @@
     VISUAL = "nvim";
   };
 
-  vim = {
+  programs.nvf.enable = true;
+  programs.nvf.settings.vim = {
     viAlias = true;
     vimAlias = true;
 
