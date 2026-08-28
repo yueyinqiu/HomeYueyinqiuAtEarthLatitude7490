@@ -1,4 +1,4 @@
-{ nvf, ... }: {
+{nvf, ...}: {
   imports = [
     nvf.homeManagerModules.default
   ];
@@ -19,11 +19,21 @@
       })
     '';
 
+    autocmds = [
+      {
+        enable = true;
+        event = ["FileType"];
+        pattern = ["nix"];
+        command = "setlocal tabstop=2 shiftwidth=2";
+      }
+    ];
 
     viAlias = true;
     vimAlias = true;
 
     opts.expandtab = true;
+    opts.tabstop = 4;
+    opts.shiftwidth = 4;
 
     lsp = {
       enable = true;
@@ -128,12 +138,13 @@
     };
 
     keymaps = [
-      {
-        mode = "n";
-        key = "<leader>e";
-        action = ":Neotree focus<CR>";
-        desc = "Focus Neo-tree";
-      }
+      # use <C-\>
+      # {
+      #   mode = "n";
+      #   key = "<leader>e";
+      #   action = ":Neotree focus<CR>";
+      #   desc = "Focus Neo-tree";
+      # }
       {
         mode = "n";
         key = "<leader>bd";
