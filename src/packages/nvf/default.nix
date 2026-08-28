@@ -15,10 +15,6 @@
     viAlias = true;
     vimAlias = true;
 
-    opts.expandtab = true;
-    opts.tabstop = 4;
-    opts.shiftwidth = 4;
-
     lsp = {
       enable = true;
 
@@ -37,21 +33,6 @@
         enable = true;
         ui.enable = true;
       };
-    };
-
-    languages = {
-      enableFormat = true;
-      enableTreesitter = true;
-      enableExtraDiagnostics = true;
-
-      markdown.enable = true;
-
-      bash.enable = true;
-      json.enable = true;
-      python.enable = true;
-      toml.enable = true;
-      xml.enable = true;
-      env.enable = true;
     };
 
     visuals = {
@@ -88,8 +69,6 @@
       transparent = false;
     };
 
-    autopairs.nvim-autopairs.enable = true;
-
     autocomplete = {
       blink-cmp = {
         enable = true;
@@ -112,13 +91,6 @@
     };
 
     keymaps = [
-      # use <C-\>
-      # {
-      #   mode = "n";
-      #   key = "<leader>e";
-      #   action = ":Neotree focus<CR>";
-      #   desc = "Focus Neo-tree";
-      # }
       {
         mode = "n";
         key = "<leader>bd";
