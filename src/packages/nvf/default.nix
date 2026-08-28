@@ -30,7 +30,6 @@
       lspSignature.enable = false;
       otter-nvim.enable = true;
       nvim-docs-view.enable = true;
-      presets.harper.enable = true;
     };
 
     debugger = {
