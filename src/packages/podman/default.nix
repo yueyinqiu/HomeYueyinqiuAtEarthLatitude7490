@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
-  services.podman.enable = true;
-  
+{pkgs, ...}: {
+  # services.podman.enable = true;
+
   home.packages = with pkgs; [
     podman-compose
   ];
