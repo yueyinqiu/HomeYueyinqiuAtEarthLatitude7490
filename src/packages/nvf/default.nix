@@ -1,6 +1,8 @@
 {nvf, ...}: {
   imports = [
     nvf.homeManagerModules.default
+
+    ./languages
   ];
 
   home.sessionVariables = {
@@ -10,24 +12,6 @@
 
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
-    luaConfigRC.fcitx5-auto-inactivate = ''
-      vim.api.nvim_create_autocmd("ModeChanged", {
-        pattern = "*:n",
-        callback = function()
-          vim.system({ "fcitx5-remote", "-c" }, { detach = true })
-        end,
-      })
-    '';
-
-    autocmds = [
-      {
-        enable = true;
-        event = ["FileType"];
-        pattern = ["nix"];
-        command = "setlocal tabstop=2 shiftwidth=2";
-      }
-    ];
-
     viAlias = true;
     vimAlias = true;
 
@@ -61,7 +45,6 @@
       enableTreesitter = true;
       enableExtraDiagnostics = true;
 
-      nix.enable = true;
       markdown.enable = true;
 
       bash.enable = true;
@@ -70,14 +53,6 @@
       toml.enable = true;
       xml.enable = true;
       env.enable = true;
-
-      csharp = {
-        enable = true;
-        lsp.servers = ["roslyn-ls"];
-        extensions.roslyn-nvim.enable = true;
-        # https://github.com/NotAShelf/nvf/issues/1673
-        extensions.roslyn-nvim.setupOpts.extensions.razor.enabled = false;
-      };
     };
 
     visuals = {
