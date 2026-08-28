@@ -22,9 +22,8 @@
       formatOnSave = true;
       lspkind.enable = true;
       lightbulb.enable = true;
-      lspsaga.enable = false;
+      lspsaga.enable = true;
       trouble.enable = true;
-      lspSignature.enable = false;
       otter-nvim.enable = true;
       nvim-docs-view.enable = true;
     };
@@ -35,18 +34,13 @@
         ui.enable = true;
       };
     };
-
     visuals = {
-      nvim-scrollbar.enable = true;
-      satellite-nvim.enable = false;
+      satellite-nvim.enable = true;
       nvim-web-devicons.enable = true;
       nvim-cursorline.enable = true;
       cinnamon-nvim.enable = true;
       fidget-nvim.enable = true;
-
       highlight-undo.enable = true;
-      # blink-indent.enable = true;
-      # indent-blankline.enable = true;
     };
 
     statusline = {
