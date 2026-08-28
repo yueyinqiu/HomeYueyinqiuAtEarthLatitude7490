@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {

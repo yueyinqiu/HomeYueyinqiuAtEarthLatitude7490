@@ -20,7 +20,7 @@
       enable = true;
 
       formatOnSave = true;
-      lspkind.enable = false;
+      lspkind.enable = true;
       lightbulb.enable = true;
       lspsaga.enable = false;
       trouble.enable = true;
@@ -90,15 +90,6 @@
     tabline = {
       nvimBufferline.enable = true;
     };
-
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>bd";
-        action = ":BufferLinePickClose<CR>";
-        desc = "Pick a buffer to close";
-      }
-    ];
 
     treesitter.context.enable = true;
 
