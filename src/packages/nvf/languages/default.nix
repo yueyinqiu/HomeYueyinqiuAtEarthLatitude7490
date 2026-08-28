@@ -12,8 +12,6 @@
     languages = {
       enableFormat = true;
       enableTreesitter = true;
-      # Disables extra linters like statix (often noisy for Nix).
-      enableExtraDiagnostics = false;
 
       markdown.enable = true;
 
