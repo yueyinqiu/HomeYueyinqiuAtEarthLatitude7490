@@ -3,6 +3,7 @@
     nvf.homeManagerModules.default
 
     ./languages
+    ./cheats
   ];
 
   home.sessionVariables = {
