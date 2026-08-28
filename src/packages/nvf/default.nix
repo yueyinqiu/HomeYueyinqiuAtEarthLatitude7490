@@ -89,8 +89,8 @@
       fidget-nvim.enable = true;
 
       highlight-undo.enable = true;
-      blink-indent.enable = true;
-      indent-blankline.enable = true;
+      # blink-indent.enable = true;
+      # indent-blankline.enable = true;
     };
 
     statusline = {
