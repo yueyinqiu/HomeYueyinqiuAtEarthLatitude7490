@@ -147,7 +147,7 @@
       nvimBufferline.enable = true;
     };
 
-    treesitter.context.enable = true;
+    # treesitter.context.enable = true;
 
     binds = {
       whichKey.enable = true;

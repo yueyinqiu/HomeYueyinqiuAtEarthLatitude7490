@@ -11,7 +11,7 @@
     ];
     port = 26290;
   };
-  
+
   systemd.user.services.nix-daemon-proxy-auto = {
     Unit = {
       Description = "Set nix-daemon proxy";
