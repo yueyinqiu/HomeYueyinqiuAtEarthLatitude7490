@@ -141,7 +141,10 @@
     filetree = {
       neo-tree = {
         enable = true;
-        setupOpts.filesystem.filtered_items.visible = true;
+        setupOpts.filesystem = {
+          filtered_items.visible = true;
+          use_libuv_file_watcher = true;
+        };
       };
     };
 
