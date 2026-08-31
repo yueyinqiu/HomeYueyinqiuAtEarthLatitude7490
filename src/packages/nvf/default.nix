@@ -32,7 +32,6 @@
     lsp = {
       enable = true;
 
-      formatOnSave = true;
       lspkind.enable = true;
       lightbulb.enable = true;
       lspsaga.enable = true;
@@ -41,18 +40,25 @@
       nvim-docs-view.enable = true;
     };
 
+    autocmds = [
+      {
+        enable = true;
+        event = ["ModeChanged"];
+        pattern = ["i*:n"];
+        command = "lua vim.lsp.buf.format()";
+      }
+    ];
+
     diagnostics = {
       enable = true;
       config = {
-        # Show more context for actionable issues, and keep noise low for info/hints.
         underline = true;
         signs = {
-          # Use explicit severities: Neovim 0.12.x min/max semantics are confusing.
-          severity = [1 2]; # ERROR, WARN
+          severity = [1 2];
         };
         virtual_text = false;
         virtual_lines = {
-          severity = [1 2]; # ERROR, WARN
+          severity = [1 2];
         };
         update_in_insert = true;
       };
