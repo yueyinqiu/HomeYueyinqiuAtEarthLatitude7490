@@ -63,6 +63,42 @@
       nvim-lint.enable = true;
     };
 
+    # Filter at the handler layer so INFO/HINT never produce signs or virtual-lines.
+    # This avoids inconsistent severity filtering behavior across Neovim versions.
+    luaConfigPost = ''
+      do
+        local sev = vim.diagnostic.severity
+
+        local function filter_warn_or_error(diags)
+          local out = {}
+          for _, d in ipairs(diags) do
+            if d.severity and d.severity <= sev.WARN then
+              out[#out + 1] = d
+            end
+          end
+          return out
+        end
+
+        local orig_signs = vim.diagnostic.handlers.signs
+        vim.diagnostic.handlers.signs = {
+          show = function(ns, bufnr, diags, opts)
+            return orig_signs.show(ns, bufnr, filter_warn_or_error(diags), opts)
+          end,
+          hide = orig_signs.hide,
+        }
+
+        local orig_virtual_lines = vim.diagnostic.handlers.virtual_lines
+        if orig_virtual_lines then
+          vim.diagnostic.handlers.virtual_lines = {
+            show = function(ns, bufnr, diags, opts)
+              return orig_virtual_lines.show(ns, bufnr, filter_warn_or_error(diags), opts)
+            end,
+            hide = orig_virtual_lines.hide,
+          }
+        end
+      end
+    '';
+
     debugger = {
       nvim-dap = {
         enable = true;

@@ -2,6 +2,7 @@
 #:package CliWrap@3.10.4
 
 using System.Runtime.CompilerServices;
+using System.Text.Json.Nodes;
 using CliWrap;
 using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
@@ -18,14 +19,12 @@ class Suggester : SnaviArgumentSuggester
     )
     {
         var output = await Cli.Wrap("opencode")
-            .WithArguments(["session", "list"])
+            .WithArguments(["session", "list", "--format", "json"])
             .ExecuteBufferedAsync(cancellationToken);
-        foreach (var line in output.StandardOutput.Split(Environment.NewLine))
+        var node = JsonNode.Parse(output.StandardOutput);
+        foreach (var item in node?.AsArray()!)
         {
-            if (!line.StartsWith("ses_"))
-                continue;
-            var split = line.Split(' ', 2, StringSplitOptions.RemoveEmptyEntries);
-            yield return (split[0], split[1]);
+            yield return ((string)item!["id"]!, (string)item["title"]!);
         }
     }
 }
