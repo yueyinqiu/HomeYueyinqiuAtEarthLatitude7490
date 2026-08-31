@@ -31,10 +31,19 @@
     diagnostics = {
       enable = true;
       config = {
+        # Show more context for actionable issues, and keep noise low for info/hints.
         underline = true;
-        signs = true;
+        signs = {
+          severity = {
+            max = 2; # WARN
+          };
+        };
         virtual_text = false;
-        virtual_lines = true;
+        virtual_lines = {
+          severity = {
+            max = 2; # WARN
+          };
+        };
         update_in_insert = true;
       };
 
