@@ -1,8 +1,10 @@
 {
   pkgs,
+  lib,
   nvf,
   ...
-}: {
+}:
+{
   imports = [
     nvf.homeManagerModules.default
 
@@ -43,9 +45,25 @@
     autocmds = [
       {
         enable = true;
-        event = ["ModeChanged"];
-        pattern = ["i*:n"];
-        command = "lua vim.lsp.buf.format()";
+        event = [ "ModeChanged" ];
+        pattern = [ "i*:n" ];
+        desc = "Auto Format";
+        callback = lib.generators.mkLuaInline ''
+          function(ev)
+            local bufnr = ev.buf
+            vim.schedule(function()
+              if not vim.api.nvim_buf_is_valid(bufnr) then
+                return
+              end
+              if vim.bo[bufnr].buftype ~= "" then
+                return
+              end
+              vim.api.nvim_buf_call(bufnr, function()
+                vim.lsp.buf.format({ bufnr = bufnr, async = false })
+              end)
+            end)
+          end
+        '';
       }
     ];
 
@@ -54,11 +72,17 @@
       config = {
         underline = true;
         signs = {
-          severity = [1 2];
+          severity = [
+            1
+            2
+          ];
         };
         virtual_text = false;
         virtual_lines = {
-          severity = [1 2];
+          severity = [
+            1
+            2
+          ];
         };
         update_in_insert = true;
       };
