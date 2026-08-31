@@ -1,9 +1,22 @@
-{nvf, ...}: {
+{
+  pkgs,
+  nvf,
+  ...
+}: {
   imports = [
     nvf.homeManagerModules.default
 
     ./languages
     ./cheats
+  ];
+
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "v";
+      text = ''
+        exec nvim "$@"
+      '';
+    })
   ];
 
   home.sessionVariables = {
@@ -35,13 +48,13 @@
         underline = true;
         signs = {
           severity = {
-            max = 2; # WARN
+            max = 2;
           };
         };
         virtual_text = false;
         virtual_lines = {
           severity = {
-            max = 2; # WARN
+            max = 2;
           };
         };
         update_in_insert = true;

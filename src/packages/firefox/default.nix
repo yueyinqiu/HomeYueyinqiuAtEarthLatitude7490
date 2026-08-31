@@ -1,4 +1,4 @@
-{ ... }: {
+{pkgs, ...}: {
   programs.firefox.enable = true;
 
   my.proxies.for-firefox = {
@@ -11,7 +11,14 @@
     port = 10538;
   };
 
-  home.shellAliases.f = "niri msg action spawn -- firefox";
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "f";
+      text = ''
+        exec niri msg action spawn -- firefox
+      '';
+    })
+  ];
 
   imports = [
     ./cheats
