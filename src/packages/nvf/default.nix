@@ -42,6 +42,13 @@
       nvim-docs-view.enable = true;
     };
 
+    # Prefer LSP when formatting via conform.nvim, but don't auto-format on save.
+    formatter.conform-nvim.setupOpts = {
+      default_format_opts.lsp_format = "prefer";
+      format_on_save = null;
+      format_after_save = null;
+    };
+
     autocmds = [
       {
         enable = true;
@@ -59,7 +66,15 @@
                 return
               end
               vim.api.nvim_buf_call(bufnr, function()
-                vim.lsp.buf.format({ bufnr = bufnr, async = false })
+                -- Prefer LSP formatting, but fall back to external formatters when needed.
+                pcall(function()
+                  require("lz.n").trigger_load("conform-nvim")
+                end)
+                local ok, conform = pcall(require, "conform")
+                if not ok then
+                  return
+                end
+                conform.format({ bufnr = bufnr, lsp_format = "prefer", timeout_ms = 500 })
               end)
             end)
           end

@@ -20,6 +20,7 @@ class Suggester : SnaviArgumentSuggester
     {
         var output = await Cli.Wrap("opencode")
             .WithArguments(["session", "list", "--format", "json"])
+            .WithWorkingDirectory(currentDirectory.FullName)
             .ExecuteBufferedAsync(cancellationToken);
         var node = JsonNode.Parse(output.StandardOutput);
         foreach (var item in node?.AsArray()!)
