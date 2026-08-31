@@ -8,7 +8,7 @@
     (pkgs.writeShellApplication {
       name = "g";
       text = ''
-        exec niri msg action spawn -- ghostty --working-directory="$PWD"'
+        exec niri msg action spawn -- ghostty --working-directory="$PWD"
       '';
     })
   ];
