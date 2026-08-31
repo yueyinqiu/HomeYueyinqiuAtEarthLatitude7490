@@ -2,6 +2,7 @@
   imports = [
     ./csharp
     ./nix
+    ./python
   ];
 
   programs.nvf.settings.vim = {
@@ -17,7 +18,6 @@
 
       bash.enable = true;
       json.enable = true;
-      python.enable = true;
       toml.enable = true;
       xml.enable = true;
       env.enable = true;

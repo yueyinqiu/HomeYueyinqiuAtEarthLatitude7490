@@ -28,6 +28,19 @@
       nvim-docs-view.enable = true;
     };
 
+    diagnostics = {
+      enable = true;
+      config = {
+        underline = true;
+        signs = true;
+        virtual_text = false;
+        virtual_lines = true;
+        update_in_insert = true;
+      };
+
+      nvim-lint.enable = true;
+    };
+
     debugger = {
       nvim-dap = {
         enable = true;
