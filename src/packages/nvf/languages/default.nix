@@ -11,7 +11,7 @@
     opts.shiftwidth = 4;
 
     languages = {
-      enableFormat = true;
+      enableFormat = false;
       enableTreesitter = true;
 
       markdown.enable = true;

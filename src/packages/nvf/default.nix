@@ -42,9 +42,6 @@
       nvim-docs-view.enable = true;
     };
 
-    # Use only LSP formatting.
-    formatter.conform-nvim.enable = false;
-
     autocmds = [
       {
         enable = true;
