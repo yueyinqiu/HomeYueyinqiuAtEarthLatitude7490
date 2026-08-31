@@ -28,6 +28,8 @@
 
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
+    opts.wrap = false;
+
     viAlias = true;
     vimAlias = true;
 
