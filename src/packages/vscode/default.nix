@@ -5,4 +5,13 @@
   imports = [
     ./cheats
   ];
+
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "c";
+      text = ''
+        exec code "$@"
+      '';
+    })
+  ];
 }
