@@ -3,19 +3,22 @@
     "provider": {
         "35-220-164-252-3888": {
             "options": {
-                "baseURL": "https://api.boyuerichdata.opensphereai.com/v1"
+                "baseURL": "https://api.boyuerichdata.opensphereai.com/v1",
             },
             "models": {
                 "gpt-4o": {
-                    "name": "gpt-4o"
+                    "name": "gpt-4o",
                 },
                 "gpt-5.1-codex": {
-                    "name": "gpt-5.1-codex"
+                    "name": "gpt-5.1-codex",
                 },
                 "gpt-5.2": {
-                    "name": "gpt-5.2"
+                    "name": "gpt-5.2",
+                },
+                "deepseek-v4-pro": {
+                    "name": "deepseek-v4-pro",
                 }
-            }
-        }
-    }
+            },
+        },
+    },
 }

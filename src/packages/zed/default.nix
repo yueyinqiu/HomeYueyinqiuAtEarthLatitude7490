@@ -6,4 +6,13 @@
       "arguments" = [ "--stdio" ];
     };
   };
+  
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "z";
+      text = ''
+        exec zed "$@"
+      '';
+    })
+  ];
 }
