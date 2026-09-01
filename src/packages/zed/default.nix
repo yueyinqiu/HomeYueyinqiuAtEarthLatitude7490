@@ -11,7 +11,7 @@
     (pkgs.writeShellApplication {
       name = "z";
       text = ''
-        exec zed "$@"
+        exec zeditor "$@"
       '';
     })
   ];
