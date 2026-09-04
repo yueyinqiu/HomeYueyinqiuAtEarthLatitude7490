@@ -38,7 +38,7 @@
         name = "visual-studio-2019-themes-extracted-from-csharp-extension";
         publisher = "yueyinqiu";
         version = "0.0.4";
-        sha256 = "1hp6gjh4xp2m1xxxxjsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+        sha256 = "sha256-/NqpkW/a1vGW4vBtGfIG8qfJWciA3C3qVj8pP2ve3fw=";
       }
     ];
 
