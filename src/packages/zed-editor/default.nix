@@ -6,6 +6,9 @@
       "arguments" = [ "--stdio" ];
     };
   };
+  programs.zed-editor.extraPackages = [
+    pkgs.bubblewrap
+  ];
   
   home.packages = [
     (pkgs.writeShellApplication {
