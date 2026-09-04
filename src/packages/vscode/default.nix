@@ -21,7 +21,10 @@
       ms-python.python
       ms-python.flake8
 
+      ms-dotnettools.csharp
       ms-dotnettools.csdevkit
+      ms-dotnettools.vscode-dotnet-runtime
+      ms-dotnettools.vscodeintellicode-csharp
 
       jnoortheen.nix-ide
 
