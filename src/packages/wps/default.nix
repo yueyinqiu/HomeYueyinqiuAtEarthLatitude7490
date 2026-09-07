@@ -5,7 +5,7 @@
 
   home.packages = [
     (pkgs.symlinkJoin {
-      name = "wps-fcitx-fake-home";
+      name = "wps-fcitx-fake-xdg";
       paths = [ pkgs.wpsoffice-cn ];
       buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
@@ -13,10 +13,14 @@
           --set GTK_IM_MODULE "fcitx" \
           --set QT_IM_MODULE "fcitx" \
           --set SDL_IM_MODULE "fcitx" \
-          --set HOME "${config.home.homeDirectory}/.wps"
+          --set XDG_CONFIG_HOME "${config.xdg.configHome}/wps-fake-xdg"
       '';
     })
   ];
+  
+  xdg.configFile."wps-fake-xdg/user-dirs.dirs".text = ''
+    XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wps-fake-xdg/Documents"
+  '';
 
   imports = [
     ./cheats
