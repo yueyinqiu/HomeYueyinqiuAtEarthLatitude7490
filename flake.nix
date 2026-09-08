@@ -9,6 +9,9 @@
     NixVirt = {
       follows = "os/NixVirt";
     };
+    nur = {
+      follows = "os/nur";
+    };
 
     nixpkgs-mindustry = {
       url = "github:NixOS/nixpkgs/241313f4e8e508cb9b13278c2b0fa25b9ca27163";
@@ -20,10 +23,6 @@
 
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/latest";
-    };
-
-    nur = {
-      url = "github:nix-community/NUR";
     };
 
     nix-wpsoffice-cn = {
