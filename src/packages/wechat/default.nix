@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   home.packages = [
     (pkgs.symlinkJoin {
-      name = "wechat-fcitx";
+      name = "wechat-fcitx-fake-xdg";
       paths = [ pkgs.wechat ];
       buildInputs = [ pkgs.makeWrapper ];
 
@@ -13,10 +13,15 @@
           --set QT_QPA_PLATFORM "xcb" \
           --set GTK_IM_MODULE "fcitx" \
           --set QT_IM_MODULE "fcitx" \
-          --set XMODIFIERS "@im=fcitx"
+          --set XMODIFIERS "@im=fcitx" \
+          --set XDG_CONFIG_HOME "${config.xdg.configHome}/wechat-fake-xdg"
       '';
     })
   ];
+
+  xdg.configFile."wechat-fake-xdg/user-dirs.dirs".text = ''
+    XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wechat-fake-xdg/Documents"
+  '';
 
   imports = [
     ./cheats
