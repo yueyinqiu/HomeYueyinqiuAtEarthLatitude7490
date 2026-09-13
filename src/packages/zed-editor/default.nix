@@ -6,7 +6,7 @@
       arguments = [ "--stdio" "--autoLoadProjects" ];
     };
     lsp.package-version-server.binary = {
-      path = "${pkgs.lsp-package-version-server}/bin/package-version-server";
+      path = "${pkgs.package-version-server}/bin/package-version-server";
     };
   };
   
