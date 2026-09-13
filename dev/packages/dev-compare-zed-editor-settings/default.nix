@@ -1,8 +1,19 @@
-{ name, pkgs, ... }:
+{
+  name,
+  pkgs,
+  ...
+}:
 
 pkgs.writeShellApplication {
   name = name;
   text = ''
-    exec ${pkgs.dotnetCorePackages.sdk_10_0}/bin/dotnet run ${./diff-settings.cs}
+    set -euo pipefail
+
+    exec ${pkgs.json-diff}/bin/json-diff -j \
+      "''${XDG_CONFIG_HOME:-$HOME/.config}/zed/settings.json" \
+      <(
+        nix eval --json \
+          '.#homeConfigurations."yueyinqiu@earth-latitude7490".config.programs.zed-editor.userSettings'
+      )
   '';
 }
