@@ -1,7 +1,6 @@
-{ nixpkgs-mindustry, ... }: {
-  # https://github.com/NixOS/nixpkgs/issues/544566
+{ mindustry-bin, ... }: {
   home.packages = [
-    nixpkgs-mindustry.mindustry-wayland
+    mindustry-bin.mindustry-bin-160_3
   ];
   imports = [
     ./cheats

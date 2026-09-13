@@ -13,10 +13,6 @@
       follows = "os/nur";
     };
 
-    nixpkgs-mindustry = {
-      url = "github:NixOS/nixpkgs/241313f4e8e508cb9b13278c2b0fa25b9ca27163";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
     };
@@ -32,6 +28,10 @@
     nvf = {
       url = "github:notashelf/nvf";
     };
+
+    mindustry-bin = {
+      url = "github:yueyinqiu/MindustryBinNix";
+    };
   };
 
   outputs = inputs:
@@ -45,10 +45,10 @@
           extraSpecialArgs = {
             flatpaks = inputs.flatpaks;
             nixvirt = inputs.NixVirt;
-            nixpkgs-mindustry = inputs.nixpkgs-mindustry.legacyPackages.${system};
             nur = inputs.nur.legacyPackages.${system}.repos;
             nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
             nvf = inputs.nvf;
+            mindustry-bin = inputs.mindustry-bin.packages.${system};
           };
           modules = [
             ./src
