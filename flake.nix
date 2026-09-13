@@ -34,41 +34,30 @@
     };
   };
 
-  outputs = inputs:
-    {
-      homeConfigurations."yueyinqiu@earth-latitude7490" =
-        let
-          system = "x86_64-linux";
-        in
-        inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = inputs.nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = {
-            flatpaks = inputs.flatpaks;
-            nixvirt = inputs.NixVirt;
-            nur = inputs.nur.legacyPackages.${system}.repos;
-            nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
-            nvf = inputs.nvf;
-            mindustry-bin = inputs.mindustry-bin.packages.${system};
-          };
-          modules = [
-            ./src
-          ];
+  outputs = inputs: {
+    homeConfigurations."yueyinqiu@earth-latitude7490" =
+      let
+        system = "x86_64-linux";
+      in
+      inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          flatpaks = inputs.flatpaks;
+          nixvirt = inputs.NixVirt;
+          nur = inputs.nur.legacyPackages.${system}.repos;
+          nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
+          nvf = inputs.nvf;
+          mindustry-bin = inputs.mindustry-bin.packages.${system};
         };
+        modules = [
+          ./src
+        ];
+      };
 
-      devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (
-        system:
-        let
-          pkgs = inputs.nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            packages = [
-              (pkgs.writeShellScriptBin "dev-switch-local" ''
-                ssh localhost -t "cd '$PWD' && all_proxy=socks5h://127.0.0.1:26290 home-manager switch --flake ."
-              '')
-            ];
-          };
-        }
-      );
-    };
+    devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
+      default = import ./dev {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+      };
+    });
+  };
 }
