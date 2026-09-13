@@ -199,6 +199,7 @@
     restore_on_startup = "launchpad";
     use_system_path_prompts = true;
     cli_default_open_behavior = "new_window";
+    default_open_behavior = "new_window";
 
     session = {
       restore_unsaved_buffers = false;
