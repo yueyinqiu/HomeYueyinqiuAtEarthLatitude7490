@@ -3,7 +3,7 @@
   ...
 }:
 {
-  imports = [
+  home.packages = [
     nix-airgap.airgap
   ];
 }
