@@ -32,6 +32,10 @@
     mindustry-bin = {
       url = "github:yueyinqiu/MindustryBinNix";
     };
+    
+    nix-airgap = {
+      url = "github:bitbloxhub/nix-airgap";
+    };
   };
 
   outputs = inputs: {
@@ -48,6 +52,7 @@
           nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
           nvf = inputs.nvf;
           mindustry-bin = inputs.mindustry-bin.packages.${system};
+          nix-airgap = inputs.nix-airgap.packages.${system};
         };
         modules = [
           ./src
