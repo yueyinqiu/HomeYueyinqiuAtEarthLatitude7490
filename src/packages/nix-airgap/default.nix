@@ -4,6 +4,6 @@
 }:
 {
   imports = [
-    nix-airgap.nix-airgap
+    nix-airgap.airgap
   ];
 }
