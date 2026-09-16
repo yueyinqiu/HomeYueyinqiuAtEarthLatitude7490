@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.bash.enable = true;
   programs.bash.initExtra = ''
-    PROMPT_COMMAND=(history -a "''${PROMPT_COMMAND[@]}")
+    PROMPT_COMMAND=("history -a" "''${PROMPT_COMMAND[@]}")
   '';
 
   home.packages = [
