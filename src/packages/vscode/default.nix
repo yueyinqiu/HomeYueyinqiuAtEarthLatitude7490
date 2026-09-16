@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   programs.vscode.enable = true;
-  programs.vscode.package = pkgs.vscode.fhs;
+  programs.vscode.package = pkgs.vscode.fhsWithPackages (pkgs: [ 
+    pkgs.nixfmt
+    pkgs.nixd
+  ]);
 
   imports = [
     ./cheats
