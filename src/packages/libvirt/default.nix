@@ -7,7 +7,6 @@
 }:
 {
   imports = [
-    nixvirt.homeModules.default
     ./cheats
   ];
 

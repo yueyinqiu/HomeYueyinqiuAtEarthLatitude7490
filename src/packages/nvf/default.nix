@@ -1,13 +1,10 @@
 {
   pkgs,
   lib,
-  nvf,
   ...
 }:
 {
   imports = [
-    nvf.homeManagerModules.default
-
     ./languages
     ./cheats
   ];

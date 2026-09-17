@@ -50,16 +50,17 @@
       inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
-          flatpaks = inputs.flatpaks;
           nixvirt = inputs.NixVirt;
           nur = inputs.nur.legacyPackages.${system}.repos;
           nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
           mindustry-bin = inputs.mindustry-bin.packages.${system};
           nix-airgap = inputs.nix-airgap.packages.${system};
-          sub-nix = inputs.sub-nix;
         };
         modules = [
+          inputs.nixvirt.homeModules.default
+          inputs.flatpaks.homeModules.default
           inputs.nvf.homeManagerModules.default
+          inputs.sub-nix.homeManagerModules.sub-nix
           ./src
         ];
       };

@@ -1,6 +1,5 @@
-{ pkgs, flatpaks, ... }: {
+{ pkgs, ... }: {
   imports = [
-    flatpaks.homeModules.default
     ./cheats
   ];
 
