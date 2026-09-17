@@ -10,52 +10,54 @@ let
   mixin = nur.yueyinqiu.mihomo-manager-mihomo-mixin;
   tui = pkgs.callPackage ./mihomo-tui { };
 
-  # --- command tree (action-first) -> libexec tree -----------------
-  # Every action is a directory of per-instance executables, so the CLI is
-  # `mihomo-proxies <action> <name>` and completion falls out of the tree.
-  renderCommand = tokens: ''
-    #!/usr/bin/env bash
-    exec ${lib.concatMapStringsSep " " lib.escapeShellArg tokens} "$@"
-  '';
-
-  withScript = port: ''
-    #!/usr/bin/env bash
-    export ALL_PROXY="http://127.0.0.1:${toString port}"
-    export HTTP_PROXY="$ALL_PROXY"
-    export HTTPS_PROXY="$ALL_PROXY"
-    export all_proxy="$ALL_PROXY"
-    export http_proxy="$ALL_PROXY"
-    export https_proxy="$ALL_PROXY"
-    exec "$@"
-  '';
-
   actions = name: {
-    restart = renderCommand [ "systemctl" "--user" "restart" "proxies-${name}" ];
-    log = renderCommand [ "journalctl" "--user" "-u" "proxies-${name}" "-f" ];
-    tui = renderCommand [ "mihomo-tui" "-c" "${config.xdg.stateHome}/proxies/state/${name}/tui/config.yaml" ];
-    port = renderCommand [ "printf" "%s\n" (toString config.my.proxies.${name}.port) ];
-    "with" = withScript config.my.proxies.${name}.port;
-    "config-directory" = renderCommand [ "printf" "%s\n" "${config.xdg.configHome}/proxies/${name}" ];
-    "state-directory" = renderCommand [ "printf" "%s\n" "${config.xdg.stateHome}/proxies/state/${name}" ];
-  };
+    restart = ''
+      #!/usr/bin/env bash
+      systemctl --user restart "mihomo-proxies-${name}"
+    '';
 
-  mkScriptFile = path: text: pkgs.writeTextFile {
-    name = "mihomo-proxies-" + lib.replaceStrings [ "/" ] [ "-" ] path;
-    inherit text;
-    executable = true;
-  };
+    log = ''
+      #!/usr/bin/env bash
+      journalctl --user -uf "mihomo-proxies-${name}"
+    '';
 
-  instanceNames = builtins.attrNames config.my.proxies;
+    tui = ''
+      #!/usr/bin/env bash
+      ${tui}/bin/mihomo-tui -c -uf "${config.xdg.stateHome}/proxies/state/${name}/tui/config.yaml"
+    '';
+
+    with = ''
+      #!/usr/bin/env bash
+      export ALL_PROXY="http://127.0.0.1:${toString config.my.proxies.${name}.port}"
+      export HTTP_PROXY="$ALL_PROXY"
+      export HTTPS_PROXY="$ALL_PROXY"
+      export all_proxy="$ALL_PROXY"
+      export http_proxy="$ALL_PROXY"
+      export https_proxy="$ALL_PROXY"
+      exec "$@"
+    '';
+
+    info = ''
+      #!/usr/bin/env bash
+      printf "Port: %s\n" "${toString config.my.proxies.${name}.port}"
+      printf "Configuration: %s\n" "${config.xdg.configHome}/proxies/${name}"
+      printf "State Directory: %s\n" "${config.xdg.stateHome}/proxies/state/${name}"
+    '';
+  };
 
   allScripts = lib.concatMap (
     name:
     lib.mapAttrsToList (
       action: text: {
         path = "${action}/${name}";
-        file = mkScriptFile "${action}/${name}" text;
+        file = (pkgs.writeTextFile {
+          name = "mihomo-proxies-${action}-${name}";
+          text = text;
+          executable = true;
+        });
       }
     ) (actions name)
-  ) instanceNames;
+  ) builtins.attrNames config.my.proxies;
 
   libexecTree = pkgs.runCommand "mihomo-proxies-libexec" { } (
     lib.concatMapStringsSep "\n" (
