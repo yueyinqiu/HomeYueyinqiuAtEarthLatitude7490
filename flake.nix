@@ -57,7 +57,7 @@
           nix-airgap = inputs.nix-airgap.packages.${system};
         };
         modules = [
-          inputs.nixvirt.homeModules.default
+          inputs.NixVirt.homeModules.default
           inputs.flatpaks.homeModules.default
           inputs.nvf.homeManagerModules.default
           inputs.sub-nix.homeManagerModules.sub-nix
