@@ -54,12 +54,12 @@
           nixvirt = inputs.NixVirt;
           nur = inputs.nur.legacyPackages.${system}.repos;
           nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
-          nvf = inputs.nvf;
           mindustry-bin = inputs.mindustry-bin.packages.${system};
           nix-airgap = inputs.nix-airgap.packages.${system};
           sub-nix = inputs.sub-nix;
         };
         modules = [
+          inputs.nvf.homeManagerModules.default
           ./src
         ];
       };
