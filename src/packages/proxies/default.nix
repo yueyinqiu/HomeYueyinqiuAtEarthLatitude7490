@@ -23,10 +23,10 @@ let
 
     tui = ''
       #!/usr/bin/env bash
-      ${tui}/bin/mihomo-tui -c -uf "${config.xdg.stateHome}/proxies/state/${name}/tui/config.yaml"
+      ${tui}/bin/mihomo-tui -c "${config.xdg.stateHome}/proxies/state/${name}/tui/config.yaml"
     '';
 
-    with = ''
+    "with" = ''
       #!/usr/bin/env bash
       export ALL_PROXY="http://127.0.0.1:${toString config.my.proxies.${name}.port}"
       export HTTP_PROXY="$ALL_PROXY"
@@ -47,24 +47,22 @@ let
 
   allScripts = lib.concatMap (
     name:
-    lib.mapAttrsToList (
-      action: text: {
-        path = "${action}/${name}";
-        file = (pkgs.writeTextFile {
+    lib.mapAttrsToList (action: text: {
+      path = "${action}/${name}";
+      file = (
+        pkgs.writeTextFile {
           name = "mihomo-proxies-${action}-${name}";
           text = text;
           executable = true;
-        });
-      }
-    ) (actions name)
-  ) builtins.attrNames config.my.proxies;
+        }
+      );
+    }) (actions name)
+  ) (builtins.attrNames config.my.proxies);
 
   libexecTree = pkgs.runCommand "mihomo-proxies-libexec" { } (
-    lib.concatMapStringsSep "\n" (
-      script: ''
-        install -Dm755 '${script.file}' "$out/libexec/${script.path}"
-      ''
-    ) allScripts
+    lib.concatMapStringsSep "\n" (script: ''
+      install -Dm755 '${script.file}' "$out/libexec/${script.path}"
+    '') allScripts
   );
 in
 {
