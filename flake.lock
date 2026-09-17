@@ -617,11 +617,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1789652118,
-        "narHash": "sha256-vbt4j2m/0KktrETu9DMBfTw4MCoGQet+rj/L4TR7v80=",
+        "lastModified": 1789660279,
+        "narHash": "sha256-rhpGbqr2L7RFjgpONZ1N+uiXH1we2g+FeKz7ZNq8RBo=",
         "owner": "yueyinqiu",
         "repo": "SubNix",
-        "rev": "8a9c50d3bbb627a0b19ca04e8857f78d8cda3f4b",
+        "rev": "f5b300aa6390114b287e75c2b8f35a28fe59a4eb",
         "type": "github"
       },
       "original": {

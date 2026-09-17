@@ -95,7 +95,7 @@ in
       enable = true;
       clis.mihomo-proxies = {
         version = "0.0.0";
-        scripts = libexecTree;
+        src = libexecTree;
       };
     };
 
