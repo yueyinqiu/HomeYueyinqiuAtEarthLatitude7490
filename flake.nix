@@ -36,6 +36,10 @@
     nix-airgap = {
       url = "github:bitbloxhub/nix-airgap";
     };
+
+    sub-nix = {
+      url = "github:yueyinqiu/SubNix";
+    };
   };
 
   outputs = inputs: {
@@ -53,6 +57,7 @@
           nvf = inputs.nvf;
           mindustry-bin = inputs.mindustry-bin.packages.${system};
           nix-airgap = inputs.nix-airgap.packages.${system};
+          sub-nix = inputs.sub-nix;
         };
         modules = [
           ./src
