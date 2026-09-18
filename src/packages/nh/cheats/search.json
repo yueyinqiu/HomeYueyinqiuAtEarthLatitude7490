@@ -1,0 +1,29 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nh"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "search"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "mode",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "search-mode.cs"
+      }
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "query",
+      "Suggester": {
+        "$type": "ArgumentSuggesterEmpty"
+      }
+    }
+  ],
+  "Description": "search nixpkgs packages or nixos/home-manager options via search.nixos.org",
+  "ExtraArguments": false
+}
