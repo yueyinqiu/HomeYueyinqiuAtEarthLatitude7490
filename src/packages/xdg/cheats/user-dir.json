@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "xdg-user-dir"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "directory",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "user-dir.cs"
+      }
+    }
+  ],
+  "Description": "print the absolute path of an xdg user directory",
+  "ExtraArguments": false
+}
