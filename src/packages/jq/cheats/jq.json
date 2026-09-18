@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "jq"
+    }
+  ],
+  "Description": "run jq, a lightweight and flexible command-line JSON processor",
+  "ExtraArguments": true
+}
