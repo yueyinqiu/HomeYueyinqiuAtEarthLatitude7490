@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "zeditor"
+    }
+  ],
+  "Description": "run zed, a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter",
+  "ExtraArguments": true
+}
