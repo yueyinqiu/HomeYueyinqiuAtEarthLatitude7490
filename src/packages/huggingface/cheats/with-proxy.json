@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "my-hf-with-proxy"
+    }
+  ],
+  "Description": "run the huggingface hub cli with proxy environment variables set",
+  "ExtraArguments": true
+}

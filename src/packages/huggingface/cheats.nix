@@ -1,8 +1,8 @@
 { ... }: {
   programs.snavi.cheats = {
-    "huggingface-niri-spawn" = {
+    "huggingface-with-proxy" = {
       src = ./cheats;
-      entry = "niri-spawn.json";
+      entry = "with-proxy.json";
     };
   };
 }
