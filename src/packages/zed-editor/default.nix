@@ -5,6 +5,7 @@
 {
   imports = [
     ./settings
+    ./cheats.nix
   ];
 
   programs.zed-editor.enable = true;
