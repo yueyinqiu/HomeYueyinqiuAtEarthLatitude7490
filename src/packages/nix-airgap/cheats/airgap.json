@@ -1,0 +1,26 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nix-airgap"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "installable",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-installable.cs"
+      }
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "ssh host",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-ssh-host.cs"
+      }
+    }
+  ],
+  "Description": "copy an installable's closure to an air-gapped nix machine over ssh",
+  "ExtraArguments": false
+}
