@@ -449,6 +449,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1789546076,
+        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -609,12 +625,31 @@
         ],
         "nvf": "nvf",
         "os": "os",
+        "snavi": "snavi",
         "sub-nix": "sub-nix"
+      }
+    },
+    "snavi": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1789739866,
+        "narHash": "sha256-x8N+noD5nQDcqS8c6wmzT7EZ8sD0OX4yM0MoTrcqNec=",
+        "owner": "yueyinqiu",
+        "repo": "Snavi-Nix",
+        "rev": "0d4af44526286f55a45d9faf717dacd811db1393",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yueyinqiu",
+        "repo": "Snavi-Nix",
+        "type": "github"
       }
     },
     "sub-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
         "lastModified": 1789660279,
