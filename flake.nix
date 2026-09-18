@@ -40,6 +40,8 @@
     sub-nix = {
       url = "github:yueyinqiu/SubNix";
     };
+
+    snavi.url = "github:yueyinqiu/Snavi-Nix";
   };
 
   outputs = inputs: {
@@ -61,6 +63,7 @@
           inputs.flatpaks.homeModules.default
           inputs.nvf.homeManagerModules.default
           inputs.sub-nix.homeManagerModules.sub-nix
+          inputs.snavi.homeManagerModules.snavi
           ./src
         ];
       };
