@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "opencode"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-s"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "session",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-sessions.cs"
+      }
+    }
+  ],
+  "Description": "resume a specific opencode session",
+  "ExtraArguments": false
+}

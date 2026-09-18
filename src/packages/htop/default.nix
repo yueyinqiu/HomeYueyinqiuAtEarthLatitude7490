@@ -3,6 +3,6 @@
     htop
   ];
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

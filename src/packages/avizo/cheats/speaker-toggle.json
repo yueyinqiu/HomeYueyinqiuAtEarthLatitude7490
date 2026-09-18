@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "volumectl"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "toggle-mute"
+    }
+  ],
+  "Description": "adjust speaker volume with avizo notification",
+  "ExtraArguments": false
+}

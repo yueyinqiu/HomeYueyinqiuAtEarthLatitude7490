@@ -2,6 +2,6 @@
   programs.home-manager.enable = true;
   
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

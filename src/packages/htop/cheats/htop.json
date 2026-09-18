@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "htop"
+    }
+  ],
+  "Description": "run htop, a cross-platform interactive process viewer",
+  "ExtraArguments": false
+}

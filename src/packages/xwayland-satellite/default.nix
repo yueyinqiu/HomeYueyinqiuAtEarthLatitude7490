@@ -3,6 +3,6 @@
     xwayland-satellite
   ];
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

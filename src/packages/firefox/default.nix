@@ -21,6 +21,6 @@
   ];
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

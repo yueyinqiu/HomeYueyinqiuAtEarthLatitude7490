@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "trash-restore"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "trash",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-trash.cs"
+      }
+    }
+  ],
+  "Description": "restore a specific file from trash",
+  "ExtraArguments": false
+}

@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "virsh"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "destroy"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "domain",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-domains.cs"
+      }
+    }
+  ],
+  "Description": "force power off a virtual machine",
+  "ExtraArguments": false
+}

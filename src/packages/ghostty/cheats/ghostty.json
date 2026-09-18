@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "ghostty"
+    }
+  ],
+  "Description": "run ghostty, a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration",
+  "ExtraArguments": false
+}

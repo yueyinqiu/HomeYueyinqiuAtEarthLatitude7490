@@ -3,6 +3,6 @@
 }:
 {
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

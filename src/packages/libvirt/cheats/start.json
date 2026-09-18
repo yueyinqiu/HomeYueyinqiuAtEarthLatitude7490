@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "virsh"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "start"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "domain",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-domains.cs"
+      }
+    }
+  ],
+  "Description": "start a virtual machine",
+  "ExtraArguments": false
+}

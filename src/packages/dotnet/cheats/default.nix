@@ -1,5 +1,0 @@
-{ ... }: {
-  imports = [
-    ./run-cs.nix
-  ];
-}

@@ -6,7 +6,7 @@
 {
   imports = [
     ./languages
-    ./cheats
+    ./cheats.nix
   ];
 
   home.packages = [

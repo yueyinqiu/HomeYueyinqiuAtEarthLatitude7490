@@ -1,0 +1,17 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "my-git-add-commit"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "message",
+      "Suggester": {
+        "$type": "ArgumentSuggesterEmpty"
+      }
+    }
+  ],
+  "Description": "stage all files, including untracked ones, and commit",
+  "ExtraArguments": false
+}

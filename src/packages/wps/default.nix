@@ -23,6 +23,6 @@
   '';
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

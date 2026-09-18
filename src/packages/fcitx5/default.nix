@@ -31,6 +31,6 @@
     fcitx5.waylandFrontend = true;
   };
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

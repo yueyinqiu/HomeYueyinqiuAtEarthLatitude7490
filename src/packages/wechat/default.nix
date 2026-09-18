@@ -24,6 +24,6 @@
   '';
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

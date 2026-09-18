@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "podman"
+    }
+  ],
+  "Description": "run podman, a daemonless container engine that lets you manage containers, pods, and images",
+  "ExtraArguments": true
+}

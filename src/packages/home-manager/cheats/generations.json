@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "home-manager"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "generations"
+    }
+  ],
+  "Description": "list all home-manager environment generations",
+  "ExtraArguments": false
+}

@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "trash-put"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "file",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-targets.cs"
+      }
+    }
+  ],
+  "Description": "move file or directory to trash",
+  "ExtraArguments": false
+}

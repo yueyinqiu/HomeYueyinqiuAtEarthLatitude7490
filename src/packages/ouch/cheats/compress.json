@@ -1,0 +1,30 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "ouch"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "compress"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "target",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-targets.cs"
+      }
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "output",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "compress-suggest-outputs.cs"
+      }
+    }
+  ],
+  "Description": "compress files or directory into archive",
+  "ExtraArguments": false
+}

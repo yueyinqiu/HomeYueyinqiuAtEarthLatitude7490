@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "my-proxies-with"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "proxy",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-proxies.cs"
+      }
+    }
+  ],
+  "Description": "run command with proxy environment variables set for the selected proxy instance",
+  "ExtraArguments": true
+}

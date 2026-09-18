@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 
   home.packages = with pkgs; [

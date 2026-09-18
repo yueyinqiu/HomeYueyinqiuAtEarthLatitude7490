@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nb"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "sync"
+    }
+  ],
+  "Description": "sync the current nb notebook",
+  "ExtraArguments": false
+}

@@ -3,6 +3,6 @@
     mpv
   ];
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

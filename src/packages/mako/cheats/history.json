@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "makoctl"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "history"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-j"
+    }
+  ],
+  "Description": "view recent mako notification history",
+  "ExtraArguments": false
+}

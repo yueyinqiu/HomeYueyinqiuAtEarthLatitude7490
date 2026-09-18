@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "flatpak"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "run"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "com.tencent.wemeet"
+    }
+  ],
+  "Description": "run wemeet, namely, Tencent video conferencing",
+  "ExtraArguments": false
+}

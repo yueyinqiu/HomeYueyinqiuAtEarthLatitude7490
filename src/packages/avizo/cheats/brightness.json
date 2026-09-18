@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "lightctl"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "direction",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "up-or-down.cs"
+      }
+    }
+  ],
+  "Description": "adjust screen brightness with avizo notification",
+  "ExtraArguments": false
+}

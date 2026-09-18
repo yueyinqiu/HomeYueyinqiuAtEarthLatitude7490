@@ -1,5 +1,0 @@
-{ ... }: {
-  imports = [
-    ./find-family.nix
-  ];
-}

@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "code"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "target",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-targets.cs"
+      }
+    }
+  ],
+  "Description": "open a file or folder with vscode",
+  "ExtraArguments": false
+}

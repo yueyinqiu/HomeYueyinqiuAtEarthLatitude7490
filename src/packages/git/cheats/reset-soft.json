@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "git"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "reset"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "--soft"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "HEAD~1"
+    }
+  ],
+  "Description": "soft undo last commit, keeping all changes staged",
+  "ExtraArguments": false
+}

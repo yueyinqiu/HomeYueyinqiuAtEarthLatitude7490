@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "obs"
+    }
+  ],
+  "Description": "run obs-studio, a software designed for capturing, compositing, encoding, recording, and streaming video content, efficiently",
+  "ExtraArguments": false
+}

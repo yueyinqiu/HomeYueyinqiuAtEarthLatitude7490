@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "dotnet"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "run"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "script",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-cs.cs"
+      }
+    }
+  ],
+  "Description": "run a dotnet file-based app",
+  "ExtraArguments": false
+}

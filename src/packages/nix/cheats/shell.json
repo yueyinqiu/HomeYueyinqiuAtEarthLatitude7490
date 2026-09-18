@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nix"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "shell"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "package",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-packages.cs"
+      }
+    }
+  ],
+  "Description": "try a nix package",
+  "ExtraArguments": false
+}

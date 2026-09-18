@@ -1,0 +1,17 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "my-fontconfig-find-family"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "keyword",
+      "Suggester": {
+        "$type": "ArgumentSuggesterEmpty"
+      }
+    }
+  ],
+  "Description": "list all available installed fonts matching a search keyword",
+  "ExtraArguments": false
+}

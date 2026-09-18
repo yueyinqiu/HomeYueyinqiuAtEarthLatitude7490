@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "opencode"
+    }
+  ],
+  "Description": "start a new opencode interactive session",
+  "ExtraArguments": false
+}

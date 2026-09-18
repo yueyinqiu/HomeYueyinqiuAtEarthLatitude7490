@@ -3,6 +3,6 @@
   home.file."udiskie".source = config.lib.file.mkOutOfStoreSymlink "/run/media/yueyinqiu";
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

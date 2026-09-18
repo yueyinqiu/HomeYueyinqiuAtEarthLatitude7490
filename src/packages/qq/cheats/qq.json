@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "qq"
+    }
+  ],
+  "Description": "run qq, an instant messaging and social platform for PC and mobile users",
+  "ExtraArguments": false
+}

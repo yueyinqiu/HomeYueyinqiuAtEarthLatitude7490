@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "fcitx5-diagnose"
+    }
+  ],
+  "Description": "print fcitx5 diagnostic info for troubleshooting",
+  "ExtraArguments": false
+}

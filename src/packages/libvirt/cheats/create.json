@@ -1,0 +1,46 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "qemu-img"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "create"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-f"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "raw"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-o"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "preallocation=full"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "file",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-file.cs"
+      }
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "size",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-size.cs"
+      }
+    }
+  ],
+  "Description": "create preallocated raw disk image for a virtual machine",
+  "ExtraArguments": false
+}

@@ -2,6 +2,6 @@
   services.avizo.enable = true;
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

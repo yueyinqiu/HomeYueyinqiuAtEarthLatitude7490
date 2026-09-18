@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nb"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "remote"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "set"
+    }
+  ],
+  "Description": "set nb sync url",
+  "ExtraArguments": true
+}

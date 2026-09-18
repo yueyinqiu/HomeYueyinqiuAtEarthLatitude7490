@@ -1,5 +1,0 @@
-{ ... }: {
-  imports = [
-    ./bytedance-feishu.nix
-  ];
-}

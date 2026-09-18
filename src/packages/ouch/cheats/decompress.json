@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "ouch"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "decompress"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "file",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-archives.cs"
+      }
+    }
+  ],
+  "Description": "decompress any archive with ouch",
+  "ExtraArguments": false
+}

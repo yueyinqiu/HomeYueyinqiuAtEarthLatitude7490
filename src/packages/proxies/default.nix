@@ -87,7 +87,7 @@ in
     ./bai-piao-ji-chang
     ./pjlab
     ./tongji
-    ./cheats
+    ./cheats.nix
   ];
 
   config = {

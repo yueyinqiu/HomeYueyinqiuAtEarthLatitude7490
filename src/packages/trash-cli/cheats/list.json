@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "trash-list"
+    }
+  ],
+  "Description": "list files in trash",
+  "ExtraArguments": false
+}

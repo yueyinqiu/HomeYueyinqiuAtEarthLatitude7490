@@ -2,6 +2,6 @@
   programs.obs-studio.enable = true;
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

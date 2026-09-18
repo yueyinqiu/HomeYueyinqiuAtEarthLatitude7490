@@ -1,5 +1,0 @@
-{ ... }: {
-  imports = [
-    ./get-address.nix
-  ];
-}

@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "direnv"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "allow"
+    }
+  ],
+  "Description": "grant permission to run the current .envrc in this directory",
+  "ExtraArguments": false
+}

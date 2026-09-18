@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "flatpak"
+    }
+  ],
+  "Description": "run flatpak, a framework for distributing desktop applications across various Linux distributions",
+  "ExtraArguments": true
+}

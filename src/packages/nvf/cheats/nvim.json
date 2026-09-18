@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "nvim"
+    }
+  ],
+  "Description": "neovim, nvim",
+  "ExtraArguments": true
+}

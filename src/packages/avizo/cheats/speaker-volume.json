@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "volumectl"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-u"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "direction",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "up-or-down.cs"
+      }
+    }
+  ],
+  "Description": "toggle speaker mute state with avizo notification",
+  "ExtraArguments": false
+}

@@ -3,6 +3,6 @@
     mindustry-bin.mindustry-bin-160_3
   ];
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

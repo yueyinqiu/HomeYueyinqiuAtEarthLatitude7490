@@ -1,6 +1,6 @@
 { ... }: {
   programs.fuzzel.enable = true;
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

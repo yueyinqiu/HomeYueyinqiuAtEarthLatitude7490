@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "niri"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "msg"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "pick-window"
+    }
+  ],
+  "Description": "pick a niri window with the mouse and print information about it",
+  "ExtraArguments": false
+}

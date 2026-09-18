@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "mpv"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "target",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-files.cs"
+      }
+    }
+  ],
+  "Description": "play a video file with mpv",
+  "ExtraArguments": false
+}
