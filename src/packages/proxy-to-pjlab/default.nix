@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  programs.home-manager-mihomo-manager.instances.to-pjlab = {
+    port = 44911;
+    configuration = ./config;
+  };
+
   home.packages = [
     (pkgs.writeShellApplication {
       name = "my-proxy-to-pjlab-atrust-up";
