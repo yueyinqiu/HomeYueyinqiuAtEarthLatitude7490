@@ -11,6 +11,11 @@
     port = 10538;
   };
 
+  programs.home-manager-mihomo-manager.instances.for-firefox = {
+    port = 37260;
+    configuration = ./proxy-config;
+  };
+
   home.packages = [
     (pkgs.writeShellApplication {
       name = "f";
