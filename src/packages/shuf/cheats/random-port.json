@@ -1,0 +1,26 @@
+{
+    "Description": "shuf; port; random; generate",
+    "Command": [
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "shuf"
+        },
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "-i"
+        },
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "10000-65535"
+        },
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "-n"
+        },
+        {
+            "$type": "CommandTokenLiteral",
+            "Value": "1"
+        }
+    ],
+    "ExtraArguments": false
+}

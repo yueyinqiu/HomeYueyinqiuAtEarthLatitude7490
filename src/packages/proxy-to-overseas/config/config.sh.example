@@ -8,15 +8,15 @@
 # . for the instance's own configuration files
 
 if [ -z "$(find "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" -mtime -30)" ]; then
-    curl -L -H "User-Agent: flclash" \
-        --output "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
-        https://vx.yeshayun.com/
+  curl -L -H "User-Agent: flclash" \
+    --output "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
+    https://vx.yeshayun.com/
 fi
 
-if [ -z "$(find "$STATE_DIRECTORY/origin-bpc.yaml" -mtime -30)" ]; then
-    curl -L -H "User-Agent: flclash" \
-        --output "$STATE_DIRECTORY/origin-bpc.yaml" \
-        https://baipiaoyes.top/
+if [ -z "$(find "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" -mtime -30)" ]; then
+  curl -L -H "User-Agent: flclash" \
+    --output "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" \
+    https://baipiaoyes.top/
 fi
 
 "$MMMM" \
