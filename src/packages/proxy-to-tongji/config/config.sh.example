@@ -23,6 +23,6 @@ proxies:
     type: ssh
     server: 10.126.126.3
     port: 22
-    username: yueyi
+    username: yueyinqiu
     private-key: "$STATE_DIRECTORY/easytier-ssh-key"
 EOF
