@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "resume a specific opencode session",
+  "Description": "opencode; resume; session",
   "ExtraArguments": false
 }

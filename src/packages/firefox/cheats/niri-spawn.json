@@ -25,6 +25,6 @@
       "Value": "firefox"
     }
   ],
-  "Description": "spawn firefox via niri, detached from current shell",
+  "Description": "firefox; niri; spawn",
   "ExtraArguments": false
 }

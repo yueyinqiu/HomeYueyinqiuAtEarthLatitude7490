@@ -5,6 +5,6 @@
       "Value": "opencode"
     }
   ],
-  "Description": "start a new opencode interactive session",
+  "Description": "opencode; start",
   "ExtraArguments": false
 }

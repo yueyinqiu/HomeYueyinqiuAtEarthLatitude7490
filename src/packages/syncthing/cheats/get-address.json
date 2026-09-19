@@ -25,6 +25,6 @@
       "Value": "get"
     }
   ],
-  "Description": "get the address of syncthing web ui",
+  "Description": "syncthing; gui; address",
   "ExtraArguments": false
 }

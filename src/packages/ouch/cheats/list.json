@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "list contents of an archive without extracting",
+  "Description": "ouch; list; archive",
   "ExtraArguments": false
 }

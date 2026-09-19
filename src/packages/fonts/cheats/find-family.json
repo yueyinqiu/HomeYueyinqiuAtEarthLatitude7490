@@ -12,6 +12,6 @@
       }
     }
   ],
-  "Description": "list all available installed fonts matching a search keyword",
+  "Description": "font; family; find",
   "ExtraArguments": false
 }

@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "start a virtual machine",
+  "Description": "libvirt; virsh; start",
   "ExtraArguments": false
 }

@@ -13,6 +13,6 @@
       "Value": "toggle-mute"
     }
   ],
-  "Description": "toggle microphone mute state with avizo notification",
+  "Description": "avizo; microphone; mute",
   "ExtraArguments": false
 }

@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "open mihomo-tui dashboard, connecting to the selected proxy instance",
+  "Description": "proxy; mihomo; dashboard; tui",
   "ExtraArguments": false
 }

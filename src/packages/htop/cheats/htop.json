@@ -5,6 +5,6 @@
       "Value": "htop"
     }
   ],
-  "Description": "run htop, a cross-platform interactive process viewer",
+  "Description": "htop; process; monitor",
   "ExtraArguments": false
 }

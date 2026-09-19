@@ -12,6 +12,6 @@
       }
     }
   ],
-  "Description": "stage all files, including untracked ones, and commit",
+  "Description": "git; add; commit",
   "ExtraArguments": false
 }

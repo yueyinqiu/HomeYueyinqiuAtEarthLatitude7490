@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "force power off a virtual machine",
+  "Description": "libvirt; virsh; destroy; poweroff",
   "ExtraArguments": false
 }

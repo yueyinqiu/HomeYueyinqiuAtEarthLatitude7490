@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "run a dotnet file-based app",
+  "Description": "dotnet; run; csharp",
   "ExtraArguments": false
 }

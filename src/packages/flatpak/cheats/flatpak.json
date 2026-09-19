@@ -5,6 +5,6 @@
       "Value": "flatpak"
     }
   ],
-  "Description": "run flatpak, a framework for distributing desktop applications across various Linux distributions",
+  "Description": "flatpak",
   "ExtraArguments": true
 }

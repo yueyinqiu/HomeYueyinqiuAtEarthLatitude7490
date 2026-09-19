@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "play a video file with mpv",
+  "Description": "mpv; video; play",
   "ExtraArguments": false
 }

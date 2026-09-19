@@ -9,6 +9,6 @@
       "Value": "status"
     }
   ],
-  "Description": "check direnv status and currently loaded environment variables",
+  "Description": "direnv; status",
   "ExtraArguments": false
 }

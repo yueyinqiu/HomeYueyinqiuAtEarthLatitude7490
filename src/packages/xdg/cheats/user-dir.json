@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "print the absolute path of an xdg user directory",
+  "Description": "xdg; user-dir",
   "ExtraArguments": false
 }

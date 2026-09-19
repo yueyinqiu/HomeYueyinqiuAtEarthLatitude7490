@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "edit a note in the current nb notebook",
+  "Description": "nb; edit; note",
   "ExtraArguments": false
 }

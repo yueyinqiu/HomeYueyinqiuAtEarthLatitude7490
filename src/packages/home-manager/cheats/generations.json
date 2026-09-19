@@ -9,6 +9,6 @@
       "Value": "generations"
     }
   ],
-  "Description": "list all home-manager environment generations",
+  "Description": "home-manager; generations",
   "ExtraArguments": false
 }

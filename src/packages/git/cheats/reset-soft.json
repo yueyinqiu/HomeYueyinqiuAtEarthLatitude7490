@@ -17,6 +17,6 @@
       "Value": "HEAD~1"
     }
   ],
-  "Description": "soft undo last commit, keeping all changes staged",
+  "Description": "git; reset; soft; undo",
   "ExtraArguments": false
 }

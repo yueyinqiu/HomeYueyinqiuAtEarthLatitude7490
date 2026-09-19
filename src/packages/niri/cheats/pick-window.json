@@ -13,6 +13,6 @@
       "Value": "pick-window"
     }
   ],
-  "Description": "pick a niri window with the mouse and print information about it",
+  "Description": "niri; window; pick",
   "ExtraArguments": false
 }

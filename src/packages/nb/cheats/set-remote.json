@@ -13,6 +13,6 @@
       "Value": "set"
     }
   ],
-  "Description": "set nb sync url",
+  "Description": "nb; remote; url",
   "ExtraArguments": true
 }

@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "move file or directory to trash",
+  "Description": "trash; put; delete",
   "ExtraArguments": false
 }

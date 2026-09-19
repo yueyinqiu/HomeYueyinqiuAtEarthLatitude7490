@@ -5,6 +5,6 @@
       "Value": "trash-list"
     }
   ],
-  "Description": "list files in trash",
+  "Description": "trash; list",
   "ExtraArguments": false
 }

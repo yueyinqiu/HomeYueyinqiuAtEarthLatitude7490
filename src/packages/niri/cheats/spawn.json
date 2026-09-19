@@ -21,6 +21,6 @@
       "Value": "--"
     }
   ],
-  "Description": "spawn command inside active niri session",
+  "Description": "niri; spawn",
   "ExtraArguments": true
 }

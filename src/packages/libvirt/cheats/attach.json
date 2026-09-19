@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "attach GUI viewer to a running domain",
+  "Description": "libvirt; virt-viewer; attach",
   "ExtraArguments": false
 }

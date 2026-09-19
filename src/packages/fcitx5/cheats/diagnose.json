@@ -5,6 +5,6 @@
       "Value": "fcitx5-diagnose"
     }
   ],
-  "Description": "print fcitx5 diagnostic info for troubleshooting",
+  "Description": "fcitx5; diagnose",
   "ExtraArguments": false
 }

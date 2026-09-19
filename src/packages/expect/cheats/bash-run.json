@@ -5,6 +5,6 @@
       "Value": "my-expect-bash-run"
     }
   ],
-  "Description": "execute a command and leave the interactive bash session open",
+  "Description": "expect; bash; interactive",
   "ExtraArguments": true
 }

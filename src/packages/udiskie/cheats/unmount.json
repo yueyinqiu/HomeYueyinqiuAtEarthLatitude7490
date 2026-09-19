@@ -21,6 +21,6 @@
       }
     }
   ],
-  "Description": "unmount a disk partition",
+  "Description": "udiskie; udisksctl; unmount",
   "ExtraArguments": false
 }

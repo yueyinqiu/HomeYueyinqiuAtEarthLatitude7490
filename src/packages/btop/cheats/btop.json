@@ -5,6 +5,6 @@
       "Value": "btop"
     }
   ],
-  "Description": "run btop, a resource monitor that shows usage and stats for processor, memory, disks, network and processes",
+  "Description": "btop; performance; cpu; memory",
   "ExtraArguments": false
 }

@@ -5,6 +5,6 @@
       "Value": "steam-run"
     }
   ],
-  "Description": "run steam-run, to run commands in the same FHS environment that is used for Steam",
+  "Description": "steam; fhs; run",
   "ExtraArguments": true
 }

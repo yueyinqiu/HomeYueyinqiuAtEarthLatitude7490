@@ -21,6 +21,6 @@
       }
     }
   ],
-  "Description": "power off a disk device",
+  "Description": "udiskie; udisksctl; poweroff",
   "ExtraArguments": false
 }

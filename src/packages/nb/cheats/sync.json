@@ -9,6 +9,6 @@
       "Value": "sync"
     }
   ],
-  "Description": "sync the current nb notebook",
+  "Description": "nb; sync",
   "ExtraArguments": false
 }

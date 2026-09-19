@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "try a nix package",
+  "Description": "nix; shell; package",
   "ExtraArguments": false
 }

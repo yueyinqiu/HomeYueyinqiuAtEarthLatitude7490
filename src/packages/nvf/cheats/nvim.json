@@ -5,6 +5,6 @@
       "Value": "nvim"
     }
   ],
-  "Description": "neovim, nvim",
+  "Description": "nvim; neovim",
   "ExtraArguments": true
 }

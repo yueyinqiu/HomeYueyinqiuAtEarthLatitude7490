@@ -24,6 +24,6 @@
       }
     }
   ],
-  "Description": "search nixpkgs packages or nixos/home-manager options via search.nixos.org",
+  "Description": "nh; nix; search",
   "ExtraArguments": false
 }

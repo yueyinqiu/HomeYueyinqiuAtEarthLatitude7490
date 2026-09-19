@@ -5,6 +5,6 @@
       "Value": "snavi"
     }
   ],
-  "Description": "run snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support",
+  "Description": "snavi; cheatsheet",
   "ExtraArguments": false
 }

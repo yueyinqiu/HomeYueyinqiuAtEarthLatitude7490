@@ -9,6 +9,6 @@
       "Value": "allow"
     }
   ],
-  "Description": "grant permission to run the current .envrc in this directory",
+  "Description": "direnv; allow; envrc",
   "ExtraArguments": false
 }

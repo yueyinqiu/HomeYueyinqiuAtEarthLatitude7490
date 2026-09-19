@@ -21,6 +21,6 @@
       }
     }
   ],
-  "Description": "copy an installable's closure to an air-gapped nix machine over ssh",
+  "Description": "nix-airgap; airgap; offline; ssh",
   "ExtraArguments": false
 }

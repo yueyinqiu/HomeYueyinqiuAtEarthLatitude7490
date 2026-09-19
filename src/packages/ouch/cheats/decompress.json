@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "decompress any archive with ouch",
+  "Description": "ouch; decompress; extract",
   "ExtraArguments": false
 }

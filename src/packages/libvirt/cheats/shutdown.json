@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "gracefully shutdown a virtual machine",
+  "Description": "libvirt; virsh; shutdown",
   "ExtraArguments": false
 }

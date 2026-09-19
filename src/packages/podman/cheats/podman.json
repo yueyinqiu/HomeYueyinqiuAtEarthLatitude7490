@@ -5,6 +5,6 @@
       "Value": "podman"
     }
   ],
-  "Description": "run podman, a daemonless container engine that lets you manage containers, pods, and images",
+  "Description": "podman; container",
   "ExtraArguments": true
 }

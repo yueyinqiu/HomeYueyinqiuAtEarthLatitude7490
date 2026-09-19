@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "restore a specific file from trash",
+  "Description": "trash; restore; recover",
   "ExtraArguments": false
 }

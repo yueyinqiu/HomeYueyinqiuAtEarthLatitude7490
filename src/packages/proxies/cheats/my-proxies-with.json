@@ -13,6 +13,6 @@
       }
     }
   ],
-  "Description": "run command with proxy environment variables set for the selected proxy instance",
+  "Description": "proxy; with; env",
   "ExtraArguments": true
 }
