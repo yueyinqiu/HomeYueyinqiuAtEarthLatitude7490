@@ -42,6 +42,8 @@
     };
 
     snavi.url = "github:yueyinqiu/Snavi-Nix";
+
+    home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
   };
 
   outputs = inputs: {
@@ -64,6 +66,7 @@
           inputs.nvf.homeManagerModules.default
           inputs.sub-nix.homeManagerModules.sub-nix
           inputs.snavi.homeManagerModules.snavi
+          inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           ./src
         ];
       };
