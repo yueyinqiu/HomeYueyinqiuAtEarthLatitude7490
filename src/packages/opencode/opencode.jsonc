@@ -17,6 +17,10 @@
                 },
                 "deepseek-v4-pro": {
                     "name": "deepseek-v4-pro",
+                    "limit": {
+                        "context": 900000,
+                        "output": 384000
+                    }
                 }
             },
         },
