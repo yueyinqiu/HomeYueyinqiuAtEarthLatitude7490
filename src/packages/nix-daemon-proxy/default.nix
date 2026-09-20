@@ -12,6 +12,11 @@
     port = 26290;
   };
 
+  programs.home-manager-mihomo-manager.instances.for-nix-daemon = {
+    port = 53849;
+    configuration = ./config;
+  };
+
   systemd.user.services.nix-daemon-proxy-auto = {
     Unit = {
       Description = "Set nix-daemon proxy";
