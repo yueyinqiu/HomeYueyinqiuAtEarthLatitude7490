@@ -1,0 +1,18 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "appimage-run"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "appimage",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "suggest-appimage.cs"
+      }
+    }
+  ],
+  "Description": "appimage; fhs; run",
+  "ExtraArguments": false
+}
