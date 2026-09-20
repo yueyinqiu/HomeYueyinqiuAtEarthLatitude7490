@@ -215,11 +215,11 @@
         "sub-nix": "sub-nix"
       },
       "locked": {
-        "lastModified": 1789879614,
-        "narHash": "sha256-9xjF16auagzs49pes20P91z22ORml31b41A0rTKnTx8=",
+        "lastModified": 1789886008,
+        "narHash": "sha256-h5eTGLVvPafB1U+sz9I+usnRuc8ZHwDqHe64QlM1aOk=",
         "owner": "MihomoManager",
         "repo": "HomeManagerMihomoManager",
-        "rev": "fc056a96b21ce2059931c5f4e538c71136b23192",
+        "rev": "4306f466c91780e71cd563762613fae19de45890",
         "type": "github"
       },
       "original": {
@@ -704,11 +704,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1789739866,
+        "lastModified": 1789885971,
         "narHash": "sha256-x8N+noD5nQDcqS8c6wmzT7EZ8sD0OX4yM0MoTrcqNec=",
         "owner": "yueyinqiu",
         "repo": "Snavi-Nix",
-        "rev": "0d4af44526286f55a45d9faf717dacd811db1393",
+        "rev": "e02811aec83030d3cc058998af3393a450ced194",
         "type": "github"
       },
       "original": {
