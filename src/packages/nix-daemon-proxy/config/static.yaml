@@ -1,0 +1,46 @@
+Rules:
+  Delete: []
+  Prepend: []
+  Append:
+    - DOMAIN-SUFFIX,github.com,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,githubusercontent.com,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,gitlab.com,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,web.archive.org,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,nomachine.com,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,googlesource.com,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,cachix.org,home-manager-mihomo-manager-to-overseas
+    - DOMAIN-SUFFIX,corona.studio,home-manager-mihomo-manager-to-overseas
+
+    - DOMAIN-SUFFIX,download.codebuddy.cn,DIRECT
+    - DOMAIN-SUFFIX,elpa.gnu.org,DIRECT
+    - DOMAIN-SUFFIX,roslyn.blob.core.windows.net,DIRECT
+    - DOMAIN-SUFFIX,vsassets.io,DIRECT
+    - DOMAIN-SUFFIX,qq.com,DIRECT
+    - DOMAIN-SUFFIX,pythonhosted.org,DIRECT
+    - DOMAIN-SUFFIX,steampowered.com,DIRECT
+    - DOMAIN-SUFFIX,sourceforge.net,DIRECT
+    - DOMAIN-SUFFIX,sourceforge.net,DIRECT
+    - DOMAIN-SUFFIX,mirror.nju.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,mirrors.tuna.tsinghua.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,mirrors.cernet.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,mirrors.ustc.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,mirrors.cqupt.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,mirror.sjtu.edu.cn,DIRECT
+    - DOMAIN-SUFFIX,nixos.org,DIRECT
+    - DOMAIN-SUFFIX,nuget.org,DIRECT
+    - DOMAIN-SUFFIX,microsoft.com,DIRECT
+    - DOMAIN-SUFFIX,addons.mozilla.org,DIRECT
+    - DOMAIN-SUFFIX,feishucdn.com,DIRECT
+    - DOMAIN-SUFFIX,gitlab.freedesktop.org,DIRECT
+    - DOMAIN-SUFFIX,visualstudio.com,DIRECT
+    - DOMAIN-SUFFIX,wpscdn.cn,DIRECT
+
+    - MATCH,REJECT
+Proxies:
+  Delete: []
+  Prepend: []
+  Append: []
+ProxyGroups:
+  Delete: []
+  Prepend: []
+  Append: []

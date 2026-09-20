@@ -9,5 +9,6 @@
 
 "$MMMM" \
     merge "$HOME_MANAGER_MIHOMO_MANAGER_PROXIES" \
-    merge rules.yaml \
+    js dynamic.js \
+    edit static.yaml \
     save "$OUTPUT_PATH"
