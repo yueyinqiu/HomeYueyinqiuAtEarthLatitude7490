@@ -215,11 +215,11 @@
         "sub-nix": "sub-nix"
       },
       "locked": {
-        "lastModified": 1789886008,
-        "narHash": "sha256-h5eTGLVvPafB1U+sz9I+usnRuc8ZHwDqHe64QlM1aOk=",
+        "lastModified": 1789910102,
+        "narHash": "sha256-B7aNMAJeL80Hlt2kRcyJTTuI4ZeipOYI2KkfOSpLPwE=",
         "owner": "MihomoManager",
         "repo": "HomeManagerMihomoManager",
-        "rev": "4306f466c91780e71cd563762613fae19de45890",
+        "rev": "8af3a59547e773392dbd1c1d07585d3e09dfe81d",
         "type": "github"
       },
       "original": {
@@ -268,11 +268,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1789739359,
-        "narHash": "sha256-6nSirTM6g05RtRmiajDKSHK2KQWdroOVLCFd++l3h9g=",
+        "lastModified": 1789909953,
+        "narHash": "sha256-MiiNWpcVocQoeyjhtLg8s4yRv8ddrfsKbYudYLdKh9s=",
         "owner": "MihomoManager",
         "repo": "MihomoManager.MihomoMixin-Nix",
-        "rev": "daa6735c1defd03bd8d4377577c24f4a777bf29e",
+        "rev": "42286f24f0bace460543ef52666efb4c1886315e",
         "type": "github"
       },
       "original": {
@@ -722,11 +722,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1789814462,
-        "narHash": "sha256-qYtQgVThMbz9M7Ou56rIhAsHJljXeEiz4n71CPrbGcg=",
+        "lastModified": 1789828793,
+        "narHash": "sha256-VMhhBM/M215oBwo/xBJhdk2zXi5r4r1BkJE2b6CMmlA=",
         "owner": "yueyinqiu",
         "repo": "SubNix",
-        "rev": "edfdbb2fc967bc131983276c6c83335dc101fe2a",
+        "rev": "9b0323c766800a010be29d422bde2e50b7fcfdce",
         "type": "github"
       },
       "original": {
