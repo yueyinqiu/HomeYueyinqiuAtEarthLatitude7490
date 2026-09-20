@@ -26,7 +26,7 @@
     };
     Service = {
       Type = "oneshot";
-      ExecStart = "${nur.yueyinqiu.nix-daemon-proxy-client}/bin/NixDaemonProxy.Client socks5 -H 127.0.0.1 -P 26290";
+      ExecStart = "${nur.yueyinqiu.nix-daemon-proxy-client}/bin/NixDaemonProxy.Client socks5 -H 127.0.0.1 -P 53849";
       Restart = "on-failure";
       RestartSec = "5s";
       StartLimitIntervalSec = 300;
