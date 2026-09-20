@@ -1,8 +1,8 @@
 { ... }: {
   programs.snavi.cheats = {
-    "git-add-commit" = {
+    "git-ac" = {
       src = ./cheats;
-      entry = "add-commit.json";
+      entry = "ac.json";
     };
     "git-reset-soft" = {
       src = ./cheats;

@@ -2,7 +2,15 @@
   "Command": [
     {
       "$type": "CommandTokenLiteral",
-      "Value": "my-git-add-commit"
+      "Value": "git"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "ac"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-m"
     },
     {
       "$type": "CommandTokenVariable",

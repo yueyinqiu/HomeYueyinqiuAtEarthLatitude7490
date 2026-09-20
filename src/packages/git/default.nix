@@ -1,21 +1,17 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs.git = {
     enable = true;
-    settings.user = {
-      name = "yueyinqiu";
-      email = "yueyinqiu@outlook.com";
+    settings = {
+      user = {
+        name = "yueyinqiu";
+        email = "yueyinqiu@outlook.com";
+      };
+      alias = {
+        ac = "!git add -A && git commit";
+      };
     };
     lfs.enable = true;
   };
-
-  home.packages = [
-    (pkgs.writeShellApplication {
-      name = "my-git-add-commit";
-      text = ''
-        git add -A && git commit -m "''$1"
-      '';
-    })
-  ];
 
   imports = [
     ./cheats.nix
