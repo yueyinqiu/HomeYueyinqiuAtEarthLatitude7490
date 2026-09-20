@@ -101,7 +101,6 @@ in
 
     home.packages = [
       pkgs.mihomo
-      mixin
       tui
 
       (pkgs.writeShellApplication {
