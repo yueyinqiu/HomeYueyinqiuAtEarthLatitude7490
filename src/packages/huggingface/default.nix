@@ -28,4 +28,9 @@
     ];
     port = 52095;
   };
+
+  programs.home-manager-mihomo-manager.instances.for-huggingface = {
+    port = 51879;
+    configuration = ./config;
+  };
 }
