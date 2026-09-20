@@ -6,6 +6,7 @@
         name = "yueyinqiu";
         email = "yueyinqiu@outlook.com";
       };
+      pull.rebase = true;
       alias = {
         ac = "!git add -A && git commit";
       };
