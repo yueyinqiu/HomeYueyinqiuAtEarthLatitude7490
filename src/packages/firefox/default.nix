@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   programs.firefox.enable = true;
-  
+
   programs.home-manager-mihomo-manager.instances.for-firefox = {
     port = 37260;
-    configuration = ./proxy-config;
+    configuration = ./proxy;
   };
 
   home.packages = [
