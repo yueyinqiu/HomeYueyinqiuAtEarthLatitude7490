@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "home-manager-mihomo-manager"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "tui"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "proxy",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-proxies.cs"
+      }
+    }
+  ],
+  "Description": "proxy; mihomo; dashboard; tui",
+  "ExtraArguments": false
+}
