@@ -13,9 +13,7 @@
                         "output": 384000
                     },
                     "options": {
-                        "thinking": {
-                            "type": "disabled"
-                        }
+                        "reasoning_effort": "low"
                     }
                 }
             },
