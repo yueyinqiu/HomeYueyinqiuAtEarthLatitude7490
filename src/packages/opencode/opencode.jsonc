@@ -13,7 +13,7 @@
                         "output": 384000
                     },
                     "options": {
-                        "reasoning_effort": "low"
+                        "reasoningEffort": "low"
                     }
                 }
             },
