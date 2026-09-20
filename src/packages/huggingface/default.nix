@@ -21,14 +21,6 @@
     })
   ];
 
-  my.proxies.for-huggingface = {
-    files = [
-      ./proxy/config.sh.example
-      ./proxy/rules.yaml
-    ];
-    port = 52095;
-  };
-
   programs.home-manager-mihomo-manager.instances.for-huggingface = {
     port = 51879;
     configuration = ./config;
