@@ -107,8 +107,7 @@
     statusline = {
       lualine = {
         enable = true;
-        theme = "auto";
-
+        setupOpts.options.theme = "auto";
         integrations.breadcrumbs = {
           vanilla.enable = false;
           nvim-navic.enable = true;
