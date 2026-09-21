@@ -6,6 +6,7 @@
     noto-fonts-color-emoji
     corefonts
     nix-wpsoffice-cn.chinese-fonts
+    maple-mono.Normal-NF-CN
 
     (pkgs.writeShellApplication {
       name = "my-fontconfig-find-family";
@@ -25,6 +26,7 @@
     defaultFonts = {
       serif = [ "Noto Serif CJK SC" ];
       sansSerif = [ "Noto Sans CJK SC" ];
+      monospace = [ "Maple Mono Normal NF CN" ];
     };
   };
 
