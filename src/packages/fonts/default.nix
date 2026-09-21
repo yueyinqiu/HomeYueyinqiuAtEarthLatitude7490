@@ -19,13 +19,13 @@
   fonts.fontconfig = {
     enable = true;
 
-    # antialiasing = true;
-    # hinting = "full";
-    # subpixelRendering = "rgb";
+    antialiasing = true;
+    hinting = "full";
+    subpixelRendering = "rgb";
 
     defaultFonts = {
       serif = [ "NSimSun" ];
-      sansSerif = [ "NSimSun" ];
+      sansSerif = [ "Microsoft YaHei" ];
       monospace = [ "NSimSun" ];
     };
   };
