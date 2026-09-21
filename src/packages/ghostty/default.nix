@@ -2,6 +2,7 @@
   programs.ghostty.enable = true;
   programs.ghostty.settings = {
     shell-integration-features = "ssh-env";
+    theme = "dark";
   };
 
   home.packages = [
