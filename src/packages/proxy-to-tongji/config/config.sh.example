@@ -17,6 +17,7 @@ proxy-groups:
     type: select
     proxies:
       - easytier
+      - DIRECT
 
 proxies:
   - name: "easytier"
