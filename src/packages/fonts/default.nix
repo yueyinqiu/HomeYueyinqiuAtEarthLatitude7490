@@ -30,7 +30,7 @@
     };
 
     configFile.yahei-no-ui = {
-      enable = false;
+      enable = true;
       text = ''
         <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
