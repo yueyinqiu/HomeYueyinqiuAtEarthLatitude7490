@@ -25,26 +25,8 @@
 
     defaultFonts = {
       serif = [ "NSimSun" ];
-      sansSerif = [ "Microsoft YaHei" ];
+      sansSerif = [ "SimHei" ];
       monospace = [ "NSimSun" ];
-    };
-
-    configFile.yahei-no-ui = {
-      enable = true;
-      text = ''
-        <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
-        <fontconfig>
-          <rejectfont>
-            <glob>*/msyh.ttf</glob>
-            <glob>*/msyhbd.ttf</glob>
-          </rejectfont>
-          <match target="pattern">
-            <test name="family"><string>Microsoft YaHei UI</string></test>
-            <edit name="family" mode="assign"><string>Microsoft YaHei</string></edit>
-          </match>
-        </fontconfig>
-      '';
     };
   };
 
