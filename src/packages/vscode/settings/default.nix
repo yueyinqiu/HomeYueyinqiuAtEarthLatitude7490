@@ -62,7 +62,6 @@
 
       "window.restoreWindows" = "none";
 
-      # --- misc ---
       "chat.disableAIFeatures" = true;
       "direnv.watchForChanges" = false;
       "json.schemaDownload.trustedDomains" = {
