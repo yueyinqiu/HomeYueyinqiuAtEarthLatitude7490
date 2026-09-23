@@ -1,48 +1,18 @@
 {
   inputs = {
-    os = {
-      url = "github:yueyinqiu/NixosEarthLatitude7490";
-    };
-    nixpkgs = {
-      follows = "os/nixpkgs";
-    };
-    NixVirt = {
-      follows = "os/NixVirt";
-    };
-    nur = {
-      follows = "os/nur";
-    };
+    os.url = "github:yueyinqiu/NixosEarthLatitude7490";
+    nixpkgs.follows = "os/nixpkgs";
+    NixVirt.follows = "os/NixVirt";
+    nur.follows = "os/nur";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-    };
-
-    flatpaks = {
-      url = "github:in-a-dil-emma/declarative-flatpak/latest";
-    };
-
-    nix-wpsoffice-cn = {
-      url = "github:Beriholic/nix-wpsoffice-cn";
-    };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-    };
-
-    mindustry-bin = {
-      url = "github:yueyinqiu/MindustryBinNix";
-    };
-    
-    nix-airgap = {
-      url = "github:bitbloxhub/nix-airgap";
-    };
-
-    sub-nix = {
-      url = "github:yueyinqiu/SubNix";
-    };
-
+    home-manager.url = "github:nix-community/home-manager/master";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
+    nix-wpsoffice-cn.url = "github:Beriholic/nix-wpsoffice-cn";
+    nvf.url = "github:notashelf/nvf";
+    mindustry-bin.url = "github:yueyinqiu/MindustryBinNix";
+    nix-airgap.url = "github:bitbloxhub/nix-airgap";
+    sub-nix.url = "github:yueyinqiu/SubNix";
     snavi.url = "github:yueyinqiu/Snavi-Nix";
-
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
   };
 
