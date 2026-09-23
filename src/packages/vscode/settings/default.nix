@@ -9,6 +9,14 @@
 
     userSettings = {
       "workbench.colorTheme" = "Visual Studio 2019 Dark (Extracted From C# Extension)";
+      "editor.semanticTokenColorCustomizations" = {
+        "[Visual Studio 2019 Dark (Extracted From C# Extension)]" = {
+          rules = {
+            "builtinConstant:python" = "#569CD6";
+          };
+        };
+      };
+      
       "workbench.activityBar.location" = "top";
       "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
@@ -23,13 +31,6 @@
       "editor.largeFileOptimizations" = false;
       "editor.minimap.autohide" = "mouseover";
       "editor.minimap.enabled" = false;
-      "editor.semanticTokenColorCustomizations" = {
-        "[Visual Studio 2019 Dark (Extracted From C# Extension)]" = {
-          rules = {
-            "builtinConstant:python" = "#569CD6";
-          };
-        };
-      };
       "workbench.editor.enablePreview" = false;
       "workbench.tree.enableStickyScroll" = false;
       "diffEditor.ignoreTrimWhitespace" = false;
