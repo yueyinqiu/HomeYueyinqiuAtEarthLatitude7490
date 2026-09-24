@@ -1,10 +1,18 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+let
+  firefox = pkgs.writeShellApplication {
+    name = "firefox";
+    text = ''
+      exec niri msg action spawn -- firefox "$@"
+    '';
+  };
+in
+{
   home.packages = [
     (pkgs.symlinkJoin {
       name = "wechat-fcitx-fake-xdg";
       paths = [ pkgs.wechat ];
       buildInputs = [ pkgs.makeWrapper ];
-
       # https://zhuanlan.zhihu.com/p/2051087997395808628
       postBuild = ''
         wrapProgram $out/bin/wechat \
@@ -14,7 +22,8 @@
           --set GTK_IM_MODULE "fcitx" \
           --set QT_IM_MODULE "fcitx" \
           --set XMODIFIERS "@im=fcitx" \
-          --set XDG_CONFIG_HOME "${config.xdg.configHome}/wechat-fake-xdg"
+          --set XDG_CONFIG_HOME "${config.xdg.configHome}/wechat-fake-xdg" \
+          --prefix PATH : "${firefox}/bin"
       '';
     })
   ];
@@ -22,9 +31,6 @@
   xdg.configFile."wechat-fake-xdg/user-dirs.dirs".text = ''
     XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wechat-fake-xdg/Documents"
   '';
-
-  xdg.configFile."wechat-fake-xdg/mozilla".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/mozilla";
 
   imports = [
     ./cheats.nix
