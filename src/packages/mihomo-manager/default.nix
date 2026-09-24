@@ -5,7 +5,7 @@
     (pkgs.writeShellApplication {
       name = "m";
       text = ''
-        exec home-manager-mihomo-manager "$@"
+        exec mihomo-manager "$@"
       '';
     })
   ];

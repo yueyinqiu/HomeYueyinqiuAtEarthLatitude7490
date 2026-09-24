@@ -2,11 +2,11 @@
   "Command": [
     {
       "$type": "CommandTokenLiteral",
-      "Value": "home-manager-mihomo-manager"
+      "Value": "mihomo-manager"
     },
     {
       "$type": "CommandTokenLiteral",
-      "Value": "tui"
+      "Value": "with"
     },
     {
       "$type": "CommandTokenVariable",
@@ -17,6 +17,6 @@
       }
     }
   ],
-  "Description": "proxy; mihomo; dashboard; tui",
-  "ExtraArguments": false
+  "Description": "proxy; with; env",
+  "ExtraArguments": true
 }
