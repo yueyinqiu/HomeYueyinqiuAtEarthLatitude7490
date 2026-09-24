@@ -1,7 +1,8 @@
 {
   config,
   ...
-}: {
+}:
+{
   imports = [
     ./cheats.nix
   ];

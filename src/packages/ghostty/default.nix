@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.ghostty.enable = true;
   programs.ghostty.settings = {
     shell-integration-features = "ssh-env";

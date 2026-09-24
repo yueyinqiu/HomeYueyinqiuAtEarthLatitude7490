@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.firefox.enable = true;
 
   programs.home-manager-mihomo-manager.instances.for-firefox = {

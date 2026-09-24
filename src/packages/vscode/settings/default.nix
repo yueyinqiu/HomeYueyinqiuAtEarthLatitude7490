@@ -16,7 +16,7 @@
           };
         };
       };
-      
+
       "workbench.activityBar.location" = "top";
       "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
