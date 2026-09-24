@@ -18,19 +18,11 @@ class Suggester : SnaviArgumentSuggester
     )
     {
         var output = await Cli.Wrap("tmux")
-            .WithArguments(["list-sessions", "-F", "#{session_name}:#{session_windows}"])
+            .WithArguments(["list-sessions", "-F", "#{session_name}"])
             .ExecuteBufferedAsync(cancellationToken);
         foreach (var line in output.StandardOutput.Split('\n', StringSplitOptions.RemoveEmptyEntries))
         {
-            var name = line;
-            var description = "";
-            var colon = line.LastIndexOf(':');
-            if (colon >= 0)
-            {
-                name = line[..colon];
-                description = line[(colon + 1)..] + " windows";
-            }
-            yield return (name, description);
+            yield return (line, "");
         }
     }
 }

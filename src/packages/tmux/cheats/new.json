@@ -9,6 +9,10 @@
       "Value": "new-session"
     },
     {
+      "$type": "CommandTokenLiteral",
+      "Value": "-s"
+    },
+    {
       "$type": "CommandTokenVariable",
       "Name": "name",
       "Suggester": {
