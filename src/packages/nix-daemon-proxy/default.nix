@@ -4,7 +4,7 @@
     nur.yueyinqiu.nix-daemon-proxy-client
   ];
 
-  programs.home-manager-mihomo-manager.instances.for-nix-daemon = {
+  home-manager-mihomo-manager.instances.for-nix-daemon = {
     port = 53849;
     configuration = ./config;
   };

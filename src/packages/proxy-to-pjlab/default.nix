@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.home-manager-mihomo-manager.instances.to-pjlab = {
+  home-manager-mihomo-manager.instances.to-pjlab = {
     port = 44911;
     configuration = ./config;
   };

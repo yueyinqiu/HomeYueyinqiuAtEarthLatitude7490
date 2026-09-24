@@ -9,6 +9,10 @@
       "Value": "kill-session"
     },
     {
+      "$type": "CommandTokenLiteral",
+      "Value": "-t"
+    },
+    {
       "$type": "CommandTokenVariable",
       "Name": "session",
       "Suggester": {
