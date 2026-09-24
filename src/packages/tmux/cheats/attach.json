@@ -1,0 +1,22 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "tmux"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "attach-session"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "session",
+      "Suggester": {
+        "$type": "ArgumentSuggesterCsharp",
+        "ScriptPath": "list-sessions.cs"
+      }
+    }
+  ],
+  "Description": "tmux; attach-session; attach",
+  "ExtraArguments": false
+}

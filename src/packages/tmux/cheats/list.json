@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "tmux"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "list-sessions"
+    }
+  ],
+  "Description": "tmux; list-sessions; ls",
+  "ExtraArguments": false
+}

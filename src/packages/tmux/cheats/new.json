@@ -1,0 +1,21 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "tmux"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "new-session"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "name",
+      "Suggester": {
+        "$type": "ArgumentSuggesterEmpty"
+      }
+    }
+  ],
+  "Description": "tmux; new-session; create",
+  "ExtraArguments": false
+}
