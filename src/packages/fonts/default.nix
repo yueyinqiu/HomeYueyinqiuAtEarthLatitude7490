@@ -25,7 +25,7 @@
 
     defaultFonts = {
       serif = [ "NSimSun" ];
-      sansSerif = [ "SimHei" ];
+      sansSerif = [ "Microsoft YaHei" ];
       monospace = [ "NSimSun" ];
     };
   };
