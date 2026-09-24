@@ -13,5 +13,6 @@
     "python.analysis.typeCheckingMode" = "standard";
     "python.terminal.activateEnvironment" = false;
     "flake8.enabled" = false;
+    "debugpy.debugJustMyCode" = false;
   };
 }

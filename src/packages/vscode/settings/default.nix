@@ -54,7 +54,6 @@
 
       "debug.inlineValues" = "off";
       "debug.terminal.clearBeforeReusing" = true;
-      "debugpy.debugJustMyCode" = false;
 
       "terminal.integrated.enablePersistentSessions" = false;
       "terminal.integrated.initialHint" = false;
@@ -65,17 +64,6 @@
 
       "chat.disableAIFeatures" = true;
       "direnv.watchForChanges" = false;
-      "json.schemaDownload.trustedDomains" = {
-        "https://developer.microsoft.com/json-schemas/" = true;
-        "https://json-schema.org/" = true;
-        "https://json.schemastore.org/" = true;
-        "https://models.dev/model-schema.json" = true;
-        "https://opencode.ai/config.json" = true;
-        "https://raw.githubusercontent.com/devcontainers/spec/" = true;
-        "https://raw.githubusercontent.com/microsoft/vscode/" = true;
-        "https://schemastore.azurewebsites.net/" = true;
-        "https://www.schemastore.org/" = true;
-      };
     };
   };
 }
