@@ -23,6 +23,9 @@
     XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wechat-fake-xdg/Documents"
   '';
 
+  xdg.configFile."wechat-fake-xdg/mozilla".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/mozilla";
+
   imports = [
     ./cheats.nix
   ];
