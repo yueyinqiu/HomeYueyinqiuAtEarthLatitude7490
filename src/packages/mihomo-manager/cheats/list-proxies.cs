@@ -2,6 +2,8 @@
 #:package CliWrap@3.10.4
 
 using System.Runtime.CompilerServices;
+using CliWrap;
+using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
 
 await new Suggester().RunAsync();
@@ -15,10 +17,12 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var proxies = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "home-manager-mihomo-manager");
-        foreach (var directory in new DirectoryInfo(proxies).EnumerateDirectories())
+        var output = await Cli.Wrap("mihomo-manager")
+            .WithArguments(["list"])
+            .ExecuteBufferedAsync(cancellationToken);
+        foreach (var instance in output.StandardOutput.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
         {
-            yield return (directory.Name, "");
+            yield return (instance, "");
         }
     }
 }

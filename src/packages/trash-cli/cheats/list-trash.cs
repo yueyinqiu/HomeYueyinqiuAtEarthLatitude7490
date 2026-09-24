@@ -18,7 +18,7 @@ class Suggester : SnaviArgumentSuggester
     )
     {
         var output = await Cli.Wrap("trash-list").ExecuteBufferedAsync(cancellationToken);
-        foreach (var line in output.StandardOutput.Split(Environment.NewLine))
+        foreach (var line in output.StandardOutput.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
         {
             var columns = line.Split(' ', 3);
             yield return (columns[2], $"{columns[0]} {columns[1]}");

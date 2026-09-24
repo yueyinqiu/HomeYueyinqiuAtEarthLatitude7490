@@ -20,7 +20,8 @@ class Suggester : SnaviArgumentSuggester
         var output = await Cli.Wrap("tmux")
             .WithArguments(["list-sessions", "-F", "#{session_name}"])
             .ExecuteBufferedAsync(cancellationToken);
-        foreach (var line in output.StandardOutput.Split('\n', StringSplitOptions.RemoveEmptyEntries))
+        foreach (var line in output.StandardOutput.Split(
+            Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
         {
             yield return (line, "");
         }
