@@ -1,4 +1,5 @@
 #:package Snavi.ArgumentSuggester@0.0.2
+#:package CliWrap@3.10.4
 
 using System.Runtime.CompilerServices;
 using Snavi.ArgumentSuggester;

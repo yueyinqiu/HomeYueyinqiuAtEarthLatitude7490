@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  programs.home-manager-mihomo-manager.enable = true;
+  home-manager-mihomo-manager.enable = true;
 
   home.packages = [
     (pkgs.writeShellApplication {
