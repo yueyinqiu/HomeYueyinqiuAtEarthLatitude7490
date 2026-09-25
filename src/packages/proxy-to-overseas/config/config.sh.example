@@ -27,7 +27,7 @@ fi
 "$MMMM" \
   merge "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" \
   js prefix-bai-piao-ji-chang.js \
-  js remove-fallback-filter.js \
+  js remove-dns-rules.js \
   save "$TEMP_DIRECTORY/bai-piao-ji-chang.yaml"
 
 "$MMMM" \
