@@ -22,6 +22,7 @@ fi
 "$MMMM" \
   merge "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
   js prefix-ye-sha-yun.js \
+  js remove-dns-rules.js \
   save "$TEMP_DIRECTORY/ye-sha-yun.yaml"
 
 "$MMMM" \
