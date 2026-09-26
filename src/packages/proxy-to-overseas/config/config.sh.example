@@ -13,26 +13,9 @@ if [ -z "$(find "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" -mtime -30)" ]; then
     https://vx.yeshayun.com/
 fi
 
-if [ -z "$(find "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" -mtime -30)" ]; then
-  curl -L -H "User-Agent: flclash" \
-    --output "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" \
-    https://baipiaoyes.top/
-fi
-
 "$MMMM" \
   merge "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
   js prefix-ye-sha-yun.js \
   js remove-dns-rules.js \
-  save "$TEMP_DIRECTORY/ye-sha-yun.yaml"
-
-"$MMMM" \
-  merge "$STATE_DIRECTORY/origin-bai-piao-ji-chang.yaml" \
-  js prefix-bai-piao-ji-chang.js \
-  js remove-dns-rules.js \
-  save "$TEMP_DIRECTORY/bai-piao-ji-chang.yaml"
-
-"$MMMM" \
-  merge "$TEMP_DIRECTORY/ye-sha-yun.yaml" \
-  merge "$TEMP_DIRECTORY/bai-piao-ji-chang.yaml" \
   js to-global.js \
   save "$OUTPUT_PATH"
