@@ -5,6 +5,7 @@ function main(config, log) {
         delete config["dns"]["fake-ip-range"];
         delete config["dns"]["fake-ip-range6"];
         delete config["dns"]["fake-ip-filter"];
+        delete config["dns"]["listen"];
     }
     config["dns"]["enhanced-mode"] = "normal";
     config["dns"]["respect-rules"] = false;
