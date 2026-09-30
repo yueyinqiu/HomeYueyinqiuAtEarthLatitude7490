@@ -1,6 +1,6 @@
 { ... }: {
   programs.snavi.cheats = {
-    "pi-pi" = {
+    "pi-coding-agent-pi" = {
       src = ./cheats;
       entry = "pi.json";
     };
