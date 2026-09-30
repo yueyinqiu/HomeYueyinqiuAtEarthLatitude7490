@@ -1,12 +1,8 @@
 { ... }: {
   programs.snavi.cheats = {
-    "pi-resume" = {
+    "pi-pi" = {
       src = ./cheats;
-      entry = "resume.json";
-    };
-    "pi-start" = {
-      src = ./cheats;
-      entry = "start.json";
+      entry = "pi.json";
     };
   };
 }
