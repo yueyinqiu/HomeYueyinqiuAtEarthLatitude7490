@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "pi"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-r"
+    }
+  ],
+  "Description": "pi; resume; session selector",
+  "ExtraArguments": false
+}

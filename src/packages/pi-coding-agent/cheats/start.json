@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "pi"
+    }
+  ],
+  "Description": "pi; start",
+  "ExtraArguments": false
+}
