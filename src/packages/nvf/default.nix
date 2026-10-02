@@ -9,15 +9,6 @@
     ./cheats.nix
   ];
 
-  home.packages = [
-    (pkgs.writeShellApplication {
-      name = "v";
-      text = ''
-        exec nvim "$@"
-      '';
-    })
-  ];
-
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
