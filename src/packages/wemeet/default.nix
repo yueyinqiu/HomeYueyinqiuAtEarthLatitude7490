@@ -1,6 +1,6 @@
-{ ... }: {
-  services.flatpak.packages = [
-    "flathub:app/com.tencent.wemeet/x86_64/stable"
+{ pkgs, ... }: {
+  home.packages = [
+    pkgs.wemeet
   ];
 
   imports = [
