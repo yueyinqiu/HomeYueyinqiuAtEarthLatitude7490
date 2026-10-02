@@ -11,7 +11,7 @@
     (pkgs.writeShellApplication {
       name = "c";
       text = ''
-        exec niri msg action spawn -- code --working-directory="$PWD"
+        exec niri msg action spawn -- code "$PWD"
       '';
     })
   ];
