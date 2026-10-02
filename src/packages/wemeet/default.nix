@@ -1,8 +1,13 @@
 { pkgs, ... }: {
   home.packages = [
-    (pkgs.wemeet.overrideAttrs (final: prev: {
-      postFixup = (prev.postFixup or "") + "\nrm -f $out/bin/wemeet\nsubstituteInPlace $out/share/applications/wemeetapp.desktop --replace-fail \"Exec=wemeet %u\" \"Exec=wemeet-xwayland %u\"\n";
-    }))
+    (pkgs.symlinkJoin {
+      name = "wemeet-xwayland-only";
+      paths = [ pkgs.wemeet ];
+      postBuild = ''
+        rm -f "$out/bin/wemeet"
+        ln -s wemeet-xwayland "$out/bin/wemeet"
+      '';
+    })
   ];
 
   imports = [
