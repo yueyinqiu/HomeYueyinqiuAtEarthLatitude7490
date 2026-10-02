@@ -2,7 +2,7 @@
   "Command": [
     {
       "$type": "CommandTokenLiteral",
-      "Value": "wemeet"
+      "Value": "wemeet-xwayland"
     }
   ],
   "Description": "wemeet; tencent; meeting",
