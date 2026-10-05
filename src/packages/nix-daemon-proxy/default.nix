@@ -20,9 +20,6 @@
       Type = "oneshot";
       ExecStart = "/run/current-system/sw/bin/nix-daemon-proxy socks5 -H 127.0.0.1 -P 53849";
       Restart = "on-failure";
-      RestartSec = "5s";
-      StartLimitIntervalSec = 300;
-      StartLimitBurst = 60;
     };
   };
 }
