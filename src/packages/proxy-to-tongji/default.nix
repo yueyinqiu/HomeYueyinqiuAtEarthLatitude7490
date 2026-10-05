@@ -5,7 +5,7 @@
     configuration = ./config;
   };
 
-  systemd.user.services.easytier-tongji = {
+  systemd.user.services.easytier-tongji-proxy = {
     Unit = {
       Description = "EasyTier network for Tongji proxy";
       After = [ "network-online.target" ];
@@ -15,8 +15,8 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      EnvironmentFile = "${config.xdg.configHome}/home-manager-mihomo-manager/to-tongji/easytier.env";
-      ExecStart = "${pkgs.easytier}/bin/easytier-core -c ${./easytier-config.toml}";
+      EnvironmentFile = "${config.xdg.configHome}/home-manager-mihomo-manager/to-tongji/easytier-tongji-proxy.env";
+      ExecStart = "${pkgs.easytier}/bin/easytier-core -c ${./easytier-tongji-proxy.toml}";
       Restart = "on-failure";
     };
   };
