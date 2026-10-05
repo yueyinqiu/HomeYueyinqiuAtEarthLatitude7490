@@ -1,0 +1,17 @@
+socks5_proxy = "socks5://127.0.0.1:@socksPort@"
+
+dhcp = true
+
+[network_identity]
+network_name = "e0ce884a-6dc4-4615-baf4-fbf233686b1e"
+
+[flags]
+no_tun = true
+
+[[acl.acl_v1.chains]]
+name = "block_all_inbound"
+chain_type = 1
+description = ""
+enabled = true
+rules = []
+default_action = 2
