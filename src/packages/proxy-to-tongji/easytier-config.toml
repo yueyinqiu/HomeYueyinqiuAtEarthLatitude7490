@@ -1,4 +1,4 @@
-socks5_proxy = "socks5://127.0.0.1:@socksPort@"
+socks5_proxy = "socks5://127.0.0.1:56509"
 
 dhcp = true
 
