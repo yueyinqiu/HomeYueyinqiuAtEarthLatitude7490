@@ -5,5 +5,6 @@
     ./python.nix
     ./json.nix
     ./csharp.nix
+    ./latex.nix
   ];
 }
