@@ -7,6 +7,8 @@ network_name = "e0ce884a-6dc4-4615-baf4-fbf233686b1e"
 
 [flags]
 no_tun = true
+use_smoltcp = true
+enable_quic_proxy = true
 
 [[acl.acl_v1.chains]]
 name = "block_all_inbound"
