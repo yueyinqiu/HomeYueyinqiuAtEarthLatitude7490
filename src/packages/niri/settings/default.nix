@@ -5,9 +5,6 @@
   ];
 
   wayland.windowManager.niri.settings = {
-    # Preserve the input section from the original config. This is NOT all
-    # niri defaults: it sets touchpad scroll-factor 0.4 (slower/smoother than
-    # the default 1.0) and disables power-key handling.
     input = {
       keyboard = {
         xkb = { };
@@ -22,6 +19,41 @@
       trackpoint = { };
       "disable-power-key-handling" = { };
     };
+
+    layout = {
+      gaps = 16;
+      "center-focused-column" = "never";
+      "preset-column-widths" = {
+        _children = [
+          { proportion = 0.33333; }
+          { proportion = 0.5; }
+          { proportion = 0.66667; }
+        ];
+      };
+      "default-column-width" = { proportion = 0.5; };
+      "focus-ring" = {
+        width = 4;
+        "active-color" = "#7fc8ff";
+        "inactive-color" = "#505050";
+      };
+      border = {
+        off = { };
+        width = 4;
+        "active-color" = "#ffc87f";
+        "inactive-color" = "#505050";
+        "urgent-color" = "#9b0000";
+      };
+      shadow = {
+        softness = 30;
+        spread = 5;
+        offset = { _props = { x = 0; y = 5; }; };
+        "color" = "#0007";
+      };
+      struts = { };
+    };
+
+    "hotkey-overlay" = { };
+    animations = { };
     "screenshot-path" = null;
     "spawn-sh-at-startup" = "${config.xdg.configHome}/niri/spawn-at-startup.sh";
   };
