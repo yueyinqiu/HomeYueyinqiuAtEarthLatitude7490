@@ -3,17 +3,13 @@
     ./settings
     ./cheats.nix
   ];
-  
+
   wayland.windowManager.niri = {
     enable = true;
     package = niri.niri;
     enableDefaultConfig = false;
   };
 
-  xdg.configFile."niri/spawn-at-startup.sh" = {
-    source = ./spawn-at-startup.sh;
-    executable = true;
-  };
 
   services.ssh-agent.enable = true;
 
