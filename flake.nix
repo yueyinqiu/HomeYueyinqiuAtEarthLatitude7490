@@ -6,6 +6,7 @@
     nur.follows = "os/nur";
 
     home-manager.url = "github:nix-community/home-manager/master";
+    niri.url = "github:niri-wm/niri";
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
     nix-wpsoffice-cn.url = "github:Beriholic/nix-wpsoffice-cn";
     nvf.url = "github:notashelf/nvf";
@@ -29,6 +30,7 @@
           nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
           mindustry-bin = inputs.mindustry-bin.packages.${system};
           nix-airgap = inputs.nix-airgap.packages.${system};
+          niri = inputs.niri.packages.${system};
         };
         modules = [
           inputs.NixVirt.homeModules.default
