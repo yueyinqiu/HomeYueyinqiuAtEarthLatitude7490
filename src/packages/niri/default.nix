@@ -30,7 +30,7 @@
   # enabled, so we only need to make the xdg-desktop-portal.service actually
   # start for this user. systemd.user.packages links the unit into
   # ~/.local/share/systemd/user, which systemd --user scans.
-  systemd.user.packages = [ pkgs.xdg-desktop-portal ];
+  # systemd.user.packages = [ pkgs.xdg-desktop-portal ];
 
   home.packages = [
     (pkgs.writeShellApplication {
