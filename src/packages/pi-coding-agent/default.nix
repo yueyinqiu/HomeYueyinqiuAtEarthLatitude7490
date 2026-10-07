@@ -15,8 +15,7 @@
       defaultModel = "deepseek-v4-pro";
       defaultThinkingLevel = "low";
       packages = [
-        "npm:pi-opencode-direct"
-        "npm:pi-opencode-zen"
+        "npm:pi-cn-free-model-providers"
       ];
     };
 
