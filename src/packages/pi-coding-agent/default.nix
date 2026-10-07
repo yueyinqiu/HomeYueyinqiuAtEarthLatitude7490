@@ -37,6 +37,14 @@
               reasoning = true;
               input = [ "text" ];
             }
+            {
+              id = "gpt-5.6-luna";
+              name = "gpt-5.6-luna";
+              contextWindow = 900000;
+              maxTokens = 384000;
+              reasoning = true;
+              input = [ "text" ];
+            }
           ];
         };
       };
