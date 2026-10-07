@@ -1,4 +1,4 @@
-{ pkgs, niri, ... }: {
+{ pkgs, niri, config, ... }: {
   imports = [
     ./settings
     ./cheats.nix
@@ -14,7 +14,7 @@
     (pkgs.writeShellApplication {
       name = "n";
       text = ''
-        exec ${niri.niri}/bin/niri-session
+        exec ${config.wayland.windowManager.niri.package}/bin/niri-session
       '';
     })
   ];
