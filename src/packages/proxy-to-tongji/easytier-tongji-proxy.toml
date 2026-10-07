@@ -1,9 +1,7 @@
 socks5_proxy = "socks5://127.0.0.1:56509"
 
 dhcp = true
-
-[network_identity]
-network_name = "e0ce884a-6dc4-4615-baf4-fbf233686b1e"
+listeners = []
 
 [flags]
 no_tun = true
@@ -17,3 +15,6 @@ description = ""
 enabled = true
 rules = []
 default_action = 2
+
+[network_identity]
+network_name = "e0ce884a-6dc4-4615-baf4-fbf233686b1e"
