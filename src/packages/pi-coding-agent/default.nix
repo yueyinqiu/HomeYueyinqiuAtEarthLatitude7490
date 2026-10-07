@@ -29,6 +29,14 @@
               reasoning = true;
               input = [ "text" ];
             }
+            {
+              id = "deepseek-v4-pro-0813";
+              name = "deepseek-v4-pro-0813";
+              contextWindow = 900000;
+              maxTokens = 384000;
+              reasoning = true;
+              input = [ "text" ];
+            }
           ];
         };
       };
