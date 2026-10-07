@@ -15,7 +15,7 @@
       defaultModel = "deepseek-v4-pro";
       defaultThinkingLevel = "low";
       packages = [
-        "npm:pi-cn-free-model-providers"
+        "git:github.com/icekale/pi-workbuddy-connect"
       ];
     };
 
