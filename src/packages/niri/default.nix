@@ -1,13 +1,13 @@
 { pkgs, niri, ... }: {
+  imports = [
+    ./settings
+    ./cheats.nix
+  ];
+  
   wayland.windowManager.niri = {
     enable = true;
     package = niri.niri;
     enableDefaultConfig = false;
-    settings = {
-      "screenshot-path" = null;
-      "spawn-sh-at-startup" = "$HOME/.config/niri/spawn-at-startup.sh";
-      _children = import ./window-rules.nix;
-    };
   };
 
   xdg.configFile."niri/spawn-at-startup.sh" = {
@@ -24,9 +24,5 @@
         exec ${niri.niri}/bin/niri-session
       '';
     })
-  ];
-  imports = [
-    ./binds.nix
-    ./cheats.nix
   ];
 }
