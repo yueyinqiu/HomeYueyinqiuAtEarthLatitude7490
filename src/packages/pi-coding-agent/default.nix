@@ -7,7 +7,7 @@
     enable = true;
 
     extraPackages = [
-      pkgs.nodejs
+      pkgs.nodejs_latest
     ];
 
     settings = {
