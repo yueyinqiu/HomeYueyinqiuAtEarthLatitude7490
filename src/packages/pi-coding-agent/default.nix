@@ -1,10 +1,14 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./cheats.nix
   ];
 
   programs.pi-coding-agent = {
     enable = true;
+
+    extraPackages = [
+      pkgs.nodejs
+    ];
 
     settings = {
       defaultProvider = "35-220-164-252-3888";
