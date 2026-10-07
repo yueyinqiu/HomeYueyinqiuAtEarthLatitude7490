@@ -10,9 +10,6 @@
     enableDefaultConfig = false;
   };
 
-
-  services.ssh-agent.enable = true;
-
   home.packages = [
     (pkgs.writeShellApplication {
       name = "n";
