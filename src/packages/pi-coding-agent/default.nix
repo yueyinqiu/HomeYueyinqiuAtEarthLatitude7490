@@ -10,6 +10,10 @@
       defaultProvider = "35-220-164-252-3888";
       defaultModel = "deepseek-v4-pro";
       defaultThinkingLevel = "low";
+      packages = [
+        "npm:pi-opencode-direct"
+        "npm:pi-opencode-zen"
+      ];
     };
 
     models = {
