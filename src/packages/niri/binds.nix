@@ -1,7 +1,3 @@
-# Standalone home-manager module: defines the niri key bindings.
-# Imported by default.nix via `imports`. We don't use `enableDefaultConfig`
-# (niri has no "unbind" primitive), so every key must be listed here; to remove
-# a binding, simply delete its entry. Sections are grouped for readability.
 { ... }: {
   wayland.windowManager.niri.settings.binds = {
     # --- Overview / help / quit ---
