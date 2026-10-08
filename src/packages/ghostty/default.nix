@@ -31,7 +31,7 @@ in
 
   xdg.mimeApps = {
     defaultApplications = {
-      "inode/directory" = xdg-open-directory;
+      "inode/directory" = "${xdg-open-directory}.desktop";
     };
   };
 }
