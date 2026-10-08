@@ -4,8 +4,4 @@
     nix-direnv.enable = true;
     enableBashIntegration = true;
   };
-
-  imports = [
-    ./cheats.nix
-  ];
 }

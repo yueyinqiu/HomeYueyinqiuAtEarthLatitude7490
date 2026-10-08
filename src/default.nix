@@ -1,8 +1,4 @@
 { ... }: {
-  imports = [
-    ./packages
-  ];
-
   home.username = "yueyinqiu";
   home.homeDirectory = "/home/yueyinqiu";
 

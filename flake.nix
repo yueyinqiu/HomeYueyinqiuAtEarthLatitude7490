@@ -1,5 +1,7 @@
 {
   inputs = {
+    import-tree.url = "github:denful/import-tree";
+
     os.url = "github:yueyinqiu/NixosEarthLatitude7490";
     nixpkgs.follows = "os/nixpkgs";
     NixVirt.follows = "os/NixVirt";
@@ -39,7 +41,7 @@
           inputs.sub-nix.homeManagerModules.sub-nix
           inputs.snavi.homeManagerModules.snavi
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
-          ./src
+          (inputs.import-tree ./src)
         ];
       };
 
