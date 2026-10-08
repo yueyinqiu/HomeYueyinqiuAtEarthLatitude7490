@@ -17,10 +17,6 @@ in
     })
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
-
   xdg.desktopEntries.${xdg-open-directory} = {
     name = "Ghostty (Open Directory)";
     exec = "${config.programs.ghostty.package}/bin/ghostty --working-directory=%f";

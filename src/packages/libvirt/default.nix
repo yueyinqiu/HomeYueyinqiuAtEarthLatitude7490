@@ -6,10 +6,6 @@
   ...
 }:
 {
-  imports = [
-    ./cheats.nix
-  ];
-
   home.packages = with pkgs; [
     virt-manager
     virt-viewer

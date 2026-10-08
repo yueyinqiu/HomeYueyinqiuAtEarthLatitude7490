@@ -3,7 +3,4 @@
     ouch
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

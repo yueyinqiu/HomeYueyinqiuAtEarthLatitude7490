@@ -3,10 +3,6 @@
   ...
 }:
 {
-  imports = [
-    ./cheats.nix
-  ];
-
   programs.snavi.enable = true;
 
   programs.bash.initExtra = ''

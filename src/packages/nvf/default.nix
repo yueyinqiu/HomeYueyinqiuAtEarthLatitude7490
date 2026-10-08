@@ -4,11 +4,6 @@
   ...
 }:
 {
-  imports = [
-    ./languages
-    ./cheats.nix
-  ];
-
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";

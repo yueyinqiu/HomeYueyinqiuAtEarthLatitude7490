@@ -1,9 +1,4 @@
 { config, ... }: {
-  imports = [
-    ./binds.nix
-    ./window-rules.nix
-  ];
-
   wayland.windowManager.niri.settings = {
     input = {
       keyboard = {

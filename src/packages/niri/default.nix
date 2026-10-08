@@ -5,11 +5,6 @@
   ...
 }:
 {
-  imports = [
-    ./settings
-    ./cheats.nix
-  ];
-
   wayland.windowManager.niri = {
     enable = true;
     package = niri.niri;

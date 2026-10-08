@@ -1,8 +1,4 @@
 { ... }: {
-  imports = [
-    ./cheats.nix
-  ];
-
   programs.tmux = {
     enable = true;
     mouse = true;

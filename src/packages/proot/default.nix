@@ -3,7 +3,4 @@
     proot
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

@@ -30,7 +30,4 @@
     };
   };
 
-  imports = [
-    ./cheats.nix
-  ];
 }

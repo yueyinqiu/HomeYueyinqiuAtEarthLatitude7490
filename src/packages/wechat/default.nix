@@ -32,7 +32,4 @@ in
     XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wechat-fake-xdg/Documents"
   '';
 
-  imports = [
-    ./cheats.nix
-  ];
 }

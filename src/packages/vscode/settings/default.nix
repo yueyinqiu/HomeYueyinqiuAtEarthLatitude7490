@@ -1,9 +1,5 @@
 { ... }:
 {
-  imports = [
-    ./languages
-  ];
-
   programs.vscode.profiles.default = {
     mutableUserSettings = true;
 

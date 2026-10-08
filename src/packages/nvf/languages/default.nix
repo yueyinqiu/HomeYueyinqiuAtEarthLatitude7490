@@ -1,10 +1,4 @@
 { ... }: {
-  imports = [
-    ./csharp
-    ./nix
-    ./python
-  ];
-
   programs.nvf.settings.vim = {
     opts.expandtab = true;
     opts.tabstop = 4;

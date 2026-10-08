@@ -3,7 +3,4 @@
     remmina
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

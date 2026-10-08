@@ -22,7 +22,4 @@
     XDG_DOCUMENTS_DIR="${config.xdg.dataHome}/wps-fake-xdg/Documents"
   '';
 
-  imports = [
-    ./cheats.nix
-  ];
 }

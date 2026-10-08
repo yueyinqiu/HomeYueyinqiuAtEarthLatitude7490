@@ -3,10 +3,6 @@
   ...
 }:
 {
-  imports = [
-    ./cheats.nix
-  ];
-
   home.packages = with pkgs; [
     python314Packages.huggingface-hub
     (writeShellApplication {

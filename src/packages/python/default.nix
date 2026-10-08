@@ -3,7 +3,4 @@
     python314
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

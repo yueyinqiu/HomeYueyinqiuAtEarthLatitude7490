@@ -5,7 +5,4 @@
     podman-compose
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

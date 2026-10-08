@@ -1,8 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ./cheats.nix
-  ];
-
   home.packages = [
     pkgs.flatpak
   ];

@@ -3,10 +3,6 @@ let
   base = "${config.home.homeDirectory}/.xdg";
 in
 {
-  imports = [
-    ./cheats.nix
-  ];
-
   xdg.userDirs = {
     enable = true;
     createDirectories = true;

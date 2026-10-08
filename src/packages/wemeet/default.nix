@@ -10,7 +10,4 @@
     })
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

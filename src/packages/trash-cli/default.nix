@@ -3,7 +3,4 @@
     trash-cli
   ];
 
-  imports = [
-    ./cheats.nix
-  ];
 }

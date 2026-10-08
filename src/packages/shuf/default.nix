@@ -2,7 +2,4 @@
   ...
 }:
 {
-  imports = [
-    ./cheats.nix
-  ];
 }
