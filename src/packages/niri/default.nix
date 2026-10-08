@@ -27,6 +27,7 @@
   };
 
   home.packages = [
+    pkgs.xdg-desktop-portal-gtk
     (pkgs.writeShellApplication {
       name = "n";
       text = ''
