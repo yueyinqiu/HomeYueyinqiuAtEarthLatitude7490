@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }: 
+let 
+  xdg-open-directory = "ghostty-inode-directory";
+in 
+{
   programs.ghostty.enable = true;
   programs.ghostty.settings = {
     shell-integration-features = "ssh-env";
@@ -17,7 +21,7 @@
     ./cheats.nix
   ];
 
-  xdg.desktopEntries."ghostty-inode-directory" = {
+  xdg.desktopEntries.${xdg-open-directory} = {
     name = "Ghostty (Open Directory)";
     exec = "${config.programs.ghostty.package}/bin/ghostty --working-directory=%f";
     mimeType = [ "inode/directory" ];
@@ -27,7 +31,7 @@
 
   xdg.mimeApps = {
     defaultApplications = {
-      "inode/directory" = "ghostty-open-dir.desktop";
+      "inode/directory" = xdg-open-directory;
     };
   };
 }
