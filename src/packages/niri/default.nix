@@ -15,7 +15,9 @@
     package = niri.niri;
     enableDefaultConfig = false;
   };
-
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+  ];
   xdg.portal.config.niri = {
     default = [
       "gnome"
@@ -27,6 +29,7 @@
   };
 
   home.packages = [
+    pkgs.xdg-desktop-portal-gtk
     pkgs.nautilus
     (pkgs.writeShellApplication {
       name = "n";
