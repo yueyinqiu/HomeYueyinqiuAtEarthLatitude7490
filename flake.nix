@@ -1,8 +1,6 @@
 {
   inputs = {
     import-tree.url = "github:denful/import-tree";
-    make-shell.url = "github:nicknovitski/make-shell";
-    flake-parts.url = "github:hercules-ci/flake-parts";
 
     os.url = "github:yueyinqiu/NixosEarthLatitude7490";
     nixpkgs.follows = "os/nixpkgs";
@@ -21,61 +19,36 @@
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        inputs.make-shell.flakeModules.default
-      ];
-
-      systems = [
-        "x86_64-linux"
-      ];
-
-      flake = {
-        homeConfigurations."yueyinqiu@earth-latitude7490" =
-          let
-            system = "x86_64-linux";
-          in
-          inputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = inputs.nixpkgs.legacyPackages.${system};
-            extraSpecialArgs = {
-              nixvirt = inputs.NixVirt;
-              nur = inputs.nur.legacyPackages.${system}.repos;
-              nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
-              mindustry-bin = inputs.mindustry-bin.packages.${system};
-              nix-airgap = inputs.nix-airgap.packages.${system};
-              niri = inputs.niri.packages.${system};
-            };
-            modules = [
-              inputs.NixVirt.homeModules.default
-              inputs.flatpaks.homeModules.default
-              inputs.nvf.homeManagerModules.default
-              inputs.sub-nix.homeManagerModules.sub-nix
-              inputs.snavi.homeManagerModules.snavi
-              inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
-              (inputs.import-tree ./src)
-            ];
-          };
+  outputs = inputs: {
+    homeConfigurations."yueyinqiu@earth-latitude7490" =
+      let
+        system = "x86_64-linux";
+      in
+      inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          nixvirt = inputs.NixVirt;
+          nur = inputs.nur.legacyPackages.${system}.repos;
+          nix-wpsoffice-cn = inputs.nix-wpsoffice-cn.packages.${system};
+          mindustry-bin = inputs.mindustry-bin.packages.${system};
+          nix-airgap = inputs.nix-airgap.packages.${system};
+          niri = inputs.niri.packages.${system};
+        };
+        modules = [
+          inputs.NixVirt.homeModules.default
+          inputs.flatpaks.homeModules.default
+          inputs.nvf.homeManagerModules.default
+          inputs.sub-nix.homeManagerModules.sub-nix
+          inputs.snavi.homeManagerModules.snavi
+          inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
+          (inputs.import-tree ./src)
+        ];
       };
 
-      perSystem =
-        {
-          ...
-        }:
-        {
-          make-shells.default = { pkgs, ... }: {
-            packages = [
-              (import ./dev/packages/dev-diff-vscode {
-                inherit pkgs;
-                name = "dev-diff-vscode";
-              })
-              (import ./dev/packages/dev-switch {
-                inherit pkgs;
-                name = "dev-switch";
-              })
-            ];
-          };
-        };
-    };
+    devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
+      default = import ./dev {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+      };
+    });
+  };
 }
