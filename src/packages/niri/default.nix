@@ -1,4 +1,10 @@
-{ pkgs, niri, config, ... }: {
+{
+  pkgs,
+  niri,
+  config,
+  ...
+}:
+{
   imports = [
     ./settings
     ./cheats.nix
@@ -8,6 +14,16 @@
     enable = true;
     package = niri.niri;
     enableDefaultConfig = false;
+  };
+
+  xdg.portal.config.niri = {
+    default = [
+      "gnome"
+      "gtk"
+    ];
+    "org.freedesktop.impl.portal.Access" = "gtk";
+    "org.freedesktop.impl.portal.FileChooser" = "gtk";
+    "org.freedesktop.impl.portal.Notification" = "gtk";
   };
 
   home.packages = [
