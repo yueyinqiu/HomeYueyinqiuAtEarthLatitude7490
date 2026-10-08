@@ -17,18 +17,15 @@
     ./cheats.nix
   ];
 
-  xdg.desktopEntries."ghostty-open-dir" = {
+  xdg.desktopEntries."ghostty-inode-directory" = {
     name = "Ghostty (Open Directory)";
     exec = "${config.programs.ghostty.package}/bin/ghostty --working-directory=%f";
-    icon = "com.mitchellh.ghostty";
     mimeType = [ "inode/directory" ];
-    categories = [ "System" "TerminalEmulator" ];
     noDisplay = true;
     terminal = false;
   };
 
   xdg.mimeApps = {
-    enable = true;
     defaultApplications = {
       "inode/directory" = "ghostty-open-dir.desktop";
     };
