@@ -16,18 +16,16 @@
     enableDefaultConfig = false;
   };
 
-  # xdg.portal.config.niri = {
-  #   default = [
-  #     "gnome"
-  #     "gtk"
-  #   ];
-  #   "org.freedesktop.impl.portal.Access" = "gtk";
-  #   "org.freedesktop.impl.portal.FileChooser" = "gtk";
-  #   "org.freedesktop.impl.portal.Notification" = "gtk";
-  # };
+  xdg.portal.config.niri = {
+    default = [
+      "gnome"
+      "gtk"
+    ];
+    "org.freedesktop.impl.portal.Access" = "gtk";
+    "org.freedesktop.impl.portal.Notification" = "gtk";
+  };
 
   home.packages = [
-    pkgs.xdg-desktop-portal-gtk
     pkgs.nautilus
     (pkgs.writeShellApplication {
       name = "n";
