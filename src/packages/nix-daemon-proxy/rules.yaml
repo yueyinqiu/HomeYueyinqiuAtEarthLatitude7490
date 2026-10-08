@@ -33,5 +33,6 @@ rules:
   - DOMAIN-SUFFIX,crates.io,DIRECT
   - DOMAIN-SUFFIX,visualstudio.com,DIRECT
   - DOMAIN-SUFFIX,wpscdn.cn,DIRECT
+  - DOMAIN-SUFFIX,baidupcs.com,DIRECT
 
   - MATCH,REJECT

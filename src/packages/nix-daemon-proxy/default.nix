@@ -1,9 +1,5 @@
-{ nur, ... }:
+{ ... }:
 {
-  home.packages = [
-    nur.yueyinqiu.nix-daemon-proxy-client
-  ];
-
   home-manager-mihomo-manager.instances.for-nix-daemon = {
     port = 53849;
     configuration = ./config;
