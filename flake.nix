@@ -64,18 +64,7 @@
           ...
         }:
         {
-          make-shells.default = { pkgs, ... }: {
-            packages = [
-              (import ./dev/packages/dev-diff-vscode {
-                inherit pkgs;
-                name = "dev-diff-vscode";
-              })
-              (import ./dev/packages/dev-switch {
-                inherit pkgs;
-                name = "dev-switch";
-              })
-            ];
-          };
+          make-shells.default = (inputs.import-tree ./dev);
         };
     };
 }
