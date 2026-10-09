@@ -44,10 +44,12 @@ in
   xdg.configFile."org.freedesktop.FileManager1.common/config".text = ''
     cmd=${ghostty-yazi-wrapper}
   '';
-
+  dbus.packages = [ 
+    pkgs.org-freedesktop-filemanager1-common 
+  ];
+  
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-termfilechooser
-    pkgs.org-freedesktop-filemanager1-common
   ];
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
     [filechooser]
