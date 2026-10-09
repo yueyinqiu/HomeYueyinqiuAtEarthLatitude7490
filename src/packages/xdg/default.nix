@@ -16,6 +16,4 @@ in
     templates = "${base}/Templates";
     videos = "${base}/Videos";
   };
-  
-  xdg.mimeApps.enable = true;
 }

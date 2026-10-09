@@ -1,7 +1,4 @@
-{ pkgs, config, ... }: 
-let 
-  xdg-open-directory = "ghostty-inode-directory";
-in 
+{ pkgs, ... }: 
 {
   programs.ghostty.enable = true;
   programs.ghostty.settings = {
@@ -16,18 +13,4 @@ in
       '';
     })
   ];
-
-  xdg.desktopEntries.${xdg-open-directory} = {
-    name = "Ghostty (Open Directory)";
-    exec = "${config.programs.ghostty.package}/bin/ghostty --working-directory=%f";
-    mimeType = [ "inode/directory" ];
-    noDisplay = true;
-    terminal = false;
-  };
-
-  xdg.mimeApps = {
-    defaultApplications = {
-      "inode/directory" = "${xdg-open-directory}.desktop";
-    };
-  };
 }
