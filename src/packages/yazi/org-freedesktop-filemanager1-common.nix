@@ -6,7 +6,7 @@
 }:
 let
   ghostty = "${config.programs.ghostty.package}/bin/ghostty";
-  bash = "${pkgs.bash}/bin/bash";
+  bash = "${config.programs.bash.package}/bin/bash";
   yazi = "${config.programs.yazi.shellWrapperName}";
   ya = "${config.programs.yazi.package}/bin/ya";
 
