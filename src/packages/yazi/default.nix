@@ -26,7 +26,7 @@ let
           "-e"
           bash
           "-lic"
-          ''y "$@"; exec ${bash} -l''
+          ''y "$@"; exec "${bash}" -l''
           "_"
         ]
       } "''${paths[@]}" &
