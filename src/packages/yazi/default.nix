@@ -19,7 +19,7 @@ let
       done
 
       cmd="${config.programs.yazi.package}/bin/yazi"
-      termcmd="${config.programs.ghostty.package}/bin/ghostty" -e
+      termcmd='"${config.programs.ghostty.package}/bin/ghostty" -e'
 
       case "$BDUS_METHOD" in
       # Since yazi can handle both files, folders
