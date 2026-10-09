@@ -43,8 +43,9 @@ let
             "-lic"
             ''y "$@"; exec "${bash}" -l''
             "_"
+            "--client-id"
           ]
-        } --client-id $$ "''${paths[@]}" &
+        } $$ "''${paths[@]}" &
         disown
         sleep 0.5
         "${ya}" emit-to $$ spot
