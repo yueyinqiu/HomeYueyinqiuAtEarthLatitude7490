@@ -17,6 +17,7 @@
     sub-nix.url = "github:yueyinqiu/SubNix";
     snavi.url = "github:yueyinqiu/Snavi-Nix";
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
+    baidunetdisk.url = "github:yueyinqiu/BaidunetdiskNix";
   };
 
   outputs = inputs: {
@@ -33,6 +34,7 @@
           mindustry-bin = inputs.mindustry-bin.packages.${system};
           nix-airgap = inputs.nix-airgap.packages.${system};
           niri = inputs.niri.packages.${system};
+          baidunetdisk = inputs.baidunetdisk.packages.${system};
         };
         modules = [
           inputs.NixVirt.homeModules.default
