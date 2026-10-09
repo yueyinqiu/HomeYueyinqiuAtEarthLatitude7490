@@ -12,7 +12,7 @@ let
     name = "ghostty-yazi-wrapper";
     text = ''
       BDUS_METHOD="$1"
-      shift 1 # skip BDUS_METHOD
+      shift 1
 
       paths=()
       for arg in "$@"; do
