@@ -1,34 +1,36 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
-  ya = "${config.programs.yazi.package}/bin/ya";
+  ghostty = "${config.programs.ghostty.package}/bin/ghostty";
   bash = "${pkgs.bash}/bin/bash";
-  ghostty = "${pkgs.ghostty}/bin/ghostty";
+  ya = "${config.programs.yazi.package}/bin/ya";
   ghostty-yazi-wrapper = pkgs.writeShellScript "ghostty-yazi-wrapper" ''
     BDUS_METHOD="$1"
     shift 1 # skip BDUS_METHOD
-    declare -a item
 
-    quote_string() {
-      local input="$1"
-      echo "'${""}''${input//\'/\'\\\'\'}'"
-    }
-
+    paths=()
     for arg in "$@"; do
-      decoded_arg=$(printf '%b' "''${arg//%/\\x}")
-      item+=("$(quote_string "$decoded_arg")")
+      decoded=$(printf '%b' "''${arg//%/\\x}")
+      paths+=("$decoded")
     done
 
     case "$BDUS_METHOD" in
     "ShowFolders" | "ShowItems")
-      eval "${ghostty} -e ${bash}/bin/bash -lic 'y "$@"; exec ${bash}/bin/bash -l' _ ''${item[@]}" &
+      ${lib.escapeShellArgs ghostty "-e" bash "-lic" ''y "$@"; exec ${bash} -l'' "_"} "''${paths[@]}" &
       disown
       ;;
     "ShowItemProperties")
       YAZI_ID=999999
-      eval "${ghostty} -e ${bash}/bin/bash -lic 'y --client-id 999999 "$@"; exec ${bash}/bin/bash -l' _ ''${item[@]}" &
+      ${
+        lib.escapeShellArgs ghostty "-e" bash "-lic" ''y --client-id 999999 "$@"; exec "${bash}" -l'' "_"
+      } "''${paths[@]}" &
       disown
       sleep 0.5
-      "${ya}" emit-to $YAZI_ID spot
+      "${ya}" emit-to "$YAZI_ID" spot
       ;;
     esac
   '';
@@ -41,10 +43,10 @@ in
   xdg.configFile."org.freedesktop.FileManager1.common/config".text = ''
     cmd=${ghostty-yazi-wrapper}
   '';
-  dbus.packages = [ 
-    pkgs.org-freedesktop-filemanager1-common 
+  dbus.packages = [
+    pkgs.org-freedesktop-filemanager1-common
   ];
-  
+
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-termfilechooser
   ];
