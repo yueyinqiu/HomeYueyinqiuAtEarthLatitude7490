@@ -20,13 +20,29 @@ let
 
     case "$BDUS_METHOD" in
     "ShowFolders" | "ShowItems")
-      ${lib.escapeShellArgs ghostty "-e" bash "-lic" ''y "$@"; exec ${bash} -l'' "_"} "''${paths[@]}" &
+      ${
+        lib.escapeShellArgs [
+          ghostty
+          "-e"
+          bash
+          "-lic"
+          ''y "$@"; exec ${bash} -l''
+          "_"
+        ]
+      } "''${paths[@]}" &
       disown
       ;;
     "ShowItemProperties")
       YAZI_ID=999999
       ${
-        lib.escapeShellArgs ghostty "-e" bash "-lic" ''y --client-id 999999 "$@"; exec "${bash}" -l'' "_"
+        lib.escapeShellArgs [
+          ghostty
+          "-e"
+          bash
+          "-lic"
+          ''y --client-id 999999 "$@"; exec "${bash}" -l''
+          "_"
+        ]
       } "''${paths[@]}" &
       disown
       sleep 0.5
