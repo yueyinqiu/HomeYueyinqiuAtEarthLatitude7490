@@ -35,20 +35,19 @@ let
         disown
         ;;
       "ShowItemProperties")
-        YAZI_ID=999999
         ${
           lib.escapeShellArgs [
             ghostty
             "-e"
             bash
             "-lic"
-            ''y --client-id 999999 "$@"; exec "${bash}" -l''
+            ''y "$@"; exec "${bash}" -l''
             "_"
           ]
-        } "''${paths[@]}" &
+        } --client-id $$ "''${paths[@]}" &
         disown
         sleep 0.5
-        "${ya}" emit-to "$YAZI_ID" spot
+        "${ya}" emit-to $$ spot
         ;;
       esac
     '';
