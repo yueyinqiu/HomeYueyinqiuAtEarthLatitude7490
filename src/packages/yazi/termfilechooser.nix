@@ -22,8 +22,16 @@ in
   ];
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
     [filechooser]
-    cmd=${lib.escapeShellArg yazi-wrapper}
-    env=TERMCMD=${lib.escapeShellArg ghostty} --title="termfilechooser" -e
+    cmd=${lib.escapeShellArg (lib.escapeShellArg yazi-wrapper)}
+    env=TERMCMD=${
+      lib.escapeShellArg (
+        lib.escapeShellArgs [
+          ghostty
+          "--title=termfilechooser"
+          "-e"
+        ]
+      )
+    }
     default_dir=$HOME
     open_mode=suggested
     save_mode=last
