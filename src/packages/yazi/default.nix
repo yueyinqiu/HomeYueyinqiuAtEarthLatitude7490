@@ -9,7 +9,7 @@ let
 
       quote_string() {
         local input="$1"
-        echo "'''''${input//\'/\'\\\'\'}'"
+        echo "'${""}''${input//\'/\'\\\'\'}'"
       }
 
       # decode url string + add quote
