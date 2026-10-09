@@ -7,10 +7,20 @@
 let
   ghostty = "${config.programs.ghostty.package}/bin/ghostty";
   bash = "${pkgs.bash}/bin/bash";
-  ya = "${config.programs.yazi.package}/bin/ya";
   yazi = "${config.programs.yazi.shellWrapperName}";
-  ghostty-yazi-wrapper = pkgs.writeShellApplication {
-    name = "ghostty-yazi-wrapper";
+  ya = "${config.programs.yazi.package}/bin/ya";
+
+  yazi-in-ghostty-bash-escaped = lib.escapeShellArgs [
+    ghostty
+    "-e"
+    bash
+    "-lic"
+    ''${lib.escapeShellArg yazi} "$@"; exec ${lib.escapeShellArg bash} -l''
+    "_"
+  ];
+
+  yazi-wrapper = pkgs.writeShellApplication {
+    name = "yazi-wrapper";
     text = ''
       BDUS_METHOD="$1"
       shift 1
@@ -23,33 +33,14 @@ let
 
       case "$BDUS_METHOD" in
       "ShowFolders" | "ShowItems")
-        ${
-          lib.escapeShellArgs [
-            ghostty
-            "-e"
-            bash
-            "-lic"
-            '''${yazi}' "$@"; exec '${bash}' -l''
-            "_"
-          ]
-        } "''${paths[@]}" &
+        ${yazi-in-ghostty-bash-escaped} "''${paths[@]}" &
         disown
         ;;
       "ShowItemProperties")
-        ${
-          lib.escapeShellArgs [
-            ghostty
-            "-e"
-            bash
-            "-lic"
-            '''${yazi}' "$@"; exec '${bash}' -l''
-            "_"
-            "--client-id"
-          ]
-        } $$ "''${paths[@]}" &
+        ${yazi-in-ghostty-bash-escaped} --client-id $$ "''${paths[@]}" &
         disown
         for _ in {1..30}; do
-          "${ya}' emit-to $$ spot && break
+          ${lib.escapeShellArg ya} emit-to $$ spot && break
           sleep 0.2
         done
         ;;
@@ -59,7 +50,7 @@ let
 in
 {
   xdg.configFile."org.freedesktop.FileManager1.common/config".text = ''
-    cmd=${ghostty-yazi-wrapper}/bin/ghostty-yazi-wrapper
+    cmd=${lib.escapeShellArg (lib.getExe yazi-wrapper)}
   '';
   dbus.packages = [
     pkgs.org-freedesktop-filemanager1-common
