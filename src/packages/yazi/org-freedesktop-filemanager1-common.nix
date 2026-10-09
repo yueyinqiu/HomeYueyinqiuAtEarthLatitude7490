@@ -47,8 +47,10 @@ let
           ]
         } $$ "''${paths[@]}" &
         disown
-        sleep 1
-        "${ya}" emit-to $$ spot
+        for _ in {1..30}; do
+          "${ya}" emit-to $$ spot && break
+          sleep 0.2
+        done
         ;;
       esac
     '';
