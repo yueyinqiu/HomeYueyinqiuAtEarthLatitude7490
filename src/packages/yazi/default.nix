@@ -31,7 +31,7 @@ let
       disown
       # Increase this if yazi take too long to load
       sleep 0.5
-      ya emit-to $YAZI_ID spot
+      "${config.programs.yazi.package}/bin/ya" emit-to $YAZI_ID spot
       ;;
     esac
   '';
