@@ -8,6 +8,7 @@ let
   ghostty = "${config.programs.ghostty.package}/bin/ghostty";
   bash = "${pkgs.bash}/bin/bash";
   ya = "${config.programs.yazi.package}/bin/ya";
+  yazi = "${config.programs.yazi.shellWrapperName}";
   ghostty-yazi-wrapper = pkgs.writeShellApplication {
     name = "ghostty-yazi-wrapper";
     text = ''
@@ -28,7 +29,7 @@ let
             "-e"
             bash
             "-lic"
-            ''y "$@"; exec "${bash}" -l''
+            '''${yazi}' "$@"; exec '${bash}' -l''
             "_"
           ]
         } "''${paths[@]}" &
@@ -41,14 +42,14 @@ let
             "-e"
             bash
             "-lic"
-            ''y "$@"; exec "${bash}" -l''
+            '''${yazi}' "$@"; exec '${bash}' -l''
             "_"
             "--client-id"
           ]
         } $$ "''${paths[@]}" &
         disown
         for _ in {1..30}; do
-          "${ya}" emit-to $$ spot && break
+          "${ya}' emit-to $$ spot && break
           sleep 0.2
         done
         ;;
