@@ -26,7 +26,6 @@
         match = {
           _props = {
             "app-id" = "wpp";
-            "title" = "^$";
           };
         };
         "open-floating" = true;
