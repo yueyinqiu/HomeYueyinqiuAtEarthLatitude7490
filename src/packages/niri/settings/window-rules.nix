@@ -25,6 +25,17 @@
       "window-rule" = {
         match = {
           _props = {
+            "app-id" = "wpp";
+            "title" = "^$";
+          };
+        };
+        "open-floating" = true;
+      };
+    }
+    {
+      "window-rule" = {
+        match = {
+          _props = {
             "app-id" = "code";
           };
         };
